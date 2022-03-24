@@ -77,9 +77,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Consultas.vb" />
     <Compile Include="Dominio\Ediciones.vb" />
+    <Compile Include="Dominio\Juegos.vb" />
     <Compile Include="Dominio\Jugadora.vb" />
     <Compile Include="Dominio\Pais.vb" />
+    <Compile Include="Dominio\Partido.vb" />
+    <Compile Include="Dominio\Resultados.vb" />
     <Compile Include="Dominio\Torneo.vb" />
     <Compile Include="Persistencia\AgenteBD.vb" />
     <Compile Include="Presentación\Form1.vb">
@@ -111,6 +115,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
