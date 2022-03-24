@@ -1,0 +1,5 @@
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Práctica 3\Tenis\Tenis\obj\Debug\Tenis.vbproj.AssemblyReference.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Práctica 3\Tenis\Tenis\obj\Debug\Tenis.vbproj.SuggestedBindingRedirects.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Práctica 3\Tenis\Tenis\obj\Debug\Tenis.Resources.resources
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Práctica 3\Tenis\Tenis\obj\Debug\Tenis.vbproj.GenerateResource.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Práctica 3\Tenis\Tenis\obj\Debug\Tenis.vbproj.CoreCompileInputs.cache
