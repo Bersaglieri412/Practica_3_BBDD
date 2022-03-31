@@ -1,36 +1,38 @@
 ﻿Public Class PaisDAO
+    Public ReadOnly Property Pais As Collection
 
-
+    Public Sub New()
+        Me.Pais = New Collection
+    End Sub
     Public Sub LeerTodas()
-        Dim p As Persona
+        Dim p As Pais
         Dim col, aux As Collection
-        col = AgenteBD.ObtenerAgente().Leer("SELECT * FROM Pais ORDER BY IDPersona")
+        col = AgenteBD.ObtenerAgente().Leer("SELECT * FROM Paises ORDER BY idPais")
         For Each aux In col
-            p = New Persona(aux(1).ToString)
-            p.Nombre = aux(2).ToString
-            Me.Personas.Add(p)
-
+            p = New Pais(aux(1).ToString)
+            p.nombre = aux(2).ToString
+            Me.Pais.Add(p)
         Next
     End Sub
 
-    Public Sub Leer(ByRef p As Persona)
+    Public Sub Leer(ByRef p As Pais)
         Dim col As Collection : Dim aux As Collection
-        col = AgenteBD.ObtenerAgente.Leer("SELECT * FROM Personas WHERE IDPersona='" & p.IDPersona & "';")
+        col = AgenteBD.ObtenerAgente.Leer("SELECT * FROM Paises WHERE idPais='" & p.id & "';")
         For Each aux In col
-            p.Nombre = aux(2).ToString
+            p.nombre = aux(2).ToString
         Next
     End Sub
 
-    Public Function Insertar(ByVal p As Persona) As Integer
-        Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Personas VALUES ('" & p.IDPersona & "', '" & p.Nombre & "');")
+    Public Function Insertar(ByVal p As Pais) As Integer
+        Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Paises VALUES ('" & p.nombre & "');")
     End Function
 
-    Public Function Actualizar(ByVal p As Persona) As Integer
-        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Personas SET NombrePersona='" & p.Nombre & "' WHERE IDPersona='" & p.IDPersona & "';")
+    Public Function Actualizar(ByVal p As Pais) As Integer
+        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Paises Set NombrePais='" & p.nombre & "' WHERE idPais='" & p.id & "';")
     End Function
 
-    Public Function Borrar(ByVal p As Persona) As Integer
-        Return AgenteBD.ObtenerAgente.Modificar("DELETE FROM Personas WHERE IDPersona='" & p.IDPersona & "';")
+    Public Function Borrar(ByVal p As Pais) As Integer
+        Return AgenteBD.ObtenerAgente.Modificar("DELETE FROM Paises WHERE idPais='" & p.id & "';")
     End Function
 
 End Class

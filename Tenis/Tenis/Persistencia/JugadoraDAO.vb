@@ -32,11 +32,11 @@
     End Function
 
     Public Function Actualizar(ByVal p As Jugadora) As Integer
-        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Personas Set NombrePersona='" & p.nombre & "' WHERE IDPersona='" & p.id & "';")
+        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Jugadoras Set NombrePersona='" & p.nombre & "' WHERE idJugadora='" & p.id & "';")
     End Function
 
     Public Function Borrar(ByVal p As Jugadora) As Integer
-        Return AgenteBD.ObtenerAgente.Modificar("DELETE FROM Personas WHERE IDPersona='" & p.id & "';")
+        Return AgenteBD.ObtenerAgente.Modificar("DELETE FROM Jugadoras WHERE idJugadora='" & p.id & "';")
     End Function
 
 
