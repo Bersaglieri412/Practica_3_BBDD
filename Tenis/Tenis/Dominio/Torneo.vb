@@ -1,8 +1,39 @@
 ﻿Public Class Torneo
-    Private idTorneo As Integer
-    Private nombreTorneo As String
-    Private ciudadTorneo As String
-    Private paisTorneo As Pais
-    Private ediciones() As Ediciones 'Debe tener un conjunto de ediciones
+    Public Property idTorneo As Integer
+    Public Property nombreTorneo As String
+    Public Property ciudadTorneo As String
+    Public Property paisTorneo As Pais
+    Public Property ediciones() As Ediciones 'Debe tener un conjunto de ediciones
+
+    Public ReadOnly Property TorDAO As JugadoraDAO
+
+    Public Sub New()
+        Me.TorDAO = New JugadoraDAO
+    End Sub
+
+    Public Sub New(Id As String)
+        Me.TorDAO = New JugadoraDAO
+        Me.idTorneo = Id
+    End Sub
+
+    Public Sub LeerTodasPersonas()
+        Me.TorDAO.LeerTodas()
+    End Sub
+
+    Public Sub LeerJugadora()
+        Me.TorDAO.Leer(Me)
+    End Sub
+
+    Public Function InsertarJugadora() As Integer
+        Return Me.TorDAO.Insertar(Me)
+    End Function
+
+    Public Function ActualizarJugadora() As Integer
+        Return Me.TorDAO.Actualizar(Me)
+    End Function
+
+    Public Function BorrarJugadora() As Integer
+        Return Me.TorDAO.Borrar(Me)
+    End Function
 
 End Class
