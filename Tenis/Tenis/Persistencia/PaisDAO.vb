@@ -1,4 +1,4 @@
-﻿Public Class PaiseDAO
+﻿Public Class PaisDAO
 
 
     Public Sub LeerTodas()

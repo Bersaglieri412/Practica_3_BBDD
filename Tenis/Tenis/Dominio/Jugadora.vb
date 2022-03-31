@@ -1,9 +1,9 @@
 ﻿Public Class Jugadora
-    Private id As Integer
-    Private pais_jug As Pais
-    Private nombre As String
-    Private puntos As Integer
-    Private fechaNacimiento As Date
+    Public Property id As Integer
+    Public Property pais_jug As Pais
+    Public Property nombre As String
+    Public Property puntos As Integer
+    Public Property fechaNacimiento As Date
 
     Public ReadOnly Property JugDAO As JugadoraDAO
 
@@ -11,9 +11,9 @@
         Me.JugDAO = New JugadoraDAO
     End Sub
 
-    Public Sub New(id As String)
+    Public Sub New(Id As String)
         Me.JugDAO = New JugadoraDAO
-        Me.id = id
+        Me.id = Id
     End Sub
 
     Public Sub LeerTodasPersonas()
