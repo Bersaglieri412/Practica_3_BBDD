@@ -5,14 +5,14 @@
     Public Property paisTorneo As Pais
     Public Property ediciones() As Ediciones 'Debe tener un conjunto de ediciones
 
-    Public ReadOnly Property TorDAO As JugadoraDAO
+    Public ReadOnly Property TorDAO As TorneoDAO
 
     Public Sub New()
-        Me.TorDAO = New JugadoraDAO
+        Me.TorDAO = New TorneoDAO
     End Sub
 
     Public Sub New(Id As String)
-        Me.TorDAO = New JugadoraDAO
+        Me.TorDAO = New TorneoDAO
         Me.idTorneo = Id
     End Sub
 

@@ -86,8 +86,10 @@
     <Compile Include="Dominio\Resultados.vb" />
     <Compile Include="Dominio\Torneo.vb" />
     <Compile Include="Persistencia\AgenteBD.vb" />
+    <Compile Include="Persistencia\EdicionesDAO.vb" />
     <Compile Include="Persistencia\JugadoraDAO.vb" />
     <Compile Include="Persistencia\PaisDAO.vb" />
+    <Compile Include="Persistencia\PartidoDAO.vb" />
     <Compile Include="Persistencia\TorneoDAO.vb" />
     <Compile Include="Presentación\Form1.vb">
       <SubType>Form</SubType>

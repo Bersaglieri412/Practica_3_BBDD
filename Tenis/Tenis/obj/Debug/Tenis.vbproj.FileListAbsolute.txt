@@ -26,3 +26,4 @@ D:\Documentos_D\ALMUDENA\2º B y C carrera\2º CUATRI\2_BASE DE DATOS\20-21\B. L
 D:\Documentos_D\ALMUDENA\2º B y C carrera\2º CUATRI\2_BASE DE DATOS\20-21\B. LAB\S.5_P3_2022\visual studio\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.exe
 D:\Documentos_D\ALMUDENA\2º B y C carrera\2º CUATRI\2_BASE DE DATOS\20-21\B. LAB\S.5_P3_2022\visual studio\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.xml
 D:\Documentos_D\ALMUDENA\2º B y C carrera\2º CUATRI\2_BASE DE DATOS\20-21\B. LAB\S.5_P3_2022\visual studio\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.pdb
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.Form1.resources

@@ -21,7 +21,7 @@
 
     Public Sub Leer(ByRef p As Jugadora)
         Dim col As Collection : Dim aux As Collection
-        col = AgenteBD.ObtenerAgente.Leer("SELECT * FROM Jugadoras WHERE IDPersona='" & p.id & "';")
+        col = AgenteBD.ObtenerAgente.Leer("SELECT * FROM Jugadoras WHERE IdJugadora='" & p.id & "';")
         For Each aux In col
             p.nombre = aux(2).ToString
         Next
@@ -32,7 +32,7 @@
     End Function
 
     Public Function Actualizar(ByVal p As Jugadora) As Integer
-        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Jugadoras Set NombrePersona='" & p.nombre & "' WHERE idJugadora='" & p.id & "';")
+        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Jugadoras Set NombreJugadora='" & p.nombre & "' WHERE idJugadora='" & p.id & "';")
     End Function
 
     Public Function Borrar(ByVal p As Jugadora) As Integer
