@@ -24,3 +24,18 @@ D:\Documentos_D\ALMUDENA\2º B y C carrera\2º CUATRI\2_BASE DE DATOS\20-21\B. L
 D:\Documentos_D\ALMUDENA\2º B y C carrera\2º CUATRI\2_BASE DE DATOS\20-21\B. LAB\S.5_P3_2022\visual studio\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.exe
 D:\Documentos_D\ALMUDENA\2º B y C carrera\2º CUATRI\2_BASE DE DATOS\20-21\B. LAB\S.5_P3_2022\visual studio\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.xml
 D:\Documentos_D\ALMUDENA\2º B y C carrera\2º CUATRI\2_BASE DE DATOS\20-21\B. LAB\S.5_P3_2022\visual studio\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.pdb
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.vbproj.AssemblyReference.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.vbproj.SuggestedBindingRedirects.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.Resources.resources
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.Form1.resources
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.vbproj.GenerateResource.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.vbproj.CoreCompileInputs.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.exe
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.xml
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.pdb
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Debug\Tenis.exe.config
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Debug\Tenis.exe
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Debug\Tenis.pdb
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Debug\Tenis.xml
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Debug\MySql.Data.dll
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.vbproj.CopyComplete

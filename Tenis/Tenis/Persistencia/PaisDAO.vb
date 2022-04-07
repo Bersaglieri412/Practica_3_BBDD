@@ -23,6 +23,14 @@
         Next
     End Sub
 
+    Public Sub buscarID(ByRef p As Pais)
+        Dim col As Collection : Dim aux As Collection
+        col = AgenteBD.ObtenerAgente.Leer("Select idPais from Paises where NombrePais='" & p.nombre & "';")
+        For Each aux In col
+            p.id = aux(1).ToString
+        Next
+    End Sub
+
     Public Function Insertar(ByVal p As Pais) As Integer
         Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Paises VALUES ('" & 0.ToString & "','" & p.nombre & "');")
     End Function

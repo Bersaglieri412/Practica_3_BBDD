@@ -29,10 +29,6 @@
 
     Public Function Insertar(ByVal p As Jugadora) As Integer
         Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Jugadoras(NombreJugadora,FechaNacimientoJugadora,PuntosJugadora,PaisJugadora) VALUES ('" & p.nombre & "', '" & p.fechaNacimiento & "', '" & p.puntos & "', '" & p.pais_jug.id & "');")
-<<<<<<< HEAD
-        ' "INSERT INTO Jugadoras VALUES ('" & 0 & "','" & p.nombre & "', '" & p.fechaNacimiento & "', '" & p.puntos & "', '" & p.pais_jug.id & "');")
-=======
->>>>>>> cc5e961f9aad696b4520d63fd8b5f5150a40ec8d
     End Function
 
     Public Function Actualizar(ByVal p As Jugadora) As Integer

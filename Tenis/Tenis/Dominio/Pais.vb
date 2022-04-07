@@ -11,7 +11,9 @@
     Public Sub New(Id As String)
         Me.PaisDAO = New PaisDAO
         Me.id = Id
+
     End Sub
+
 
     Public Sub LeerTodasPersonas()
         Me.PaisDAO.LeerTodas()
