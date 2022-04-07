@@ -19,10 +19,9 @@
     Private Sub btnAnadirJugadora_Click(sender As Object, e As EventArgs) Handles btnAnadirJugadora.Click
 
         ' Si "txtID" NO está vacío y "txtNombre" NO está vacío
-        If Me.txtIDJugadora.Text <> String.Empty And Me.txtNombreJugadora.Text <> String.Empty And Me.txtPuntosJugadora.Text <> String.Empty Then ' los "<>" significa que es distinto 
+        If Me.txtNombreJugadora.Text <> String.Empty And Me.txtPuntosJugadora.Text <> String.Empty Then ' los "<>" significa que es distinto 
 
             j = New Jugadora
-            ' j.id = txtIDJugadora.Text
             j.nombre = txtNombreJugadora.Text
             j.puntos = txtPuntosJugadora.Text
 

@@ -34,10 +34,9 @@ Partial Class Form1
         Me.lblPaisJugadora = New System.Windows.Forms.Label()
         Me.DateTimeFechaNacJugadora = New System.Windows.Forms.DateTimePicker()
         Me.txtNombreJugadora = New System.Windows.Forms.TextBox()
-        Me.txtIDJugadora = New System.Windows.Forms.TextBox()
         Me.lblFechaNacJugadora = New System.Windows.Forms.Label()
         Me.lblNombreJugadora = New System.Windows.Forms.Label()
-        Me.lblIDJugadora = New System.Windows.Forms.Label()
+        Me.lblIDJugadoraa = New System.Windows.Forms.Label()
         Me.listaJugadoras = New System.Windows.Forms.ListBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.btnLimpiarPais = New System.Windows.Forms.Button()
@@ -67,6 +66,7 @@ Partial Class Form1
         Me.listaTorneos = New System.Windows.Forms.ListBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.lblIDJugadora = New System.Windows.Forms.Label()
         Me.Pestañas.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -89,6 +89,7 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.lblIDJugadora)
         Me.TabPage1.Controls.Add(Me.cbPaisJugadora)
         Me.TabPage1.Controls.Add(Me.btnLimpiarJugadora)
         Me.TabPage1.Controls.Add(Me.btnEliminarJugadora)
@@ -99,10 +100,9 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.lblPaisJugadora)
         Me.TabPage1.Controls.Add(Me.DateTimeFechaNacJugadora)
         Me.TabPage1.Controls.Add(Me.txtNombreJugadora)
-        Me.TabPage1.Controls.Add(Me.txtIDJugadora)
         Me.TabPage1.Controls.Add(Me.lblFechaNacJugadora)
         Me.TabPage1.Controls.Add(Me.lblNombreJugadora)
-        Me.TabPage1.Controls.Add(Me.lblIDJugadora)
+        Me.TabPage1.Controls.Add(Me.lblIDJugadoraa)
         Me.TabPage1.Controls.Add(Me.listaJugadoras)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
@@ -202,13 +202,6 @@ Partial Class Form1
         Me.txtNombreJugadora.Size = New System.Drawing.Size(171, 22)
         Me.txtNombreJugadora.TabIndex = 5
         '
-        'txtIDJugadora
-        '
-        Me.txtIDJugadora.Location = New System.Drawing.Point(449, 48)
-        Me.txtIDJugadora.Name = "txtIDJugadora"
-        Me.txtIDJugadora.Size = New System.Drawing.Size(171, 22)
-        Me.txtIDJugadora.TabIndex = 4
-        '
         'lblFechaNacJugadora
         '
         Me.lblFechaNacJugadora.AutoSize = True
@@ -229,15 +222,15 @@ Partial Class Form1
         Me.lblNombreJugadora.TabIndex = 2
         Me.lblNombreJugadora.Text = "Nombre"
         '
-        'lblIDJugadora
+        'lblIDJugadoraa
         '
-        Me.lblIDJugadora.AutoSize = True
-        Me.lblIDJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIDJugadora.Location = New System.Drawing.Point(399, 55)
-        Me.lblIDJugadora.Name = "lblIDJugadora"
-        Me.lblIDJugadora.Size = New System.Drawing.Size(23, 17)
-        Me.lblIDJugadora.TabIndex = 1
-        Me.lblIDJugadora.Text = "ID"
+        Me.lblIDJugadoraa.AutoSize = True
+        Me.lblIDJugadoraa.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIDJugadoraa.Location = New System.Drawing.Point(399, 55)
+        Me.lblIDJugadoraa.Name = "lblIDJugadoraa"
+        Me.lblIDJugadoraa.Size = New System.Drawing.Size(23, 17)
+        Me.lblIDJugadoraa.TabIndex = 1
+        Me.lblIDJugadoraa.Text = "ID"
         '
         'listaJugadoras
         '
@@ -532,6 +525,14 @@ Partial Class Form1
         Me.TabPage5.Text = "TabPage5"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'lblIDJugadora
+        '
+        Me.lblIDJugadora.AutoSize = True
+        Me.lblIDJugadora.Location = New System.Drawing.Point(446, 55)
+        Me.lblIDJugadora.Name = "lblIDJugadora"
+        Me.lblIDJugadora.Size = New System.Drawing.Size(0, 17)
+        Me.lblIDJugadora.TabIndex = 71
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -560,10 +561,9 @@ Partial Class Form1
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents DateTimeFechaNacJugadora As DateTimePicker
     Friend WithEvents txtNombreJugadora As TextBox
-    Friend WithEvents txtIDJugadora As TextBox
     Friend WithEvents lblFechaNacJugadora As Label
     Friend WithEvents lblNombreJugadora As Label
-    Friend WithEvents lblIDJugadora As Label
+    Friend WithEvents lblIDJugadoraa As Label
     Friend WithEvents lblPaisJugadora As Label
     Friend WithEvents btnLimpiarJugadora As Button
     Friend WithEvents btnEliminarJugadora As Button
@@ -596,4 +596,5 @@ Partial Class Form1
     Friend WithEvents txtEdicionesTorneo As TextBox
     Friend WithEvents lblEdicionesTorneo As Label
     Friend WithEvents cbPaisJugadora As ComboBox
+    Friend WithEvents lblIDJugadora As Label
 End Class
