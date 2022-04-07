@@ -25,7 +25,7 @@
     End Sub
 
     Public Function Insertar(ByVal p As Ediciones) As Integer
-        Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Ediciones VALUES ('" & p.torneo.idTorneo & "', '" & p.ganadora.id & "');")
+        Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Ediciones VALUES ('" & 0.ToString & "','" & p.torneo.idTorneo & "', '" & p.ganadora.id & "');")
     End Function
 
     Public Function Actualizar(ByVal p As Ediciones) As Integer 'No se que valores se actualizarian aqui, he puesto que basicamente se cambie el torneo
