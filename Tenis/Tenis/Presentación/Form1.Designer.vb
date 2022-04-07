@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.Pestañas = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.cbPaisJugadora = New System.Windows.Forms.ComboBox()
         Me.btnLimpiarJugadora = New System.Windows.Forms.Button()
         Me.btnEliminarJugadora = New System.Windows.Forms.Button()
         Me.bntModificarJugadora = New System.Windows.Forms.Button()
@@ -67,7 +67,6 @@ Partial Class Form1
         Me.listaTorneos = New System.Windows.Forms.ListBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.cbPaisJugadora = New System.Windows.Forms.ComboBox()
         Me.Pestañas.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -91,7 +90,6 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.cbPaisJugadora)
-        Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.btnLimpiarJugadora)
         Me.TabPage1.Controls.Add(Me.btnEliminarJugadora)
         Me.TabPage1.Controls.Add(Me.bntModificarJugadora)
@@ -114,14 +112,14 @@ Partial Class Form1
         Me.TabPage1.Text = "JUGADORA"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'Button1
+        'cbPaisJugadora
         '
-        Me.Button1.Location = New System.Drawing.Point(63, 268)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(106, 31)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "¡Conectar!"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.cbPaisJugadora.FormattingEnabled = True
+        Me.cbPaisJugadora.Location = New System.Drawing.Point(449, 190)
+        Me.cbPaisJugadora.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cbPaisJugadora.Name = "cbPaisJugadora"
+        Me.cbPaisJugadora.Size = New System.Drawing.Size(171, 24)
+        Me.cbPaisJugadora.TabIndex = 70
         '
         'btnLimpiarJugadora
         '
@@ -534,15 +532,6 @@ Partial Class Form1
         Me.TabPage5.Text = "TabPage5"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
-        'cbPaisJugadora
-        '
-        Me.cbPaisJugadora.FormattingEnabled = True
-        Me.cbPaisJugadora.Location = New System.Drawing.Point(449, 190)
-        Me.cbPaisJugadora.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.cbPaisJugadora.Name = "cbPaisJugadora"
-        Me.cbPaisJugadora.Size = New System.Drawing.Size(171, 24)
-        Me.cbPaisJugadora.TabIndex = 70
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -550,7 +539,7 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(864, 450)
         Me.Controls.Add(Me.Pestañas)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "TENIS FEMENINO"
         Me.Pestañas.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -606,6 +595,5 @@ Partial Class Form1
     Friend WithEvents btnAnadirTorneo As Button
     Friend WithEvents txtEdicionesTorneo As TextBox
     Friend WithEvents lblEdicionesTorneo As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents cbPaisJugadora As ComboBox
 End Class
