@@ -4,6 +4,8 @@
     Public Property edicion As Ediciones 'Actúa como los dos atributos de la clave ajena de la tabla
     Public Property ronda As Char
 
+    Public Property juegos As Collection 'Debe tener al menos dos juegos, uno por jugadora
+
     Public ReadOnly Property ParDAO As PartidoDAO
 
 

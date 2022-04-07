@@ -15,4 +15,8 @@
         Next
 
     End Sub
+
+    Private Sub btnAnadirJugadora_Click(sender As Object, e As EventArgs) Handles btnAnadirJugadora.Click
+        pAux.
+    End Sub
 End Class

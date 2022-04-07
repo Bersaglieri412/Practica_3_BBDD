@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.Pestañas = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnLimpiarJugadora = New System.Windows.Forms.Button()
         Me.btnEliminarJugadora = New System.Windows.Forms.Button()
         Me.bntModificarJugadora = New System.Windows.Forms.Button()
@@ -67,7 +68,6 @@ Partial Class Form1
         Me.listaTorneos = New System.Windows.Forms.ListBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Pestañas.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -113,6 +113,15 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "JUGADORA"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(63, 268)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(106, 31)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "¡Conectar!"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'btnLimpiarJugadora
         '
@@ -531,15 +540,6 @@ Partial Class Form1
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "TabPage5"
         Me.TabPage5.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(63, 268)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(106, 31)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "¡Conectar!"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
