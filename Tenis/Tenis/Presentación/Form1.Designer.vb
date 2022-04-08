@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.Pestañas = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TxtID = New System.Windows.Forms.TextBox()
         Me.lblIDJugadora = New System.Windows.Forms.Label()
         Me.cbPaisJugadora = New System.Windows.Forms.ComboBox()
         Me.btnLimpiarJugadora = New System.Windows.Forms.Button()
@@ -67,7 +68,6 @@ Partial Class Form1
         Me.listaTorneos = New System.Windows.Forms.ListBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.TxtID = New System.Windows.Forms.TextBox()
         Me.Pestañas.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -113,6 +113,13 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "JUGADORA"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TxtID
+        '
+        Me.TxtID.Location = New System.Drawing.Point(449, 52)
+        Me.TxtID.Name = "TxtID"
+        Me.TxtID.Size = New System.Drawing.Size(171, 22)
+        Me.TxtID.TabIndex = 72
         '
         'lblIDJugadora
         '
@@ -200,7 +207,9 @@ Partial Class Form1
         '
         'DateTimeFechaNacJugadora
         '
+        Me.DateTimeFechaNacJugadora.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.DateTimeFechaNacJugadora.Location = New System.Drawing.Point(449, 140)
+        Me.DateTimeFechaNacJugadora.MaxDate = New Date(2022, 12, 31, 0, 0, 0, 0)
         Me.DateTimeFechaNacJugadora.Name = "DateTimeFechaNacJugadora"
         Me.DateTimeFechaNacJugadora.Size = New System.Drawing.Size(171, 22)
         Me.DateTimeFechaNacJugadora.TabIndex = 6
@@ -534,13 +543,6 @@ Partial Class Form1
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "TabPage5"
         Me.TabPage5.UseVisualStyleBackColor = True
-        '
-        'TxtID
-        '
-        Me.TxtID.Location = New System.Drawing.Point(449, 52)
-        Me.TxtID.Name = "TxtID"
-        Me.TxtID.Size = New System.Drawing.Size(171, 22)
-        Me.TxtID.TabIndex = 72
         '
         'Form1
         '
