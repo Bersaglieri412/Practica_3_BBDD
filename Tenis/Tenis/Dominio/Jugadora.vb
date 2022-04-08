@@ -44,4 +44,8 @@
         Return Me.JugDAO.Borrar(Me)
     End Function
 
+    Public Function buscarID()
+        Me.JugDAO.buscarID(Me)
+    End Function
+
 End Class

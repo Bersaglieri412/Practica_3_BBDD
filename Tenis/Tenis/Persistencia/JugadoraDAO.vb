@@ -24,6 +24,9 @@
         col = AgenteBD.ObtenerAgente.Leer("SELECT * FROM Jugadoras WHERE IdJugadora='" & p.id & "';")
         For Each aux In col
             p.nombre = aux(2).ToString
+            p.fechaNacimiento = aux(3).ToString
+            p.puntos = aux(4)
+            p.pais_jug = New Pais(aux(5).ToString)
         Next
     End Sub
 
@@ -39,5 +42,12 @@
         Return AgenteBD.ObtenerAgente.Modificar("DELETE FROM Jugadoras WHERE idJugadora='" & p.id & "';")
     End Function
 
+    Public Sub buscarID(ByRef p As Jugadora)
+        Dim col As Collection : Dim aux As Collection
+        col = AgenteBD.ObtenerAgente.Leer("Select idJugadora from Jugadoras where NombreJugadora='" & p.nombre & "';")
+        For Each aux In col
+            p.id = aux(1).ToString
+        Next
+    End Sub
 
 End Class

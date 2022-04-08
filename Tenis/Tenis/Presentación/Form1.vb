@@ -9,6 +9,10 @@
         paises = New Collection
         Me.j = New Jugadora
         Me.p = New Pais
+        Me.TxtID.Enabled = False
+        Me.btnEliminarJugadora.Enabled = False
+        Me.btnLimpiarJugadora.Enabled = False
+        Me.btnModificarJugadora.Enabled = False
         Try
             Me.j.LeerTodasPersonas()
             p.LeerTodasPersonas()
@@ -54,4 +58,35 @@
 
     End Sub
 
+    Private Sub listaJugadoras_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaJugadoras.SelectedIndexChanged
+        If Not Me.listaJugadoras.SelectedItem Is Nothing Then
+            Me.j.nombre = listaJugadoras.SelectedItem.ToString
+            Try
+                Me.j.buscarID()
+                Me.j.LeerJugadora()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End Try
+            Me.TxtID.Text = j.id
+            Me.txtNombreJugadora.Text = j.nombre
+            Me.txtPuntosJugadora.Text = j.puntos
+            Me.DateTimeFechaNacJugadora.Value = j.fechaNacimiento
+        End If
+        Me.btnAnadirJugadora.Enabled = False
+        Me.btnEliminarJugadora.Enabled = True
+        Me.btnLimpiarJugadora.Enabled = True
+        Me.btnModificarJugadora.Enabled = True
+    End Sub
+
+    Private Sub btnLimpiarJugadora_Click(sender As Object, e As EventArgs) Handles btnLimpiarJugadora.Click
+        Me.btnAnadirJugadora.Enabled = True
+        Me.btnEliminarJugadora.Enabled = False
+        Me.btnLimpiarJugadora.Enabled = False
+        Me.btnModificarJugadora.Enabled = False
+        Me.TxtID.Clear()
+        Me.txtNombreJugadora.Clear()
+        Me.txtPuntosJugadora.Clear()
+        Me.DateTimeFechaNacJugadora.Value = Date.Now
+    End Sub
 End Class

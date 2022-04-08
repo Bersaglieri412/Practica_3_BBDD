@@ -24,10 +24,11 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.Pestañas = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.lblIDJugadora = New System.Windows.Forms.Label()
         Me.cbPaisJugadora = New System.Windows.Forms.ComboBox()
         Me.btnLimpiarJugadora = New System.Windows.Forms.Button()
         Me.btnEliminarJugadora = New System.Windows.Forms.Button()
-        Me.bntModificarJugadora = New System.Windows.Forms.Button()
+        Me.btnModificarJugadora = New System.Windows.Forms.Button()
         Me.btnAnadirJugadora = New System.Windows.Forms.Button()
         Me.txtPuntosJugadora = New System.Windows.Forms.TextBox()
         Me.lblPuntosJugadora = New System.Windows.Forms.Label()
@@ -66,7 +67,7 @@ Partial Class Form1
         Me.listaTorneos = New System.Windows.Forms.ListBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.lblIDJugadora = New System.Windows.Forms.Label()
+        Me.TxtID = New System.Windows.Forms.TextBox()
         Me.Pestañas.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -89,11 +90,12 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.TxtID)
         Me.TabPage1.Controls.Add(Me.lblIDJugadora)
         Me.TabPage1.Controls.Add(Me.cbPaisJugadora)
         Me.TabPage1.Controls.Add(Me.btnLimpiarJugadora)
         Me.TabPage1.Controls.Add(Me.btnEliminarJugadora)
-        Me.TabPage1.Controls.Add(Me.bntModificarJugadora)
+        Me.TabPage1.Controls.Add(Me.btnModificarJugadora)
         Me.TabPage1.Controls.Add(Me.btnAnadirJugadora)
         Me.TabPage1.Controls.Add(Me.txtPuntosJugadora)
         Me.TabPage1.Controls.Add(Me.lblPuntosJugadora)
@@ -112,6 +114,14 @@ Partial Class Form1
         Me.TabPage1.Text = "JUGADORA"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'lblIDJugadora
+        '
+        Me.lblIDJugadora.AutoSize = True
+        Me.lblIDJugadora.Location = New System.Drawing.Point(446, 55)
+        Me.lblIDJugadora.Name = "lblIDJugadora"
+        Me.lblIDJugadora.Size = New System.Drawing.Size(0, 16)
+        Me.lblIDJugadora.TabIndex = 71
+        '
         'cbPaisJugadora
         '
         Me.cbPaisJugadora.FormattingEnabled = True
@@ -124,7 +134,7 @@ Partial Class Form1
         'btnLimpiarJugadora
         '
         Me.btnLimpiarJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLimpiarJugadora.Location = New System.Drawing.Point(652, 233)
+        Me.btnLimpiarJugadora.Location = New System.Drawing.Point(652, 218)
         Me.btnLimpiarJugadora.Name = "btnLimpiarJugadora"
         Me.btnLimpiarJugadora.Size = New System.Drawing.Size(151, 46)
         Me.btnLimpiarJugadora.TabIndex = 14
@@ -134,27 +144,27 @@ Partial Class Form1
         'btnEliminarJugadora
         '
         Me.btnEliminarJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarJugadora.Location = New System.Drawing.Point(652, 166)
+        Me.btnEliminarJugadora.Location = New System.Drawing.Point(652, 154)
         Me.btnEliminarJugadora.Name = "btnEliminarJugadora"
         Me.btnEliminarJugadora.Size = New System.Drawing.Size(151, 46)
         Me.btnEliminarJugadora.TabIndex = 13
         Me.btnEliminarJugadora.Text = "ELIMINAR JUGADORA"
         Me.btnEliminarJugadora.UseVisualStyleBackColor = True
         '
-        'bntModificarJugadora
+        'btnModificarJugadora
         '
-        Me.bntModificarJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bntModificarJugadora.Location = New System.Drawing.Point(652, 97)
-        Me.bntModificarJugadora.Name = "bntModificarJugadora"
-        Me.bntModificarJugadora.Size = New System.Drawing.Size(151, 46)
-        Me.bntModificarJugadora.TabIndex = 12
-        Me.bntModificarJugadora.Text = "MODIFICAR JUGADORA"
-        Me.bntModificarJugadora.UseVisualStyleBackColor = True
+        Me.btnModificarJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificarJugadora.Location = New System.Drawing.Point(652, 92)
+        Me.btnModificarJugadora.Name = "btnModificarJugadora"
+        Me.btnModificarJugadora.Size = New System.Drawing.Size(151, 46)
+        Me.btnModificarJugadora.TabIndex = 12
+        Me.btnModificarJugadora.Text = "MODIFICAR JUGADORA"
+        Me.btnModificarJugadora.UseVisualStyleBackColor = True
         '
         'btnAnadirJugadora
         '
         Me.btnAnadirJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAnadirJugadora.Location = New System.Drawing.Point(652, 40)
+        Me.btnAnadirJugadora.Location = New System.Drawing.Point(652, 28)
         Me.btnAnadirJugadora.Name = "btnAnadirJugadora"
         Me.btnAnadirJugadora.Size = New System.Drawing.Size(151, 46)
         Me.btnAnadirJugadora.TabIndex = 11
@@ -174,7 +184,7 @@ Partial Class Form1
         Me.lblPuntosJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPuntosJugadora.Location = New System.Drawing.Point(359, 233)
         Me.lblPuntosJugadora.Name = "lblPuntosJugadora"
-        Me.lblPuntosJugadora.Size = New System.Drawing.Size(63, 17)
+        Me.lblPuntosJugadora.Size = New System.Drawing.Size(58, 16)
         Me.lblPuntosJugadora.TabIndex = 9
         Me.lblPuntosJugadora.Text = "Puntos "
         '
@@ -184,7 +194,7 @@ Partial Class Form1
         Me.lblPaisJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPaisJugadora.Location = New System.Drawing.Point(383, 193)
         Me.lblPaisJugadora.Name = "lblPaisJugadora"
-        Me.lblPaisJugadora.Size = New System.Drawing.Size(39, 17)
+        Me.lblPaisJugadora.Size = New System.Drawing.Size(38, 16)
         Me.lblPaisJugadora.TabIndex = 7
         Me.lblPaisJugadora.Text = "País"
         '
@@ -208,7 +218,7 @@ Partial Class Form1
         Me.lblFechaNacJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFechaNacJugadora.Location = New System.Drawing.Point(264, 145)
         Me.lblFechaNacJugadora.Name = "lblFechaNacJugadora"
-        Me.lblFechaNacJugadora.Size = New System.Drawing.Size(158, 17)
+        Me.lblFechaNacJugadora.Size = New System.Drawing.Size(151, 16)
         Me.lblFechaNacJugadora.TabIndex = 3
         Me.lblFechaNacJugadora.Text = "Fecha de nacimiento"
         '
@@ -218,7 +228,7 @@ Partial Class Form1
         Me.lblNombreJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreJugadora.Location = New System.Drawing.Point(358, 102)
         Me.lblNombreJugadora.Name = "lblNombreJugadora"
-        Me.lblNombreJugadora.Size = New System.Drawing.Size(64, 17)
+        Me.lblNombreJugadora.Size = New System.Drawing.Size(62, 16)
         Me.lblNombreJugadora.TabIndex = 2
         Me.lblNombreJugadora.Text = "Nombre"
         '
@@ -228,7 +238,7 @@ Partial Class Form1
         Me.lblIDJugadoraa.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIDJugadoraa.Location = New System.Drawing.Point(399, 55)
         Me.lblIDJugadoraa.Name = "lblIDJugadoraa"
-        Me.lblIDJugadoraa.Size = New System.Drawing.Size(23, 17)
+        Me.lblIDJugadoraa.Size = New System.Drawing.Size(22, 16)
         Me.lblIDJugadoraa.TabIndex = 1
         Me.lblIDJugadoraa.Text = "ID"
         '
@@ -321,7 +331,7 @@ Partial Class Form1
         Me.lblNombrePais.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombrePais.Location = New System.Drawing.Point(266, 105)
         Me.lblNombrePais.Name = "lblNombrePais"
-        Me.lblNombrePais.Size = New System.Drawing.Size(64, 17)
+        Me.lblNombrePais.Size = New System.Drawing.Size(62, 16)
         Me.lblNombrePais.TabIndex = 16
         Me.lblNombrePais.Text = "Nombre"
         '
@@ -331,7 +341,7 @@ Partial Class Form1
         Me.lblIDPais.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIDPais.Location = New System.Drawing.Point(307, 56)
         Me.lblIDPais.Name = "lblIDPais"
-        Me.lblIDPais.Size = New System.Drawing.Size(23, 17)
+        Me.lblIDPais.Size = New System.Drawing.Size(22, 16)
         Me.lblIDPais.TabIndex = 15
         Me.lblIDPais.Text = "ID"
         '
@@ -423,7 +433,7 @@ Partial Class Form1
         Me.lblEdicionesTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEdicionesTorneo.Location = New System.Drawing.Point(266, 235)
         Me.lblEdicionesTorneo.Name = "lblEdicionesTorneo"
-        Me.lblEdicionesTorneo.Size = New System.Drawing.Size(78, 17)
+        Me.lblEdicionesTorneo.Size = New System.Drawing.Size(76, 16)
         Me.lblEdicionesTorneo.TabIndex = 27
         Me.lblEdicionesTorneo.Text = "Ediciones"
         '
@@ -447,7 +457,7 @@ Partial Class Form1
         Me.lblPaisTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPaisTorneo.Location = New System.Drawing.Point(305, 190)
         Me.lblPaisTorneo.Name = "lblPaisTorneo"
-        Me.lblPaisTorneo.Size = New System.Drawing.Size(39, 17)
+        Me.lblPaisTorneo.Size = New System.Drawing.Size(38, 16)
         Me.lblPaisTorneo.TabIndex = 24
         Me.lblPaisTorneo.Text = "País"
         '
@@ -457,7 +467,7 @@ Partial Class Form1
         Me.lblCiudadTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCiudadTorneo.Location = New System.Drawing.Point(286, 136)
         Me.lblCiudadTorneo.Name = "lblCiudadTorneo"
-        Me.lblCiudadTorneo.Size = New System.Drawing.Size(58, 17)
+        Me.lblCiudadTorneo.Size = New System.Drawing.Size(56, 16)
         Me.lblCiudadTorneo.TabIndex = 23
         Me.lblCiudadTorneo.Text = "Ciudad"
         '
@@ -481,7 +491,7 @@ Partial Class Form1
         Me.lblNombreTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreTorneo.Location = New System.Drawing.Point(280, 88)
         Me.lblNombreTorneo.Name = "lblNombreTorneo"
-        Me.lblNombreTorneo.Size = New System.Drawing.Size(64, 17)
+        Me.lblNombreTorneo.Size = New System.Drawing.Size(62, 16)
         Me.lblNombreTorneo.TabIndex = 20
         Me.lblNombreTorneo.Text = "Nombre"
         '
@@ -491,7 +501,7 @@ Partial Class Form1
         Me.lblIDTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIDTorneo.Location = New System.Drawing.Point(321, 42)
         Me.lblIDTorneo.Name = "lblIDTorneo"
-        Me.lblIDTorneo.Size = New System.Drawing.Size(23, 17)
+        Me.lblIDTorneo.Size = New System.Drawing.Size(22, 16)
         Me.lblIDTorneo.TabIndex = 19
         Me.lblIDTorneo.Text = "ID"
         '
@@ -525,13 +535,12 @@ Partial Class Form1
         Me.TabPage5.Text = "TabPage5"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
-        'lblIDJugadora
+        'TxtID
         '
-        Me.lblIDJugadora.AutoSize = True
-        Me.lblIDJugadora.Location = New System.Drawing.Point(446, 55)
-        Me.lblIDJugadora.Name = "lblIDJugadora"
-        Me.lblIDJugadora.Size = New System.Drawing.Size(0, 17)
-        Me.lblIDJugadora.TabIndex = 71
+        Me.TxtID.Location = New System.Drawing.Point(449, 52)
+        Me.TxtID.Name = "TxtID"
+        Me.TxtID.Size = New System.Drawing.Size(171, 22)
+        Me.TxtID.TabIndex = 72
         '
         'Form1
         '
@@ -567,7 +576,7 @@ Partial Class Form1
     Friend WithEvents lblPaisJugadora As Label
     Friend WithEvents btnLimpiarJugadora As Button
     Friend WithEvents btnEliminarJugadora As Button
-    Friend WithEvents bntModificarJugadora As Button
+    Friend WithEvents btnModificarJugadora As Button
     Friend WithEvents btnAnadirJugadora As Button
     Friend WithEvents txtPuntosJugadora As TextBox
     Friend WithEvents lblPuntosJugadora As Label
@@ -597,4 +606,5 @@ Partial Class Form1
     Friend WithEvents lblEdicionesTorneo As Label
     Friend WithEvents cbPaisJugadora As ComboBox
     Friend WithEvents lblIDJugadora As Label
+    Friend WithEvents TxtID As TextBox
 End Class
