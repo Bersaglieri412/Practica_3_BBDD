@@ -16,8 +16,12 @@
         Me.btnLimpiarJugadora.Enabled = False
         Me.btnModificarJugadora.Enabled = False
         Me.cbPaisJugadora.DropDownStyle = ComboBoxStyle.DropDownList
+        Me.cbPaisTorneo.DropDownStyle = ComboBoxStyle.DropDownList
         Me.txtPuntosJugadora.Enabled = False
         Me.txtIDTorneo.Enabled = False
+        Me.btnModificarTorneo.Enabled = False
+        Me.btnLimpiarTorneo.Enabled = False
+        Me.btnEliminarTorneo.Enabled = False
         Try
             Me.j.LeerTodasPersonas()
             Me.t.LeerTodasPersonas()
@@ -37,6 +41,7 @@
             Me.listaTorneos.Items.Add(eAux.nombreTorneo)
         Next
         Me.cbPaisJugadora.DataSource = paises
+        Me.cbPaisTorneo.DataSource = paises
     End Sub
 
     Private Sub btnAnadirJugadora_Click(sender As Object, e As EventArgs) Handles btnAnadirJugadora.Click
@@ -49,7 +54,7 @@
                 j.fechaNacimiento = DateTimeFechaNacJugadora.Value.ToString("yyyy-MM-dd HH:mm:ss.fff")
                 p.nombre = cbPaisJugadora.SelectedItem.ToString
                 p.PaisDAO.buscarID(p)
-                j.pais_jug = New Pais(p.id)
+                j.pais_jug = p
                 'A lo mejor habría que añadir una excepción específica para decir que están mal los datos de entrada
                 If j.InsertarJugadora() <> 1 Then
                     MessageBox.Show("INSERT return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -67,6 +72,11 @@
 
     Private Sub listaJugadoras_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaJugadoras.SelectedIndexChanged
         If Not Me.listaJugadoras.SelectedItem Is Nothing Then
+            Me.btnAnadirJugadora.Enabled = False
+            Me.btnEliminarJugadora.Enabled = True
+            Me.btnLimpiarJugadora.Enabled = True
+            Me.btnModificarJugadora.Enabled = True
+            Me.lblPuntosJugadora.Enabled = True
             Me.j.nombre = listaJugadoras.SelectedItem.ToString
             Try
                 Me.j.buscarID()
@@ -81,11 +91,7 @@
             Me.DateTimeFechaNacJugadora.Value = j.fechaNacimiento
             Me.cbPaisJugadora.SelectedIndex = Me.cbPaisJugadora.FindString(j.pais_jug.id)
         End If
-        Me.btnAnadirJugadora.Enabled = False
-        Me.btnEliminarJugadora.Enabled = True
-        Me.btnLimpiarJugadora.Enabled = True
-        Me.btnModificarJugadora.Enabled = True
-        Me.lblPuntosJugadora.Enabled = True
+
     End Sub
 
     Private Sub btnLimpiarJugadora_Click(sender As Object, e As EventArgs) Handles btnLimpiarJugadora.Click
@@ -138,14 +144,13 @@
 
     Private Sub btnEliminarJugadora_Click(sender As Object, e As EventArgs) Handles btnEliminarJugadora.Click
 
-        If Not p Is Nothing Then
-            If MessageBox.Show("¿Estás seguro de que quieres borrar " & Me.txtNombreJugadora.Text & "?", "Por favor, confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+        If MessageBox.Show("¿Estás seguro de que quieres borrar " & Me.txtNombreJugadora.Text & "?", "Por favor, confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
 
                 Try
 
                     j.id = TxtID.Text
-
-                    If j.BorrarJugadora <> 1 Then
+                j.nombre = txtNombreJugadora.Text
+                If j.BorrarJugadora <> 1 Then
                         MessageBox.Show("DELETE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         Exit Sub
                     End If
@@ -155,31 +160,135 @@
                     Exit Sub
                 End Try
                 Me.listaJugadoras.Items.RemoveAt(Me.listaJugadoras.FindString(Me.txtNombreJugadora.Text.ToString))
-                MessageBox.Show(p.nombre & " eliminado correctamente")
+            MessageBox.Show(j.nombre & " eliminado correctamente")
+        End If
+        Me.btnLimpiarJugadora.PerformClick()
+    End Sub
+
+    Private Sub listaTorneos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaTorneos.SelectedIndexChanged
+        If Not Me.listaTorneos.SelectedItem Is Nothing Then
+            Me.btnModificarTorneo.Enabled = True
+            Me.btnLimpiarTorneo.Enabled = True
+            Me.btnEliminarTorneo.Enabled = True
+            Me.listaEdiciones.Items.Clear()
+            Me.btnAnadirTorneo.Enabled = False
+
+            Me.t.nombreTorneo = listaTorneos.SelectedItem.ToString
+            Dim ed As Ediciones
+            Try
+                Me.t.buscarID()
+                Me.t.ediciones.Clear()
+                Me.t.LeerJugadora()
+                Me.t.paisTorneo.LeerPais()
+                For Each ed In Me.t.ediciones
+                    Me.listaEdiciones.Items.Add(ed.anualidad.ToString)
+                Next
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End Try
+            Me.txtIDTorneo.Text = t.idTorneo
+            Me.txtNombreTorneo.Text = t.nombreTorneo
+            Me.cbPaisTorneo.SelectedIndex = Me.cbPaisTorneo.FindString(t.paisTorneo.nombre)
+            Me.txtCiudadTorneo.Text = t.ciudadTorneo
+        Else
+            Me.btnLimpiarJugadora.PerformClick()
+        End If
+    End Sub
+
+    Private Sub btnLimpiarTorneo_Click(sender As Object, e As EventArgs) Handles btnLimpiarTorneo.Click
+        Me.txtIDPais.Clear()
+        Me.txtCiudadTorneo.Clear()
+        Me.txtNombreTorneo.Clear()
+        Me.cbPaisTorneo.BringToFront()
+        Me.listaEdiciones.Items.Clear()
+        Me.btnModificarTorneo.Enabled = False
+        Me.btnLimpiarTorneo.Enabled = False
+        Me.btnEliminarTorneo.Enabled = False
+        Me.btnAnadirTorneo.Enabled = True
+    End Sub
+
+    Private Sub btnModificarTorneo_Click(sender As Object, e As EventArgs) Handles btnModificarTorneo.Click
+        If Me.listaTorneos.SelectedItem <> String.Empty Then
+            If Me.txtCiudadTorneo.Text <> String.Empty And Me.txtNombreTorneo.Text <> String.Empty Then
+
+                Try
+                    t = New Torneo
+                    t.idTorneo = Me.txtIDTorneo.Text
+                    t.nombreTorneo = Me.txtNombreTorneo.Text
+                    t.ciudadTorneo = txtPuntosJugadora.Text
+                    p = New Pais(Me.cbPaisTorneo.SelectedItem)
+                    p.LeerPais()
+                    t.paisTorneo = p
+                    'Lo mismo aquí, a lo mejor vendría bien una excepción específica
+
+                    If t.ActualizarJugadora() <> 1 Then
+                        MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        Exit Sub
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+                    Exit Sub
+                End Try
+                MessageBox.Show(t.nombreTorneo & " actualizado correctamente")
+
+                If listaTorneos.SelectedIndex.ToString() <> t.nombreTorneo.ToString() Then
+                    Me.listaTorneos.Items.Add(t.nombreTorneo)
+                    Me.listaTorneos.Items.Remove(listaTorneos.SelectedItem)
+                End If
+            End If
+        Else
+            MsgBox("Debe seleccionar un torneo de la lista para modificar", MessageBoxButtons.OK)
+        End If
+    End Sub
+
+    Private Sub btnAnadirTorneo_Click(sender As Object, e As EventArgs) Handles btnAnadirTorneo.Click
+        If Me.txtNombreTorneo.Text <> String.Empty And Me.txtCiudadTorneo.Text <> String.Empty Then ' los "<>" significa que es distinto 
+            Try
+                t = New Torneo
+                t.nombreTorneo = Me.txtNombreTorneo.Text
+                t.ciudadTorneo = Me.txtCiudadTorneo.Text
+                p.nombre = cbPaisTorneo.SelectedItem.ToString
+                p.PaisDAO.buscarID(p)
+                t.paisTorneo = p
+                'A lo mejor habría que añadir una excepción específica para decir que están mal los datos de entrada
+                If t.InsertarJugadora() <> 1 Then
+                    MessageBox.Show("INSERT return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Exit Sub
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End Try
+
+            Me.listaTorneos.Items.Add(t.nombreTorneo) ' Añadir a la lstPersonas, el ID de la persona añadida a la bd recientemente
+        End If
+
+    End Sub
+
+    Private Sub btnEliminarTorneo_Click(sender As Object, e As EventArgs) Handles btnEliminarTorneo.Click
+        If Not p Is Nothing Then
+            If MessageBox.Show("¿Estás seguro de que quieres borrar " & Me.txtNombreTorneo.Text & "?", "Por favor, confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+
+                Try
+
+                    t.idTorneo = Me.txtIDTorneo.Text
+                    t.nombreTorneo = Me.txtNombreTorneo.Text
+                    If t.BorrarJugadora <> 1 Then
+                        MessageBox.Show("DELETE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        Exit Sub
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+                    Exit Sub
+                End Try
+                Me.listaTorneos.Items.RemoveAt(Me.listaTorneos.FindString(Me.txtNombreTorneo.Text.ToString))
+                MessageBox.Show(t.nombreTorneo & " eliminado correctamente")
             End If
             Me.btnLimpiarJugadora.PerformClick()
         End If
     End Sub
 
-    Private Sub listaTorneos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaTorneos.SelectedIndexChanged
-        Me.t.nombreTorneo = listaTorneos.SelectedItem.ToString
-        Me.listaEdiciones.Items.Clear()
-        Dim ed As Ediciones
-        Try
-            Me.t.buscarID()
-            Me.t.ediciones.Clear()
-            Me.t.LeerJugadora()
-            Me.t.paisTorneo.LeerPais()
-            For Each ed In Me.t.ediciones
-                Me.listaEdiciones.Items.Add(ed.anualidad.ToString)
-            Next
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        End Try
-        Me.txtIDTorneo.Text = t.idTorneo
-        Me.txtNombreTorneo.Text = t.nombreTorneo
-        Me.txtPaisTorneo.Text = t.paisTorneo.nombre
-        Me.txtCiudadTorneo.Text = t.ciudadTorneo
-    End Sub
 End Class

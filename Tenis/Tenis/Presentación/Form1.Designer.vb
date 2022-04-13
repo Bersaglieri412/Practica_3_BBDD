@@ -31,7 +31,6 @@ Partial Class Form1
         Me.btnEliminarTorneo = New System.Windows.Forms.Button()
         Me.btnModificarTorneo = New System.Windows.Forms.Button()
         Me.btnAnadirTorneo = New System.Windows.Forms.Button()
-        Me.txtPaisTorneo = New System.Windows.Forms.TextBox()
         Me.txtCiudadTorneo = New System.Windows.Forms.TextBox()
         Me.txtNombreTorneo = New System.Windows.Forms.TextBox()
         Me.txtIDTorneo = New System.Windows.Forms.TextBox()
@@ -68,6 +67,7 @@ Partial Class Form1
         Me.lblIDJugadoraa = New System.Windows.Forms.Label()
         Me.listaJugadoras = New System.Windows.Forms.ListBox()
         Me.Pestañas = New System.Windows.Forms.TabControl()
+        Me.cbPaisTorneo = New System.Windows.Forms.ComboBox()
         Me.TabPage3.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -96,13 +96,13 @@ Partial Class Form1
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.cbPaisTorneo)
         Me.TabPage3.Controls.Add(Me.Label1)
         Me.TabPage3.Controls.Add(Me.listaEdiciones)
         Me.TabPage3.Controls.Add(Me.btnLimpiarTorneo)
         Me.TabPage3.Controls.Add(Me.btnEliminarTorneo)
         Me.TabPage3.Controls.Add(Me.btnModificarTorneo)
         Me.TabPage3.Controls.Add(Me.btnAnadirTorneo)
-        Me.TabPage3.Controls.Add(Me.txtPaisTorneo)
         Me.TabPage3.Controls.Add(Me.txtCiudadTorneo)
         Me.TabPage3.Controls.Add(Me.txtNombreTorneo)
         Me.TabPage3.Controls.Add(Me.txtIDTorneo)
@@ -177,13 +177,6 @@ Partial Class Form1
         Me.btnAnadirTorneo.TabIndex = 29
         Me.btnAnadirTorneo.Text = "AÑADIR TORNEO"
         Me.btnAnadirTorneo.UseVisualStyleBackColor = True
-        '
-        'txtPaisTorneo
-        '
-        Me.txtPaisTorneo.Location = New System.Drawing.Point(369, 185)
-        Me.txtPaisTorneo.Name = "txtPaisTorneo"
-        Me.txtPaisTorneo.Size = New System.Drawing.Size(171, 22)
-        Me.txtPaisTorneo.TabIndex = 26
         '
         'txtCiudadTorneo
         '
@@ -546,6 +539,14 @@ Partial Class Form1
         Me.Pestañas.Size = New System.Drawing.Size(836, 404)
         Me.Pestañas.TabIndex = 0
         '
+        'cbPaisTorneo
+        '
+        Me.cbPaisTorneo.FormattingEnabled = True
+        Me.cbPaisTorneo.Location = New System.Drawing.Point(369, 191)
+        Me.cbPaisTorneo.Name = "cbPaisTorneo"
+        Me.cbPaisTorneo.Size = New System.Drawing.Size(171, 24)
+        Me.cbPaisTorneo.TabIndex = 35
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -572,7 +573,6 @@ Partial Class Form1
     Friend WithEvents btnEliminarTorneo As Button
     Friend WithEvents btnModificarTorneo As Button
     Friend WithEvents btnAnadirTorneo As Button
-    Friend WithEvents txtPaisTorneo As TextBox
     Friend WithEvents txtCiudadTorneo As TextBox
     Friend WithEvents txtNombreTorneo As TextBox
     Friend WithEvents txtIDTorneo As TextBox
@@ -611,4 +611,5 @@ Partial Class Form1
     Friend WithEvents Pestañas As TabControl
     Friend WithEvents listaEdiciones As ListBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents cbPaisTorneo As ComboBox
 End Class
