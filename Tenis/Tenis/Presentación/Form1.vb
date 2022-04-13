@@ -2,6 +2,7 @@
 
     Private j As Jugadora
     Private p As Pais
+    Private t As Torneo
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim pAux As Jugadora
         Dim pAux1 As Pais
@@ -9,13 +10,16 @@
         paises = New Collection
         Me.j = New Jugadora
         Me.p = New Pais
+        Me.t = New Torneo
         Me.TxtID.Enabled = False
         Me.btnEliminarJugadora.Enabled = False
         Me.btnLimpiarJugadora.Enabled = False
         Me.btnModificarJugadora.Enabled = False
         Me.cbPaisJugadora.DropDownStyle = ComboBoxStyle.DropDownList
+        Me.lblPuntosJugadora.Enabled = False
         Try
             Me.j.LeerTodasPersonas()
+            Me.t.LeerTodasPersonas()
             p.LeerTodasPersonas()
         Catch ex As Exception
             MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -26,6 +30,9 @@
         Next
         For Each pAux1 In p.PaisDAO.Pais
             paises.Add(pAux1.nombre)
+        Next
+        For Each eAux In t.TorDAO.Torneo
+            Me.listaTorneos.Items.Add(eAux.nombreTorneo)
         Next
         Me.cbPaisJugadora.DataSource = paises
     End Sub
@@ -77,6 +84,7 @@
         Me.btnEliminarJugadora.Enabled = True
         Me.btnLimpiarJugadora.Enabled = True
         Me.btnModificarJugadora.Enabled = True
+        Me.lblPuntosJugadora.Enabled = True
     End Sub
 
     Private Sub btnLimpiarJugadora_Click(sender As Object, e As EventArgs) Handles btnLimpiarJugadora.Click

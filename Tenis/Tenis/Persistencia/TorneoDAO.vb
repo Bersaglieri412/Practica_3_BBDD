@@ -12,7 +12,7 @@
             p = New Torneo(aux(1).ToString)
             p.nombreTorneo = aux(2).ToString
             p.ciudadTorneo = aux(3).ToString
-            p.paisTorneo = aux(4)
+            p.paisTorneo = New Pais(aux(4).ToString)
             Me.Torneo.Add(p)
 
         Next
@@ -24,7 +24,7 @@
         For Each aux In col
             p.nombreTorneo = aux(2).ToString
             p.ciudadTorneo = aux(3).ToString
-            p.paisTorneo = aux(4) 
+            p.paisTorneo = New Pais(aux(4).ToString)
         Next
     End Sub
 
