@@ -8,10 +8,9 @@
         Me.EdDAO = New EdicionesDAO()
     End Sub
 
-    Public Sub New(Anualidad As Integer, Torneo As Torneo)
+    Public Sub New(Anualidad As Integer)
         Me.EdDAO = New EdicionesDAO()
         Me.anualidad = Anualidad
-        Me.torneo = Torneo
     End Sub
 
     Public Sub LeerTodasPersonas()

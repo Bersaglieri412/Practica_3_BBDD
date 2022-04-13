@@ -16,7 +16,8 @@
         Me.btnLimpiarJugadora.Enabled = False
         Me.btnModificarJugadora.Enabled = False
         Me.cbPaisJugadora.DropDownStyle = ComboBoxStyle.DropDownList
-        Me.lblPuntosJugadora.Enabled = False
+        Me.txtPuntosJugadora.Enabled = False
+        Me.txtIDTorneo.Enabled = False
         Try
             Me.j.LeerTodasPersonas()
             Me.t.LeerTodasPersonas()
@@ -30,6 +31,7 @@
         Next
         For Each pAux1 In p.PaisDAO.Pais
             paises.Add(pAux1.nombre)
+            Me.listaPaises.Items.Add(pAux1.nombre)
         Next
         For Each eAux In t.TorDAO.Torneo
             Me.listaTorneos.Items.Add(eAux.nombreTorneo)
@@ -40,11 +42,10 @@
     Private Sub btnAnadirJugadora_Click(sender As Object, e As EventArgs) Handles btnAnadirJugadora.Click
 
         ' Si "txtID" NO está vacío y "txtNombre" NO está vacío
-        If Me.txtNombreJugadora.Text <> String.Empty And Me.txtPuntosJugadora.Text <> String.Empty Then ' los "<>" significa que es distinto 
+        If Me.txtNombreJugadora.Text <> String.Empty Then ' los "<>" significa que es distinto 
             Try
                 j = New Jugadora
                 j.nombre = txtNombreJugadora.Text
-                j.puntos = txtPuntosJugadora.Text
                 j.fechaNacimiento = DateTimeFechaNacJugadora.Value.ToString("yyyy-MM-dd HH:mm:ss.fff")
                 p.nombre = cbPaisJugadora.SelectedItem.ToString
                 p.PaisDAO.buscarID(p)
@@ -158,5 +159,27 @@
             End If
             Me.btnLimpiarJugadora.PerformClick()
         End If
+    End Sub
+
+    Private Sub listaTorneos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaTorneos.SelectedIndexChanged
+        Me.t.nombreTorneo = listaTorneos.SelectedItem.ToString
+        Me.listaEdiciones.Items.Clear()
+        Dim ed As Ediciones
+        Try
+            Me.t.buscarID()
+            Me.t.ediciones.Clear()
+            Me.t.LeerJugadora()
+            Me.t.paisTorneo.LeerPais()
+            For Each ed In Me.t.ediciones
+                Me.listaEdiciones.Items.Add(ed.anualidad.ToString)
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End Try
+        Me.txtIDTorneo.Text = t.idTorneo
+        Me.txtNombreTorneo.Text = t.nombreTorneo
+        Me.txtPaisTorneo.Text = t.paisTorneo.nombre
+        Me.txtCiudadTorneo.Text = t.ciudadTorneo
     End Sub
 End Class
