@@ -32,7 +32,7 @@
     End Sub
 
     Public Function Insertar(ByVal p As Pais) As Integer
-        Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Paises VALUES ('" & 0.ToString & "','" & p.nombre & "');")
+        Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Paises VALUES ('" & p.id & "','" & p.nombre & "');")
     End Function
 
     Public Function Actualizar(ByVal p As Pais) As Integer

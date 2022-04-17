@@ -25,6 +25,7 @@ Partial Class Form1
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.cbPaisTorneo = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.listaEdiciones = New System.Windows.Forms.ListBox()
         Me.btnLimpiarTorneo = New System.Windows.Forms.Button()
@@ -67,7 +68,6 @@ Partial Class Form1
         Me.lblIDJugadoraa = New System.Windows.Forms.Label()
         Me.listaJugadoras = New System.Windows.Forms.ListBox()
         Me.Pestañas = New System.Windows.Forms.TabControl()
-        Me.cbPaisTorneo = New System.Windows.Forms.ComboBox()
         Me.TabPage3.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -118,6 +118,14 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TORNEO"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'cbPaisTorneo
+        '
+        Me.cbPaisTorneo.FormattingEnabled = True
+        Me.cbPaisTorneo.Location = New System.Drawing.Point(369, 191)
+        Me.cbPaisTorneo.Name = "cbPaisTorneo"
+        Me.cbPaisTorneo.Size = New System.Drawing.Size(171, 24)
+        Me.cbPaisTorneo.TabIndex = 35
         '
         'Label1
         '
@@ -538,14 +546,6 @@ Partial Class Form1
         Me.Pestañas.SelectedIndex = 0
         Me.Pestañas.Size = New System.Drawing.Size(836, 404)
         Me.Pestañas.TabIndex = 0
-        '
-        'cbPaisTorneo
-        '
-        Me.cbPaisTorneo.FormattingEnabled = True
-        Me.cbPaisTorneo.Location = New System.Drawing.Point(369, 191)
-        Me.cbPaisTorneo.Name = "cbPaisTorneo"
-        Me.cbPaisTorneo.Size = New System.Drawing.Size(171, 24)
-        Me.cbPaisTorneo.TabIndex = 35
         '
         'Form1
         '

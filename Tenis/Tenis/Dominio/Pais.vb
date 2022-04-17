@@ -14,7 +14,9 @@
 
     End Sub
 
-
+    Public Sub buscarId()
+        Me.PaisDAO.buscarID(Me)
+    End Sub
     Public Sub LeerTodasPersonas()
         Me.PaisDAO.LeerTodas()
     End Sub

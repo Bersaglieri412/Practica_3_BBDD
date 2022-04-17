@@ -19,9 +19,13 @@
         Me.cbPaisTorneo.DropDownStyle = ComboBoxStyle.DropDownList
         Me.txtPuntosJugadora.Enabled = False
         Me.txtIDTorneo.Enabled = False
+        Me.txtIDPais.Enabled = False
         Me.btnModificarTorneo.Enabled = False
         Me.btnLimpiarTorneo.Enabled = False
         Me.btnEliminarTorneo.Enabled = False
+        Me.btnModificarPais.Enabled = False
+        Me.btnLimpiarPais.Enabled = False
+        Me.btnEliminarPais.Enabled = False
         Try
             Me.j.LeerTodasPersonas()
             Me.t.LeerTodasPersonas()
@@ -103,6 +107,7 @@
         Me.txtNombreJugadora.Clear()
         Me.txtPuntosJugadora.Clear()
         Me.cbPaisJugadora.BringToFront()
+        Me.listaJugadoras.ClearSelected()
         Me.DateTimeFechaNacJugadora.Value = Date.Now
     End Sub
 
@@ -202,6 +207,7 @@
         Me.txtNombreTorneo.Clear()
         Me.cbPaisTorneo.BringToFront()
         Me.listaEdiciones.Items.Clear()
+        Me.listaTorneos.ClearSelected()
         Me.btnModificarTorneo.Enabled = False
         Me.btnLimpiarTorneo.Enabled = False
         Me.btnEliminarTorneo.Enabled = False
@@ -268,15 +274,112 @@
     End Sub
 
     Private Sub btnEliminarTorneo_Click(sender As Object, e As EventArgs) Handles btnEliminarTorneo.Click
-        If Not p Is Nothing Then
-            If MessageBox.Show("¿Estás seguro de que quieres borrar " & Me.txtNombreTorneo.Text & "?", "Por favor, confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+        If MessageBox.Show("¿Estás seguro de que quieres borrar " & Me.txtNombreTorneo.Text & "?", "Por favor, confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+
+            Try
+
+                t.idTorneo = Me.txtIDTorneo.Text
+                t.nombreTorneo = Me.txtNombreTorneo.Text
+                If t.BorrarJugadora <> 1 Then
+                    MessageBox.Show("DELETE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Exit Sub
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+                Exit Sub
+            End Try
+            Me.listaTorneos.Items.RemoveAt(Me.listaTorneos.FindString(Me.txtNombreTorneo.Text.ToString))
+            MessageBox.Show(t.nombreTorneo & " eliminado correctamente")
+        End If
+        Me.btnLimpiarTorneo.PerformClick()
+    End Sub
+
+    Private Sub btnAnadirPais_Click(sender As Object, e As EventArgs) Handles btnAnadirPais.Click
+        If Me.txtNombrePais.Text <> String.Empty Then
+            Me.p.nombre = Me.txtNombrePais.Text
+            Me.p.id = Me.txtNombrePais.Text.Substring(0, 3).ToUpper
+            Try
+                If Me.p.InsertarPais() <> 1 Then
+                    MessageBox.Show("INSERT return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Exit Sub
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End Try
+            Me.listaPaises.Items.Add(Me.p.nombre)
+        End If
+    End Sub
+
+    Private Sub txtNombrePais_TextChanged(sender As Object, e As EventArgs) Handles txtNombrePais.TextChanged
+        If Len(Me.txtNombrePais.Text) < 3 Then
+            Me.txtIDPais.Text = Me.txtNombrePais.Text.Substring(0, Len(Me.txtNombrePais.Text)).ToUpper
+        Else
+            Me.txtIDPais.Text = Me.txtNombrePais.Text.Substring(0, 3).ToUpper
+        End If
+
+    End Sub
+
+    Private Sub listaPaises_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaPaises.SelectedIndexChanged
+        If Not Me.listaPaises.SelectedItem Is Nothing Then
+            Me.btnAnadirPais.Enabled = False
+            Me.btnModificarPais.Enabled = True
+            Me.btnLimpiarPais.Enabled = True
+            Me.btnEliminarPais.Enabled = True
+            Try
+                Me.p.nombre = Me.listaPaises.SelectedItem.ToString()
+                Me.p.buscarId()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End Try
+            Me.txtNombrePais.Text = p.nombre
+        Else
+            Me.btnLimpiarPais.PerformClick()
+        End If
+    End Sub
+
+    Private Sub btnLimpiarPais_Click(sender As Object, e As EventArgs) Handles btnLimpiarPais.Click
+        Me.btnAnadirPais.Enabled = True
+        Me.btnModificarPais.Enabled = False
+        Me.btnLimpiarPais.Enabled = False
+        Me.btnEliminarPais.Enabled = False
+        Me.txtNombrePais.Clear()
+        Me.txtIDPais.Clear()
+        Me.listaPaises.ClearSelected()
+    End Sub
+
+    Private Sub btnEliminarPais_Click(sender As Object, e As EventArgs) Handles btnEliminarPais.Click
+        If MessageBox.Show("¿Estás seguro de que quieres borrar " & Me.txtNombrePais.Text & "?", "Por favor, confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+
+            Try
+
+                p.id = Me.txtIDPais.Text
+                p.nombre = Me.txtNombrePais.Text
+                If p.BorrarPais <> 1 Then
+                    MessageBox.Show("DELETE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Exit Sub
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+                Exit Sub
+            End Try
+            Me.listaPaises.Items.RemoveAt(Me.listaPaises.FindString(Me.txtNombreTorneo.Text.ToString))
+            MessageBox.Show(Me.p.nombre & " eliminado correctamente")
+        End If
+        Me.btnLimpiarPais.PerformClick()
+    End Sub
+
+    Private Sub btnModificarPais_Click(sender As Object, e As EventArgs) Handles btnModificarPais.Click
+        If Me.listaPaises.SelectedItem <> String.Empty Then
+            If Me.txtNombrePais.Text <> String.Empty Then
 
                 Try
-
-                    t.idTorneo = Me.txtIDTorneo.Text
-                    t.nombreTorneo = Me.txtNombreTorneo.Text
-                    If t.BorrarJugadora <> 1 Then
-                        MessageBox.Show("DELETE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    p.nombre = Me.txtNombrePais.Text
+                    'p.id = Me.txtIDPais.Text
+                    'Lo mismo aquí, a lo mejor vendría bien una excepción específica
+                    If p.ActualizarPais() <> 1 Then
+                        MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         Exit Sub
                     End If
                 Catch ex As Exception
@@ -284,11 +387,12 @@
 
                     Exit Sub
                 End Try
-                Me.listaTorneos.Items.RemoveAt(Me.listaTorneos.FindString(Me.txtNombreTorneo.Text.ToString))
-                MessageBox.Show(t.nombreTorneo & " eliminado correctamente")
+                MessageBox.Show(p.nombre & " actualizado correctamente")
+                Me.listaPaises.Items.Add(p.nombre)
+                Me.listaPaises.Items.Remove(listaPaises.SelectedItem)
             End If
-            Me.btnLimpiarJugadora.PerformClick()
+        Else
+            MsgBox("Debe seleccionar un torneo de la lista para modificar", MessageBoxButtons.OK)
         End If
     End Sub
-
 End Class
