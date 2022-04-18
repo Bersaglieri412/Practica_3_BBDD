@@ -3,35 +3,66 @@
     Public Property torneo As Torneo
     Public Property ganadora As Jugadora
     Public Property partidos() As Partido 'Colección de partidos dentro de Edición
-    Public ReadOnly Property EdDAO As EdicionesDAO
-    Public Sub New()
-        Me.EdDAO = New EdicionesDAO()
-    End Sub
 
-    Public Sub New(Anualidad As Integer)
-        Me.EdDAO = New EdicionesDAO()
+    Public Sub New(Anualidad As Integer, torneo As Integer)
+        Me.torneo = New Torneo(torneo)
         Me.anualidad = Anualidad
     End Sub
 
-    Public Sub LeerTodasPersonas()
-        Me.EdDAO.LeerTodas()
+    Public Sub generarEdicion()
+        Dim jugadoras As Jugadora
+        Dim participantes As Collection = New Collection
+        Dim jugAux As Jugadora
+
+        jugadoras = New Jugadora()
+        jugadoras.LeerTodasPersonas()
+        Dim i As Integer = 8
+        Randomize()
+
+        Do
+            Dim n As Integer = Int((Int((jugadoras.JugDAO.Jugadora.Count * Rnd()) + 1)))
+            participantes.Add(jugadoras.JugDAO.Jugadora.Item(n))
+            jugadoras.JugDAO.Jugadora.Remove(n)
+            i = i - 1
+        Loop While i <> 0
+
+        participantes = ordenar(participantes)
+
+        MsgBox(participantes.Item(1).puntos)
+        MsgBox(participantes.Item(2).puntos)
+        MsgBox(participantes.Item(8).puntos)
     End Sub
+    Function compareKeys(p As Integer, p1 As Integer)
+        Dim mayor As Boolean
+        mayor = False
+        If p > p1 Then
+            mayor = True
+        End If
 
-    Public Sub LeerEdicion()
-        Me.EdDAO.Leer(Me)
-    End Sub
-
-    Public Function InsertarEdicion() As Integer
-        Return Me.EdDAO.Insertar(Me)
+        Return mayor
     End Function
 
-    Public Function ActualizarEdicion() As Integer
-        Return Me.EdDAO.Actualizar(Me)
-    End Function
+    Function ordenar(participantes As Collection)
+        Dim vItm As Object
+        Dim t As Integer, j As Integer
+        Dim vTemp As Object
 
-    Public Function BorrarEdicion() As Integer
-        Return Me.EdDAO.Borrar(Me)
-    End Function
+        For t = 1 To participantes.Count - 1
+            For j = t + 1 To participantes.Count
+                If compareKeys(participantes(t).puntos, participantes(j).puntos) Then
+                    'store the lesser item
+                    vTemp = participantes(j)
 
+                    'remove the lesser item
+                    participantes.Remove(j)
+
+                    're-add the lesser item before the greater Item
+                    participantes.Add(vTemp,, t)
+                End If
+            Next j
+        Next t
+
+        Return participantes
+    End Function
 End Class
 

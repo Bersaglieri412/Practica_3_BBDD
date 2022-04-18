@@ -308,6 +308,8 @@
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End Try
             Me.listaPaises.Items.Add(Me.p.nombre)
+            Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
+            Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
         End If
     End Sub
 
@@ -352,7 +354,6 @@
         If MessageBox.Show("¿Estás seguro de que quieres borrar " & Me.txtNombrePais.Text & "?", "Por favor, confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
 
             Try
-
                 p.id = Me.txtIDPais.Text
                 p.nombre = Me.txtNombrePais.Text
                 If p.BorrarPais <> 1 Then
@@ -364,7 +365,9 @@
 
                 Exit Sub
             End Try
-            Me.listaPaises.Items.RemoveAt(Me.listaPaises.FindString(Me.txtNombreTorneo.Text.ToString))
+            Me.listaPaises.Items.RemoveAt(Me.listaPaises.Items.IndexOf(p.nombre))
+            Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
+            Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
             MessageBox.Show(Me.p.nombre & " eliminado correctamente")
         End If
         Me.btnLimpiarPais.PerformClick()
@@ -390,9 +393,18 @@
                 MessageBox.Show(p.nombre & " actualizado correctamente")
                 Me.listaPaises.Items.Add(p.nombre)
                 Me.listaPaises.Items.Remove(listaPaises.SelectedItem)
+                Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
+                Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
+                'Ten en cuenta que hay que despues borrar el pais de los cb que no funciona
             End If
         Else
             MsgBox("Debe seleccionar un torneo de la lista para modificar", MessageBoxButtons.OK)
         End If
+    End Sub
+
+    Private Sub btnAñadirEdicion_Click(sender As Object, e As EventArgs) Handles btnAñadirEdicion.Click
+        Dim ed As Ediciones
+        ed = New Ediciones(2019, 9)
+        ed.generarEdicion()
     End Sub
 End Class

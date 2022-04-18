@@ -11,7 +11,7 @@
         For Each aux In col
             p.idPartido = aux(1).ToString
             p.ganadora = New Jugadora(aux(4).ToString)
-            p.edicion = New Ediciones(aux(2))
+            'p.edicion = New Ediciones(aux(2))
             p.ronda = aux(5).ToString
             Me.Partido.Add(p)
 

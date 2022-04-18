@@ -18,7 +18,7 @@
             p.paisTorneo = New Pais(aux(4).ToString)
             cole = AgenteBD.ObtenerAgente().Leer("Select * from ediciones where Torneo='" & aux(1) & "'")
             For Each auxe In cole
-                e = New Ediciones(auxe(1))
+                e = New Ediciones(auxe(1), p.idTorneo)
                 e.torneo = New Torneo(auxe(2))
                 e.ganadora = New Jugadora(auxe(3))
                 Me.Ediciones.Add(e)
@@ -58,7 +58,7 @@
         Ediciones.Clear()
         cole = AgenteBD.ObtenerAgente().Leer("Select * from ediciones where Torneo='" & p.idTorneo & "'")
         For Each auxe In cole
-            e = New Ediciones(auxe(1))
+            e = New Ediciones(auxe(1), p.idTorneo)
             e.torneo = New Torneo(auxe(2))
             e.ganadora = New Jugadora(auxe(3))
             Me.Ediciones.Add(e)

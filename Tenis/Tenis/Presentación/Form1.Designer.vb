@@ -24,6 +24,13 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.BtnBuscarEdicion = New System.Windows.Forms.Button()
+        Me.TreeView1 = New System.Windows.Forms.TreeView()
+        Me.btnAñadirEdicion = New System.Windows.Forms.Button()
+        Me.LabelTorneoAño = New System.Windows.Forms.Label()
+        Me.labeltorneoedicion = New System.Windows.Forms.Label()
+        Me.txtAñoEdicion = New System.Windows.Forms.TextBox()
+        Me.txtTorneoEdicion = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.cbPaisTorneo = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -68,6 +75,7 @@ Partial Class Form1
         Me.lblIDJugadoraa = New System.Windows.Forms.Label()
         Me.listaJugadoras = New System.Windows.Forms.ListBox()
         Me.Pestañas = New System.Windows.Forms.TabControl()
+        Me.TabPage4.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -86,6 +94,13 @@ Partial Class Form1
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.BtnBuscarEdicion)
+        Me.TabPage4.Controls.Add(Me.TreeView1)
+        Me.TabPage4.Controls.Add(Me.btnAñadirEdicion)
+        Me.TabPage4.Controls.Add(Me.LabelTorneoAño)
+        Me.TabPage4.Controls.Add(Me.labeltorneoedicion)
+        Me.TabPage4.Controls.Add(Me.txtAñoEdicion)
+        Me.TabPage4.Controls.Add(Me.txtTorneoEdicion)
         Me.TabPage4.Location = New System.Drawing.Point(4, 25)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
@@ -93,6 +108,63 @@ Partial Class Form1
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "EDICION"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'BtnBuscarEdicion
+        '
+        Me.BtnBuscarEdicion.Location = New System.Drawing.Point(521, 251)
+        Me.BtnBuscarEdicion.Name = "BtnBuscarEdicion"
+        Me.BtnBuscarEdicion.Size = New System.Drawing.Size(116, 35)
+        Me.BtnBuscarEdicion.TabIndex = 6
+        Me.BtnBuscarEdicion.Text = "Buscar Edicion"
+        Me.BtnBuscarEdicion.UseVisualStyleBackColor = True
+        '
+        'TreeView1
+        '
+        Me.TreeView1.Location = New System.Drawing.Point(57, 64)
+        Me.TreeView1.Name = "TreeView1"
+        Me.TreeView1.Size = New System.Drawing.Size(206, 246)
+        Me.TreeView1.TabIndex = 5
+        '
+        'btnAñadirEdicion
+        '
+        Me.btnAñadirEdicion.Location = New System.Drawing.Point(521, 185)
+        Me.btnAñadirEdicion.Name = "btnAñadirEdicion"
+        Me.btnAñadirEdicion.Size = New System.Drawing.Size(116, 41)
+        Me.btnAñadirEdicion.TabIndex = 4
+        Me.btnAñadirEdicion.Text = "Generar Edición"
+        Me.btnAñadirEdicion.UseVisualStyleBackColor = True
+        '
+        'LabelTorneoAño
+        '
+        Me.LabelTorneoAño.AutoSize = True
+        Me.LabelTorneoAño.Location = New System.Drawing.Point(446, 123)
+        Me.LabelTorneoAño.Name = "LabelTorneoAño"
+        Me.LabelTorneoAño.Size = New System.Drawing.Size(31, 16)
+        Me.LabelTorneoAño.TabIndex = 3
+        Me.LabelTorneoAño.Text = "Año"
+        '
+        'labeltorneoedicion
+        '
+        Me.labeltorneoedicion.AutoSize = True
+        Me.labeltorneoedicion.Location = New System.Drawing.Point(446, 64)
+        Me.labeltorneoedicion.Name = "labeltorneoedicion"
+        Me.labeltorneoedicion.Size = New System.Drawing.Size(51, 16)
+        Me.labeltorneoedicion.TabIndex = 2
+        Me.labeltorneoedicion.Text = "Torneo"
+        '
+        'txtAñoEdicion
+        '
+        Me.txtAñoEdicion.Location = New System.Drawing.Point(521, 117)
+        Me.txtAñoEdicion.Name = "txtAñoEdicion"
+        Me.txtAñoEdicion.Size = New System.Drawing.Size(188, 22)
+        Me.txtAñoEdicion.TabIndex = 1
+        '
+        'txtTorneoEdicion
+        '
+        Me.txtTorneoEdicion.Location = New System.Drawing.Point(521, 64)
+        Me.txtTorneoEdicion.Name = "txtTorneoEdicion"
+        Me.txtTorneoEdicion.Size = New System.Drawing.Size(188, 22)
+        Me.txtTorneoEdicion.TabIndex = 0
         '
         'TabPage3
         '
@@ -138,6 +210,7 @@ Partial Class Form1
         '
         'listaEdiciones
         '
+        Me.listaEdiciones.Cursor = System.Windows.Forms.Cursors.Hand
         Me.listaEdiciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.listaEdiciones.FormattingEnabled = True
         Me.listaEdiciones.ItemHeight = 16
@@ -555,6 +628,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Pestañas)
         Me.Name = "Form1"
         Me.Text = "TENIS FEMENINO"
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
@@ -612,4 +687,11 @@ Partial Class Form1
     Friend WithEvents listaEdiciones As ListBox
     Friend WithEvents Label1 As Label
     Friend WithEvents cbPaisTorneo As ComboBox
+    Friend WithEvents BtnBuscarEdicion As Button
+    Friend WithEvents TreeView1 As TreeView
+    Friend WithEvents btnAñadirEdicion As Button
+    Friend WithEvents LabelTorneoAño As Label
+    Friend WithEvents labeltorneoedicion As Label
+    Friend WithEvents txtAñoEdicion As TextBox
+    Friend WithEvents txtTorneoEdicion As TextBox
 End Class
