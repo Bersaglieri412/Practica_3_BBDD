@@ -28,14 +28,15 @@
 
         participantes = ordenar(participantes)
 
-        MsgBox(participantes.Item(1).puntos)
-        MsgBox(participantes.Item(2).puntos)
-        MsgBox(participantes.Item(8).puntos)
+        For Each jug In participantes
+            MsgBox(jug.puntos & " " & jug.nombre)
+        Next
+
     End Sub
     Function compareKeys(p As Integer, p1 As Integer)
         Dim mayor As Boolean
         mayor = False
-        If p > p1 Then
+        If p < p1 Then
             mayor = True
         End If
 
@@ -50,13 +51,13 @@
         For t = 1 To participantes.Count - 1
             For j = t + 1 To participantes.Count
                 If compareKeys(participantes(t).puntos, participantes(j).puntos) Then
-                    'store the lesser item
+
                     vTemp = participantes(j)
 
-                    'remove the lesser item
+
                     participantes.Remove(j)
 
-                    're-add the lesser item before the greater Item
+
                     participantes.Add(vTemp,, t)
                 End If
             Next j
