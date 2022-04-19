@@ -9,6 +9,7 @@
     Public Sub New(j As Jugadora, p As Partido)
         Me.jugadora = j
         Me.partido = p
+        Me.set3 = Nothing
     End Sub
 
 End Class

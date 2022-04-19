@@ -50,6 +50,13 @@
         Next
     End Sub
 
+    Public Sub buscarIDPartido(ByRef p As Partido)
+        Dim col As Collection : Dim aux As Collection
+        col = AgenteBD.ObtenerAgente.Leer("Select idPartido from partidos where anualidad='" & p.edicion.anualidad & "' and ganadora='" & p.ganadora.id & "' and ronda='" & p.ronda & "';")
+        For Each aux In col
+            p.idPartido = aux(1).ToString
+        Next
+    End Sub
     Public Sub leerEdiciones(ByRef p As Torneo)
         Dim e As Ediciones
         Dim cole, auxe As Collection
@@ -81,28 +88,33 @@
 
     Public Function insertarEdicion(e As Ediciones)
         Dim r As Integer
-        r = 0
-        If r = AgenteBD.ObtenerAgente.Modificar("INSERT INTO ediciones VALUES ('" & e.anualidad.ToString & "','" & e.torneo.idTorneo.ToString & "','" & e.ganadora.id.ToString & "');") <> 1 Then
-            MsgBox("Error en el insert -1")
+
+        If AgenteBD.ObtenerAgente.Modificar("INSERT INTO Ediciones (anualidad,torneo,ganadora) VALUES ('" & e.anualidad & "','" & e.torneo.idTorneo & "','" & e.ganadora.id & "');") <> 1 Then
+            Return 0
             Exit Function
         End If
         For Each p In e.partidos
             If AgenteBD.ObtenerAgente.Modificar("Insert INTO Partidos(Anualidad,Torneo,Ganadora,Ronda) Values('" & e.anualidad & "', '" & e.torneo.idTorneo.ToString & "' ,'" & p.ganadora.id.ToString & "', '" & p.ronda & "');") <> 1 Then
-                MsgBox("Error en el insert 0")
+                Return 0
                 Exit Function
-            Else
-                MsgBox("si")
             End If
+            buscarIDPartido(p)
             For Each s In p.sets
-                If AgenteBD.ObtenerAgente.Modificar("Insert INTO Juegos(Jugadora,Partido,SET1,SET2,SET3) Values('" & s.jugadora.id & "', '" & p.idPartido.ToString & "', '" & s.set1.ToString & "' ,'" & s.set2.ToString & "', '" & s.set3.ToString & "');") <> 1 Then
-                    MsgBox("Error en el insert 1")
-                    Exit Function
+                If Not s.set3 Is Nothing Then
+                    If AgenteBD.ObtenerAgente.Modificar("Insert INTO Juegos(Jugadora,Partido,SET1,SET2,SET3) Values('" & s.jugadora.id & "', '" & p.idPartido.ToString & "', '" & s.set1.ToString & "' ,'" & s.set2.ToString & "', '" & s.set3.ToString & "');") <> 1 Then
+                        Return 0
+                        Exit Function
+                    End If
                 Else
-                    MsgBox("si")
+                    If AgenteBD.ObtenerAgente.Modificar("Insert INTO Juegos(Jugadora,Partido,SET1,SET2) Values('" & s.jugadora.id & "', '" & p.idPartido.ToString & "', '" & s.set1.ToString & "' ,'" & s.set2.ToString & "');") <> 1 Then
+                        Return 0
+                        Exit Function
+                    End If
                 End If
+
             Next
         Next
-        MsgBox("fuera")
-        Return r
+
+        Return 1
     End Function
 End Class
