@@ -79,4 +79,19 @@
         Return AgenteBD.ObtenerAgente.Modificar("DELETE FROM Torneos WHERE idTorneo='" & p.idTorneo & "';")
     End Function
 
+    Public Function insertarEdicion(e As Ediciones)
+        For Each p In e.partidos
+            If AgenteBD.ObtenerAgente.Modificar("Insert INTO Partidos Values('" & p.idPartido.ToString & "', '" & e.torneo.ToString & "', '" & p.edicion.anualidad.ToString & "' ,'" & p.edicion.torneo.ToString & "', '" & p.ganadora.id.ToString & "', '" & p.ronda & ")") <> 1 Then
+                MsgBox("Error en el insert")
+                'Añadir condicion para salir
+            End If
+            For Each s In p.sets
+                If AgenteBD.ObtenerAgente.Modificar("Insert INTO Juegos Values('" & s.jugadora.nombre & "', '" & p.idPartido.ToString & "', '" & s.set1.ToString & "' ,'" & s.set2.ToString & "', '" & s.set3.ToString & "')") <> 1 Then
+                    MsgBox("Error en el insert")
+                    'Añadir condicion para salir
+                End If
+            Next
+        Next
+        Return AgenteBD.ObtenerAgente.Modificar("Insert INTO Ediciones Values('" & e.anualidad.ToString & "', '" & e.torneo.ToString & "', '" & e.ganadora.id.ToString & "')")
+    End Function
 End Class

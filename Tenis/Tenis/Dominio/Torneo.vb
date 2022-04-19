@@ -43,5 +43,9 @@
     Public Function BorrarJugadora() As Integer
         Return Me.TorDAO.Borrar(Me)
     End Function
+    Public Sub añadirEdicion(a As Integer)
+        ediciones.Add(New Ediciones(a, Me.idTorneo))
+        ediciones(ediciones.Count).generarEdicion()
+    End Sub
 
 End Class

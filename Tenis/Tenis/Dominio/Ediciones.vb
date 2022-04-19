@@ -2,7 +2,7 @@
     Public Property anualidad As Integer
     Public Property torneo As Torneo
     Public Property ganadora As Jugadora
-    Public Property partidos() As Partido 'Colección de partidos dentro de Edición
+    Public Property partidos As Collection 'Colección de partidos dentro de Edición
 
     Public Sub New(Anualidad As Integer, torneo As Integer)
         Me.torneo = New Torneo(torneo)
@@ -13,7 +13,8 @@
         Dim jugadoras As Jugadora
         Dim participantes As Collection = New Collection
         Dim jugAux As Jugadora
-
+        Dim pAux As Partido
+        partidos = New Collection
         jugadoras = New Jugadora()
         jugadoras.LeerTodasPersonas()
         Dim i As Integer = 8
@@ -27,21 +28,53 @@
         Loop While i <> 0
 
         participantes = ordenar(participantes)
+        Dim ganadores As Collection
 
-        For Each jug In participantes
-            MsgBox(jug.puntos & " " & jug.nombre)
+        For i = 1 To 4
+            pAux = New Partido()
+            pAux.edicion = Me
+            pAux.celebrarPartido(participantes(i), participantes(8 - (i - 1)), "c")
+            partidos.Add(pAux)
+        Next i
+
+        For i = 1 To 2
+            pAux = New Partido()
+            pAux.edicion = Me
+            pAux.celebrarPartido(partidos(i).ganadora, partidos(4 - (i - 1)).ganadora, "s")
+            partidos.Add(pAux)
+        Next i
+
+
+        pAux = New Partido()
+            pAux.edicion = Me
+        pAux.celebrarPartido(partidos(5).ganadora, partidos(6).ganadora, "f")
+        partidos.Add(pAux)
+        Me.ganadora = partidos(7).ganadora
+        ganadora.puntos = ganadora.puntos + 100
+
+        For i = 1 To 6
+            If i < 5 Then
+                If ganadora.id <> partidos(i).ganadora.id And partidos(i).ganadora.id <> partidos(5).ganadora.id And partidos(i).ganadora.id <> partidos(6).ganadora.id Then
+                    partidos(i).ganadora.puntos += 10
+                End If
+            ElseIf i < 7 Then
+                If partidos(i).ganadora.id <> ganadora.id Then
+                    partidos(i).ganadora.puntos += 25
+                End If
+            Else
+                    If partidos(i).ganadora.id <> partidos(i).sets(1).jugadora Then
+                    partidos(i).sets(1).jugadora.puntos += 50
+                Else
+                    partidos(i).sets(2).jugadora.puntos += 50
+                End If
+            End If
         Next
+        'Queda insertar el resultado de estas ediciones en la base de datos
+        MsgBox(ganadora.puntos & " " & ganadora.nombre)
+
 
     End Sub
-    Function compareKeys(p As Integer, p1 As Integer)
-        Dim mayor As Boolean
-        mayor = False
-        If p < p1 Then
-            mayor = True
-        End If
 
-        Return mayor
-    End Function
 
     Function ordenar(participantes As Collection)
         Dim vItm As Object
@@ -50,7 +83,7 @@
 
         For t = 1 To participantes.Count - 1
             For j = t + 1 To participantes.Count
-                If compareKeys(participantes(t).puntos, participantes(j).puntos) Then
+                If participantes(t).compareTo(participantes(j).puntos) Then
 
                     vTemp = participantes(j)
 

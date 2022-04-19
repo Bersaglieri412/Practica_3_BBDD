@@ -48,4 +48,14 @@
         Me.JugDAO.buscarID(Me)
     End Function
 
+    Function compareTo(p As Integer)
+        Dim mayor As Boolean
+        mayor = False
+        If Me.puntos < p Then
+            mayor = True
+        End If
+
+        Return mayor
+    End Function
+
 End Class

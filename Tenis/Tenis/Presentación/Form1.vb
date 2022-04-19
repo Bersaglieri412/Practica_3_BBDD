@@ -403,8 +403,9 @@
     End Sub
 
     Private Sub btnAñadirEdicion_Click(sender As Object, e As EventArgs) Handles btnAñadirEdicion.Click
-        Dim ed As Ediciones
-        ed = New Ediciones(2019, 9)
-        ed.generarEdicion()
+        Dim tor As Torneo
+        tor = New Torneo(4)
+        tor.añadirEdicion(2019)
+
     End Sub
 End Class
