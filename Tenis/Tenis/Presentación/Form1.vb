@@ -16,7 +16,6 @@
         Me.listaPaises.Items.Clear()
         Me.listaTorneos.Items.Clear()
         Me.generarEdicion.Enabled = False
-        Me.txtAñoEdicion.Enabled = False
         Me.txtAnoEdicion.Enabled = False
         Me.TxtID.Enabled = False
         Me.btnEliminarJugadora.Enabled = False
@@ -434,4 +433,11 @@
         End If
 
     End Sub
+
+    Private Sub listaEdiciones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaEdiciones.SelectedIndexChanged
+        Form2.Form2_Load(sender, e)
+        Me.Pestañas.SelectedIndex = 3
+    End Sub
+
+
 End Class

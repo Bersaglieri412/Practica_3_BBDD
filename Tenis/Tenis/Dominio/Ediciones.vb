@@ -4,8 +4,8 @@
     Public Property ganadora As Jugadora
     Public Property partidos As Collection 'Colección de partidos dentro de Edición
 
-    Public Sub New(Anualidad As Integer, torneo As Integer)
-        Me.torneo = New Torneo(torneo)
+    Public Sub New(Anualidad As Integer, torneo As Torneo)
+        Me.torneo = New Torneo(torneo.idTorneo)
         Me.anualidad = Anualidad
     End Sub
 
@@ -28,8 +28,8 @@
         Loop While i <> 0
 
         participantes = ordenar(participantes)
-        Dim ganadores As Collection
 
+        'Generar cuartos de final
         For i = 1 To 4
             pAux = New Partido()
             pAux.edicion = Me
@@ -37,6 +37,7 @@
             partidos.Add(pAux)
         Next i
 
+        'Generar Semifinales
         For i = 1 To 2
             pAux = New Partido()
             pAux.edicion = Me
@@ -44,7 +45,7 @@
             partidos.Add(pAux)
         Next i
 
-
+        'Generar Final
         pAux = New Partido()
             pAux.edicion = Me
         pAux.celebrarPartido(partidos(5).ganadora, partidos(6).ganadora, "f")

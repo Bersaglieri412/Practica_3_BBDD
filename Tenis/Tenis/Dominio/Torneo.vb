@@ -12,7 +12,7 @@
         Me.ediciones = New Collection
     End Sub
 
-    Public Sub New(Id As String)
+    Public Sub New(Id As Integer)
         Me.TorDAO = New TorneoDAO
         Me.idTorneo = Id
         Me.ediciones = New Collection
@@ -44,7 +44,7 @@
         Return Me.TorDAO.Borrar(Me)
     End Function
     Public Function añadirEdicion(a As Integer)
-        ediciones.Add(New Ediciones(a, Me.idTorneo))
+        ediciones.Add(New Ediciones(a, Me))
         ediciones(ediciones.Count).generarEdicion()
         Return TorDAO.insertarEdicion(ediciones(ediciones.Count))
     End Function

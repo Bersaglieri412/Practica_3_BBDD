@@ -43,8 +43,8 @@
         ronda = r
         Dim g, g1 As Integer
         g = g1 = 0
-        Dim s As Sets = New Sets(j)
-        Dim s1 As Sets = New Sets(j1)
+        Dim s As Sets = New Sets(j, Me)
+        Dim s1 As Sets = New Sets(j1, Me)
         Randomize()
         If (Int((2 * Rnd()) + 1)) = 1 Then
             s.set1 = 6

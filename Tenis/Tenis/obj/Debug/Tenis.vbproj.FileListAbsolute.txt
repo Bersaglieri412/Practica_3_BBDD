@@ -39,3 +39,4 @@ C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Debug\Ten
 C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Debug\Tenis.xml
 C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Debug\MySql.Data.dll
 C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.vbproj.CopyComplete
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Debug\Tenis.Form2.resources

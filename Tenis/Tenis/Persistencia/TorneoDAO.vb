@@ -18,7 +18,7 @@
             p.paisTorneo = New Pais(aux(4).ToString)
             cole = AgenteBD.ObtenerAgente().Leer("Select * from ediciones where Torneo='" & aux(1) & "'")
             For Each auxe In cole
-                e = New Ediciones(auxe(1), p.idTorneo)
+                e = New Ediciones(auxe(1), p)
                 e.torneo = New Torneo(auxe(2))
                 e.ganadora = New Jugadora(auxe(3))
                 Me.Ediciones.Add(e)
@@ -58,7 +58,7 @@
         Ediciones.Clear()
         cole = AgenteBD.ObtenerAgente().Leer("Select * from ediciones where Torneo='" & p.idTorneo & "'")
         For Each auxe In cole
-            e = New Ediciones(auxe(1), p.idTorneo)
+            e = New Ediciones(auxe(1), p)
             e.torneo = New Torneo(auxe(2))
             e.ganadora = New Jugadora(auxe(3))
             Me.Ediciones.Add(e)
@@ -81,7 +81,8 @@
 
     Public Function insertarEdicion(e As Ediciones)
         Dim r As Integer
-        If r = AgenteBD.ObtenerAgente.Modificar("INSERT INTO ediciones(Anualidad,Torneo,Ganadora) VALUES ('" & e.anualidad.ToString & "', '" & e.torneo.idTorneo.ToString & "', '" & e.ganadora.id.ToString & "');") <> 1 Then
+        r = 0
+        If r = AgenteBD.ObtenerAgente.Modificar("INSERT INTO ediciones VALUES ('" & e.anualidad.ToString & "','" & e.torneo.idTorneo.ToString & "','" & e.ganadora.id.ToString & "');") <> 1 Then
             MsgBox("Error en el insert -1")
             Exit Function
         End If
