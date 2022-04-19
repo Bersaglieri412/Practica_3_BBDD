@@ -26,12 +26,14 @@ Partial Class Form1
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.BtnBuscarEdicion = New System.Windows.Forms.Button()
         Me.TreeView1 = New System.Windows.Forms.TreeView()
-        Me.btnAñadirEdicion = New System.Windows.Forms.Button()
         Me.LabelTorneoAño = New System.Windows.Forms.Label()
         Me.labeltorneoedicion = New System.Windows.Forms.Label()
         Me.txtAñoEdicion = New System.Windows.Forms.TextBox()
         Me.txtTorneoEdicion = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtAnoEdicion = New System.Windows.Forms.TextBox()
+        Me.generarEdicion = New System.Windows.Forms.Button()
         Me.cbPaisTorneo = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.listaEdiciones = New System.Windows.Forms.ListBox()
@@ -96,7 +98,6 @@ Partial Class Form1
         '
         Me.TabPage4.Controls.Add(Me.BtnBuscarEdicion)
         Me.TabPage4.Controls.Add(Me.TreeView1)
-        Me.TabPage4.Controls.Add(Me.btnAñadirEdicion)
         Me.TabPage4.Controls.Add(Me.LabelTorneoAño)
         Me.TabPage4.Controls.Add(Me.labeltorneoedicion)
         Me.TabPage4.Controls.Add(Me.txtAñoEdicion)
@@ -124,15 +125,6 @@ Partial Class Form1
         Me.TreeView1.Name = "TreeView1"
         Me.TreeView1.Size = New System.Drawing.Size(206, 246)
         Me.TreeView1.TabIndex = 5
-        '
-        'btnAñadirEdicion
-        '
-        Me.btnAñadirEdicion.Location = New System.Drawing.Point(521, 185)
-        Me.btnAñadirEdicion.Name = "btnAñadirEdicion"
-        Me.btnAñadirEdicion.Size = New System.Drawing.Size(116, 41)
-        Me.btnAñadirEdicion.TabIndex = 4
-        Me.btnAñadirEdicion.Text = "Generar Edición"
-        Me.btnAñadirEdicion.UseVisualStyleBackColor = True
         '
         'LabelTorneoAño
         '
@@ -168,6 +160,9 @@ Partial Class Form1
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Label2)
+        Me.TabPage3.Controls.Add(Me.txtAnoEdicion)
+        Me.TabPage3.Controls.Add(Me.generarEdicion)
         Me.TabPage3.Controls.Add(Me.cbPaisTorneo)
         Me.TabPage3.Controls.Add(Me.Label1)
         Me.TabPage3.Controls.Add(Me.listaEdiciones)
@@ -190,6 +185,32 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TORNEO"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Location = New System.Drawing.Point(308, 260)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(34, 16)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "Año"
+        '
+        'txtAnoEdicion
+        '
+        Me.txtAnoEdicion.Location = New System.Drawing.Point(369, 260)
+        Me.txtAnoEdicion.Name = "txtAnoEdicion"
+        Me.txtAnoEdicion.Size = New System.Drawing.Size(100, 22)
+        Me.txtAnoEdicion.TabIndex = 37
+        '
+        'generarEdicion
+        '
+        Me.generarEdicion.Location = New System.Drawing.Point(369, 298)
+        Me.generarEdicion.Name = "generarEdicion"
+        Me.generarEdicion.Size = New System.Drawing.Size(100, 52)
+        Me.generarEdicion.TabIndex = 36
+        Me.generarEdicion.Text = "Generar Edición"
+        Me.generarEdicion.UseVisualStyleBackColor = True
         '
         'cbPaisTorneo
         '
@@ -689,9 +710,11 @@ Partial Class Form1
     Friend WithEvents cbPaisTorneo As ComboBox
     Friend WithEvents BtnBuscarEdicion As Button
     Friend WithEvents TreeView1 As TreeView
-    Friend WithEvents btnAñadirEdicion As Button
     Friend WithEvents LabelTorneoAño As Label
     Friend WithEvents labeltorneoedicion As Label
     Friend WithEvents txtAñoEdicion As TextBox
     Friend WithEvents txtTorneoEdicion As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtAnoEdicion As TextBox
+    Friend WithEvents generarEdicion As Button
 End Class

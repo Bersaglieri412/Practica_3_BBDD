@@ -51,21 +51,26 @@
         partidos.Add(pAux)
         Me.ganadora = partidos(7).ganadora
         ganadora.puntos = ganadora.puntos + 100
+        ganadora.ActualizarPuntos()
 
         For i = 1 To 6
             If i < 5 Then
                 If ganadora.id <> partidos(i).ganadora.id And partidos(i).ganadora.id <> partidos(5).ganadora.id And partidos(i).ganadora.id <> partidos(6).ganadora.id Then
                     partidos(i).ganadora.puntos += 10
+                    partidos(i).ganadora.ActualizarPuntos()
                 End If
             ElseIf i < 7 Then
                 If partidos(i).ganadora.id <> ganadora.id Then
                     partidos(i).ganadora.puntos += 25
+                    partidos(i).ganadora.ActualizarPuntos()
                 End If
             Else
                     If partidos(i).ganadora.id <> partidos(i).sets(1).jugadora Then
                     partidos(i).sets(1).jugadora.puntos += 50
+                    partidos(i).ganadora.ActualizarPuntos()
                 Else
                     partidos(i).sets(2).jugadora.puntos += 50
+                    partidos(i).ganadora.ActualizarPuntos()
                 End If
             End If
         Next

@@ -80,18 +80,28 @@
     End Function
 
     Public Function insertarEdicion(e As Ediciones)
+        Dim r As Integer
+        If r = AgenteBD.ObtenerAgente.Modificar("INSERT INTO ediciones(Anualidad,Torneo,Ganadora) VALUES ('" & e.anualidad.ToString & "', '" & e.torneo.idTorneo.ToString & "', '" & e.ganadora.id.ToString & "');") <> 1 Then
+            MsgBox("Error en el insert -1")
+            Exit Function
+        End If
         For Each p In e.partidos
-            If AgenteBD.ObtenerAgente.Modificar("Insert INTO Partidos Values('" & p.idPartido.ToString & "', '" & e.torneo.ToString & "', '" & p.edicion.anualidad.ToString & "' ,'" & p.edicion.torneo.ToString & "', '" & p.ganadora.id.ToString & "', '" & p.ronda & ")") <> 1 Then
-                MsgBox("Error en el insert")
-                'Añadir condicion para salir
+            If AgenteBD.ObtenerAgente.Modificar("Insert INTO Partidos(Anualidad,Torneo,Ganadora,Ronda) Values('" & e.anualidad & "', '" & e.torneo.idTorneo.ToString & "' ,'" & p.ganadora.id.ToString & "', '" & p.ronda & "');") <> 1 Then
+                MsgBox("Error en el insert 0")
+                Exit Function
+            Else
+                MsgBox("si")
             End If
             For Each s In p.sets
-                If AgenteBD.ObtenerAgente.Modificar("Insert INTO Juegos Values('" & s.jugadora.nombre & "', '" & p.idPartido.ToString & "', '" & s.set1.ToString & "' ,'" & s.set2.ToString & "', '" & s.set3.ToString & "')") <> 1 Then
-                    MsgBox("Error en el insert")
-                    'Añadir condicion para salir
+                If AgenteBD.ObtenerAgente.Modificar("Insert INTO Juegos(Jugadora,Partido,SET1,SET2,SET3) Values('" & s.jugadora.id & "', '" & p.idPartido.ToString & "', '" & s.set1.ToString & "' ,'" & s.set2.ToString & "', '" & s.set3.ToString & "');") <> 1 Then
+                    MsgBox("Error en el insert 1")
+                    Exit Function
+                Else
+                    MsgBox("si")
                 End If
             Next
         Next
-        Return AgenteBD.ObtenerAgente.Modificar("Insert INTO Ediciones Values('" & e.anualidad.ToString & "', '" & e.torneo.ToString & "', '" & e.ganadora.id.ToString & "')")
+        MsgBox("fuera")
+        Return r
     End Function
 End Class

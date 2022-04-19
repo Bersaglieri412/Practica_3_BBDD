@@ -9,11 +9,13 @@
 
     Public Sub New()
         Me.JugDAO = New JugadoraDAO
+        puntos = 0
     End Sub
 
     Public Sub New(Id As String)
         Me.JugDAO = New JugadoraDAO
         Me.id = Id
+        puntos = 0
     End Sub
     Public Sub New(Id As String, pais_jug As Pais, nombre As String, puntos As Integer, fechaNacimiento As String)
         Me.id = Id
@@ -39,7 +41,9 @@
     Public Function ActualizarJugadora() As Integer
         Return Me.JugDAO.Actualizar(Me)
     End Function
-
+    Public Function ActualizarPuntos() As Integer
+        Return Me.JugDAO.ActualizarPuntos(Me)
+    End Function
     Public Function BorrarJugadora() As Integer
         Return Me.JugDAO.Borrar(Me)
     End Function

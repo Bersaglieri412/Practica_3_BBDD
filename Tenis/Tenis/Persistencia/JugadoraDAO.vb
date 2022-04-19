@@ -49,5 +49,7 @@
             p.id = aux(1).ToString
         Next
     End Sub
-
+    Public Function ActualizarPuntos(j As Jugadora) As Integer
+        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Jugadoras Set PuntosJugadora='" & j.puntos.ToString & "' WHERE idJugadora='" & j.id & "';")
+    End Function
 End Class

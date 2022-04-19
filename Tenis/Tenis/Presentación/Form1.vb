@@ -11,6 +11,13 @@
         Me.j = New Jugadora
         Me.p = New Pais
         Me.t = New Torneo
+        Me.listaJugadoras.Items.Clear()
+        Me.listaEdiciones.Items.Clear()
+        Me.listaPaises.Items.Clear()
+        Me.listaTorneos.Items.Clear()
+        Me.generarEdicion.Enabled = False
+        Me.txtAñoEdicion.Enabled = False
+        Me.txtAnoEdicion.Enabled = False
         Me.TxtID.Enabled = False
         Me.btnEliminarJugadora.Enabled = False
         Me.btnLimpiarJugadora.Enabled = False
@@ -177,6 +184,8 @@
             Me.btnEliminarTorneo.Enabled = True
             Me.listaEdiciones.Items.Clear()
             Me.btnAnadirTorneo.Enabled = False
+            Me.generarEdicion.Enabled = True
+            Me.txtAnoEdicion.Enabled = True
 
             Me.t.nombreTorneo = listaTorneos.SelectedItem.ToString
             Dim ed As Ediciones
@@ -308,8 +317,9 @@
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End Try
             Me.listaPaises.Items.Add(Me.p.nombre)
-            Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
-            Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
+            'Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
+            'Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
+            Form1_Load(sender, e)
         End If
     End Sub
 
@@ -366,8 +376,9 @@
                 Exit Sub
             End Try
             Me.listaPaises.Items.RemoveAt(Me.listaPaises.Items.IndexOf(p.nombre))
-            Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
-            Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
+            'Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
+            'Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
+            Form1_Load(sender, e)
             MessageBox.Show(Me.p.nombre & " eliminado correctamente")
         End If
         Me.btnLimpiarPais.PerformClick()
@@ -393,8 +404,9 @@
                 MessageBox.Show(p.nombre & " actualizado correctamente")
                 Me.listaPaises.Items.Add(p.nombre)
                 Me.listaPaises.Items.Remove(listaPaises.SelectedItem)
-                Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
-                Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
+                'Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
+                'Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
+                Form1_Load(sender, e)
                 'Ten en cuenta que hay que despues borrar el pais de los cb que no funciona
             End If
         Else
@@ -402,10 +414,24 @@
         End If
     End Sub
 
-    Private Sub btnAñadirEdicion_Click(sender As Object, e As EventArgs) Handles btnAñadirEdicion.Click
-        Dim tor As Torneo
-        tor = New Torneo(4)
-        tor.añadirEdicion(2019)
+
+    Private Sub generarEdicion_Click(sender As Object, e As EventArgs) Handles generarEdicion.Click
+        If Me.txtAnoEdicion.Text <> String.Empty Then
+            Dim tor As Torneo
+            tor = New Torneo(Me.txtIDTorneo.Text)
+            Try
+                If tor.añadirEdicion(Me.txtAnoEdicion.Text) <> 1 Then
+                    MessageBox.Show("INSERT return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Exit Sub
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End Try
+            Form1_Load(sender, e)
+
+        Else
+            MsgBox("Debes poner un valor en el campo año")
+        End If
 
     End Sub
 End Class
