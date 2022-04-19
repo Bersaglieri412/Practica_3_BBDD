@@ -1,9 +1,11 @@
 ﻿Public Class TorneoDAO
     Public ReadOnly Property Torneo As Collection
     Public ReadOnly Property Ediciones As Collection
+    Public ReadOnly Property ganadoras As Collection
     Public Sub New()
         Me.Torneo = New Collection
         Me.Ediciones = New Collection
+        Me.ganadoras = New Collection
     End Sub
     Public Sub LeerTodas()
         Ediciones.Clear()
@@ -17,15 +19,8 @@
             p.ciudadTorneo = aux(3).ToString
             p.paisTorneo = New Pais(aux(4).ToString)
             cole = AgenteBD.ObtenerAgente().Leer("Select * from ediciones where Torneo='" & aux(1) & "'")
-            For Each auxe In cole
-                e = New Ediciones(auxe(1), p)
-                e.torneo = New Torneo(auxe(2))
-                e.ganadora = New Jugadora(auxe(3))
-                Me.Ediciones.Add(e)
-            Next
-            p.ediciones = Me.Ediciones
+            leerEdiciones(p)
             Me.Torneo.Add(p)
-
         Next
     End Sub
 
@@ -61,15 +56,14 @@
         Dim e As Ediciones
         Dim cole, auxe As Collection
         Dim contador As Integer
-        contador = 1
         Ediciones.Clear()
         cole = AgenteBD.ObtenerAgente().Leer("Select * from ediciones where Torneo='" & p.idTorneo & "'")
         For Each auxe In cole
             e = New Ediciones(auxe(1), p)
             e.torneo = New Torneo(auxe(2))
             e.ganadora = New Jugadora(auxe(3))
+            leerPartidos(e)
             Me.Ediciones.Add(e)
-            contador = contador + 1
         Next
         p.ediciones = Ediciones
 
@@ -85,6 +79,13 @@
     Public Function Borrar(ByVal p As Torneo) As Integer
         Return AgenteBD.ObtenerAgente.Modificar("DELETE FROM Torneos WHERE idTorneo='" & p.idTorneo & "';")
     End Function
+    Public Sub leerGanadoras(t As Torneo)
+        Dim col, aux As Collection
+        col = AgenteBD.ObtenerAgente.Leer("Select NombreJugadora from jugadoras j,ediciones e where j.idJugadora=e.ganadora and e.torneo='" & t.idTorneo & "'; ")
+        For Each aux In col
+            Me.ganadoras.Add(aux(1))
+        Next
+    End Sub
 
     Public Function insertarEdicion(e As Ediciones)
         Dim r As Integer
@@ -117,4 +118,31 @@
 
         Return 1
     End Function
+
+    Public Sub leerPartidos(e As Ediciones)
+        e.partidos = New Collection
+        e.partidos.Clear()
+        Dim col, aux, jugs, jugs1 As Collection
+        Dim p As Partido
+        Dim s As Sets
+        col = AgenteBD.ObtenerAgente.Leer("Select * from partidos where anualidad='" & e.anualidad & "' and torneo='" & e.torneo.idTorneo & "';")
+        For Each aux In col
+            p = New Partido(aux(1).ToString)
+            p.edicion = e
+            p.ganadora = New Jugadora(aux(4))
+            p.ronda = aux(5).ToString
+            jugs = AgenteBD.ObtenerAgente.Leer("Select * From juegos where partido='" & p.idPartido & "';")
+            For Each jugs1 In jugs
+                s = New Sets(New Jugadora(jugs1(1)), p)
+                s.set1 = jugs1(3)
+                s.set2 = jugs1(4)
+                If Not jugs1(5) Is Nothing Then
+                    s.set3 = jugs1(5)
+                End If
+                p.sets.Add(s)
+            Next
+            e.partidos.Add(p)
+        Next
+    End Sub
+
 End Class

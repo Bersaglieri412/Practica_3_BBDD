@@ -3,6 +3,7 @@
     Private j As Jugadora
     Private p As Pais
     Private t As Torneo
+    Private ed As Ediciones
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim pAux As Jugadora
         Dim pAux1 As Pais
@@ -15,6 +16,7 @@
         Me.listaEdiciones.Items.Clear()
         Me.listaPaises.Items.Clear()
         Me.listaTorneos.Items.Clear()
+        Me.listaGanadoras.Items.Clear()
         Me.generarEdicion.Enabled = False
         Me.txtAnoEdicion.Enabled = False
         Me.TxtID.Enabled = False
@@ -50,6 +52,7 @@
         For Each eAux In t.TorDAO.Torneo
             Me.listaTorneos.Items.Add(eAux.nombreTorneo)
         Next
+
         Me.cbPaisJugadora.DataSource = paises
         Me.cbPaisTorneo.DataSource = paises
     End Sub
@@ -182,6 +185,8 @@
             Me.btnLimpiarTorneo.Enabled = True
             Me.btnEliminarTorneo.Enabled = True
             Me.listaEdiciones.Items.Clear()
+            Me.listaGanadoras.Items.Clear()
+            'MsgBox(Me.listaGanadoras.Items.Count)
             Me.btnAnadirTorneo.Enabled = False
             Me.generarEdicion.Enabled = True
             Me.txtAnoEdicion.Enabled = True
@@ -193,8 +198,13 @@
                 Me.t.ediciones.Clear()
                 Me.t.LeerJugadora()
                 Me.t.paisTorneo.LeerPais()
+                Me.t.leerGanadoras()
+
                 For Each ed In Me.t.ediciones
                     Me.listaEdiciones.Items.Add(ed.anualidad.ToString)
+                Next
+                For Each g In Me.t.TorDAO.ganadoras
+                    Me.listaGanadoras.Items.Add(g.ToString)
                 Next
 
             Catch ex As Exception
@@ -205,7 +215,7 @@
             Me.cbPaisTorneo.SelectedIndex = Me.cbPaisTorneo.FindString(t.paisTorneo.nombre)
             Me.txtCiudadTorneo.Text = t.ciudadTorneo
         Else
-            Me.btnLimpiarJugadora.PerformClick()
+            Me.btnLimpiarTorneo.PerformClick()
         End If
     End Sub
 
@@ -215,6 +225,7 @@
         Me.txtNombreTorneo.Clear()
         Me.cbPaisTorneo.BringToFront()
         Me.listaEdiciones.Items.Clear()
+        Me.listaGanadoras.Items.Clear()
         Me.listaTorneos.ClearSelected()
         Me.btnModificarTorneo.Enabled = False
         Me.btnLimpiarTorneo.Enabled = False
@@ -435,8 +446,14 @@
     End Sub
 
     Private Sub listaEdiciones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaEdiciones.SelectedIndexChanged
-        Form2.Form2_Load(sender, e)
-        Me.Pestañas.SelectedIndex = 3
+        For Each edicion In t.ediciones
+            If edicion.anualidad Is Me.listaEdiciones.SelectedItem.ToString Then
+                ed = edicion
+                Exit For
+            End If
+        Next
+        Form2.ed = Me.ed
+        Form2.Visible = True
     End Sub
 
 

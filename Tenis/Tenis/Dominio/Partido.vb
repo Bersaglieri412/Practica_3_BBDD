@@ -10,10 +10,12 @@
 
 
     Public Sub New()
+        Me.sets = New Collection
         Me.ParDAO = New PartidoDAO
     End Sub
 
-    Public Sub New(Id As String)
+    Public Sub New(Id As Integer)
+        Me.sets = New Collection
         Me.ParDAO = New PartidoDAO
         Me.idPartido = Id
     End Sub

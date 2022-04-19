@@ -40,6 +40,9 @@
         Return Me.TorDAO.Actualizar(Me)
     End Function
 
+    Public Sub leerGanadoras()
+        Me.TorDAO.leerGanadoras(Me)
+    End Sub
     Public Function BorrarJugadora() As Integer
         Return Me.TorDAO.Borrar(Me)
     End Function

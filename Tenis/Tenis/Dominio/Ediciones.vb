@@ -5,6 +5,7 @@
     Public Property partidos As Collection 'Colección de partidos dentro de Edición
 
     Public Sub New(Anualidad As Integer, torneo As Torneo)
+        Me.partidos = New Collection
         Me.torneo = New Torneo(torneo.idTorneo)
         Me.anualidad = Anualidad
     End Sub
