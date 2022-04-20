@@ -23,6 +23,7 @@ Partial Class Form3
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Me.listaRanking = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -123,7 +124,7 @@ Partial Class Form3
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(281, 95)
+        Me.Label2.Location = New System.Drawing.Point(273, 98)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(108, 16)
         Me.Label2.TabIndex = 82
@@ -140,7 +141,7 @@ Partial Class Form3
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(268, 140)
+        Me.Label3.Location = New System.Drawing.Point(260, 143)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(121, 16)
         Me.Label3.TabIndex = 84
@@ -157,7 +158,7 @@ Partial Class Form3
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(341, 215)
+        Me.Label6.Location = New System.Drawing.Point(333, 218)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 16)
         Me.Label6.TabIndex = 86
@@ -236,7 +237,7 @@ Partial Class Form3
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(244, 181)
+        Me.Label11.Location = New System.Drawing.Point(236, 184)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(148, 16)
         Me.Label11.TabIndex = 96
@@ -351,6 +352,7 @@ Partial Class Form3
         Me.Controls.Add(Me.listaEdicionesGanadas)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.listaRanking)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form3"
         Me.Text = "Form3"
         Me.TabControl1.ResumeLayout(False)

@@ -12,6 +12,7 @@
         Me.j = New Jugadora
         Me.p = New Pais
         Me.t = New Torneo
+        Me.listaEdicionesGanadas.Items.Clear()
         Me.listaJugadoras.Items.Clear()
         Me.listaEdiciones.Items.Clear()
         Me.listaPaises.Items.Clear()
@@ -124,6 +125,8 @@
         Me.btnEliminarJugadora.Enabled = False
         Me.btnLimpiarJugadora.Enabled = False
         Me.btnModificarJugadora.Enabled = False
+        Me.listaEdicionesGanadas.Items.Clear()
+        Me.ListaTorneosFinalista.Items.Clear()
         Me.TxtID.Clear()
         Me.txtNombreJugadora.Clear()
         Me.txtPuntosJugadora.Clear()

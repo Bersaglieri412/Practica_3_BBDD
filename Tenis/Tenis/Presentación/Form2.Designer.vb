@@ -22,6 +22,7 @@ Partial Class Form2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.txtSemi1 = New System.Windows.Forms.TextBox()
         Me.txtcuartos1 = New System.Windows.Forms.TextBox()
         Me.txtcuartos1_1 = New System.Windows.Forms.TextBox()
@@ -410,6 +411,7 @@ Partial Class Form2
         Me.Controls.Add(Me.txtcuartos1_1)
         Me.Controls.Add(Me.txtSemi1)
         Me.Controls.Add(Me.txtcuartos1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form2"
         Me.Text = "Partidos y resultados"
         Me.ResumeLayout(False)

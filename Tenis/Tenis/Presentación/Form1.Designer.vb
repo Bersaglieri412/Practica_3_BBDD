@@ -22,6 +22,7 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.listaGanadoras = New System.Windows.Forms.ListBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -642,6 +643,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(864, 450)
         Me.Controls.Add(Me.Pestañas)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "Gestor torneos tenis femenino"
         Me.TabPage3.ResumeLayout(False)

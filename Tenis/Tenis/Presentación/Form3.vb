@@ -25,6 +25,7 @@
             Me.listaTorneos.Items.Clear()
             Me.ListaTorneosFinalista.Items.Clear()
             Me.listaEdicionesGanadas.Items.Clear()
+            Me.ListBox1.Items.Clear()
             j.edicionesF.Clear()
             j.edicionesG.Clear()
             j.torneosP.Clear()
@@ -103,7 +104,7 @@
                     Me.txtPuntosObtenidos.Text = "+25"
                 Else
                     Me.txtResultado.Text = "Cuartofinalista"
-                    Me.txtPuntosObtenidos.Text = "+15"
+                    Me.txtPuntosObtenidos.Text = "+10"
 
                 End If
 
@@ -172,5 +173,11 @@
         Else
             MsgBox("Debe seleccionar una edición")
         End If
+    End Sub
+
+    Private Sub listaEdicionesGanadas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaEdicionesGanadas.SelectedIndexChanged
+        Dim s As String = Me.listaEdicionesGanadas.SelectedItem
+        Dim c() As Object = Split(s, " ")
+        Me.listaTorneos.SelectedIndex = Me.listaTorneos.Items.IndexOf(c(1))
     End Sub
 End Class
