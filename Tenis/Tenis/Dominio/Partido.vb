@@ -44,39 +44,49 @@
         sets = New Collection()
         ronda = r
         Dim g, g1 As Integer
-        g = g1 = 0
+        g = 0
+        g1 = 0
         Dim s As Sets = New Sets(j, Me)
         Dim s1 As Sets = New Sets(j1, Me)
         Randomize()
         If (Int((2 * Rnd()) + 1)) = 1 Then
             s.set1 = 6
-            s1.set1 = (Int((4 * Rnd()) + 1))
-            g = g + 1
+            s1.set1 = (Int((4 * Rnd())))
+            g += 1
+
         Else
             s1.set1 = 6
-            s.set1 = (Int((4 * Rnd()) + 1))
-            g1 = g1 + 1
+            s.set1 = (Int((4 * Rnd())))
+            g1 += 1
+
         End If
 
         If (Int((2 * Rnd()) + 1)) = 1 Then
             s.set2 = 6
-            s1.set2 = (Int((4 * Rnd()) + 1))
-            g = g + 1
+            s1.set2 = (Int((4 * Rnd())))
+            g += 1
+
         Else
             s1.set2 = 6
-            s.set2 = (Int((4 * Rnd()) + 1))
-            g1 = g1 + 1
+            s.set2 = (Int((4 * Rnd())))
+            g1 += 1
+
         End If
-        If g1 <> 2 Or g <> 2 Then
+        If g1 < 2 And g < 2 Then
             If (Int((2 * Rnd()) + 1)) = 1 Then
                 s.set3 = 6
-                s1.set3 = (Int((4 * Rnd()) + 1))
-                g = g + 1
+                s1.set3 = (Int((4 * Rnd())))
+                g += 1
+
             Else
                 s1.set3 = 6
-                s.set3 = (Int((4 * Rnd()) + 1))
-                g1 = g1 + 1
+                s.set3 = (Int((4 * Rnd())))
+                g1 += 1
+
             End If
+        Else
+            s.set3 = -1
+            s1.set3 = -1
         End If
         If g > g1 Then
             Me.ganadora = j

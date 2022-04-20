@@ -90,14 +90,26 @@
             Me.btnLimpiarJugadora.Enabled = True
             Me.btnModificarJugadora.Enabled = True
             Me.lblPuntosJugadora.Enabled = True
+            Me.listaEdicionesGanadas.Items.Clear()
+            Me.ListaTorneosFinalista.Items.Clear()
             Me.j.nombre = listaJugadoras.SelectedItem.ToString
             Try
+                Me.j.edicionesG.Clear()
+                Me.j.edicionesF.Clear()
                 Me.j.buscarID()
                 Me.j.LeerJugadora()
+                Me.j.leerGanadas()
+                Me.j.leerFinales()
             Catch ex As Exception
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End Try
+            For Each aux In j.edicionesG
+                Me.listaEdicionesGanadas.Items.Add(aux(1) & " " & aux(2))
+            Next
+            For Each aux In j.edicionesF
+                Me.ListaTorneosFinalista.Items.Add(aux(1) & " " & aux(2))
+            Next
             Me.TxtID.Text = j.id
             Me.txtNombreJugadora.Text = j.nombre
             Me.txtPuntosJugadora.Text = j.puntos
@@ -436,18 +448,21 @@
                 End If
             Catch ex As Exception
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
             End Try
             Form1_Load(sender, e)
-            MsgBox("Gandora: " & tor.ediciones(tor.ediciones.Count).ganadora.nombre & "    Total puntos: " & tor.ediciones(tor.ediciones.Count).ganadora.puntos)
-            Form2.rellenar(tor.ediciones(tor.ediciones.Count))
-            Form2.Visible = True
+            If MsgBox("Gandora: " & tor.ediciones(tor.ediciones.Count).ganadora.nombre & Environment.NewLine & "Total puntos: " & tor.ediciones(tor.ediciones.Count).ganadora.puntos & Environment.NewLine & "¿Desea ver el árbol de partidos detallado?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Form2.rellenar(tor.ediciones(tor.ediciones.Count))
+                Form2.Visible = True
+            End If
         Else
-            MsgBox("Debes poner un valor en el campo año")
+                MsgBox("Debes poner un valor en el campo año")
         End If
 
     End Sub
 
     Private Sub listaEdiciones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaEdiciones.SelectedIndexChanged
+
         For Each edicion In t.ediciones
             If edicion.anualidad = Me.listaEdiciones.SelectedItem.ToString Then
                 ed = edicion
@@ -458,5 +473,9 @@
         Form2.Visible = True
     End Sub
 
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form3.j = j
+        Form3.rellenar()
+        Form3.Visible = True
+    End Sub
 End Class

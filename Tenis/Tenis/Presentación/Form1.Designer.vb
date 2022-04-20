@@ -54,6 +54,11 @@ Partial Class Form1
         Me.lblIDPais = New System.Windows.Forms.Label()
         Me.listaPaises = New System.Windows.Forms.ListBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ListaTorneosFinalista = New System.Windows.Forms.ListBox()
+        Me.listaEdicionesGanadas = New System.Windows.Forms.ListBox()
         Me.TxtID = New System.Windows.Forms.TextBox()
         Me.txtPuntosJugadora = New System.Windows.Forms.TextBox()
         Me.txtNombreJugadora = New System.Windows.Forms.TextBox()
@@ -115,7 +120,7 @@ Partial Class Form1
         Me.listaGanadoras.ItemHeight = 16
         Me.listaGanadoras.Location = New System.Drawing.Point(160, 236)
         Me.listaGanadoras.Name = "listaGanadoras"
-        Me.listaGanadoras.Size = New System.Drawing.Size(110, 132)
+        Me.listaGanadoras.Size = New System.Drawing.Size(124, 132)
         Me.listaGanadoras.TabIndex = 40
         '
         'Label3
@@ -397,6 +402,11 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Button1)
+        Me.TabPage1.Controls.Add(Me.Label5)
+        Me.TabPage1.Controls.Add(Me.Label4)
+        Me.TabPage1.Controls.Add(Me.ListaTorneosFinalista)
+        Me.TabPage1.Controls.Add(Me.listaEdicionesGanadas)
         Me.TabPage1.Controls.Add(Me.TxtID)
         Me.TabPage1.Controls.Add(Me.txtPuntosJugadora)
         Me.TabPage1.Controls.Add(Me.txtNombreJugadora)
@@ -420,6 +430,52 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "JUGADORA"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(652, 272)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(151, 47)
+        Me.Button1.TabIndex = 77
+        Me.Button1.Text = "Mostrar Ranking"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(183, 247)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(57, 16)
+        Me.Label5.TabIndex = 76
+        Me.Label5.Text = "Finalista"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(33, 250)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(63, 16)
+        Me.Label4.TabIndex = 75
+        Me.Label4.Text = "Ganadas"
+        '
+        'ListaTorneosFinalista
+        '
+        Me.ListaTorneosFinalista.FormattingEnabled = True
+        Me.ListaTorneosFinalista.ItemHeight = 16
+        Me.ListaTorneosFinalista.Location = New System.Drawing.Point(183, 272)
+        Me.ListaTorneosFinalista.Name = "ListaTorneosFinalista"
+        Me.ListaTorneosFinalista.Size = New System.Drawing.Size(147, 84)
+        Me.ListaTorneosFinalista.TabIndex = 74
+        '
+        'listaEdicionesGanadas
+        '
+        Me.listaEdicionesGanadas.FormattingEnabled = True
+        Me.listaEdicionesGanadas.ItemHeight = 16
+        Me.listaEdicionesGanadas.Location = New System.Drawing.Point(33, 272)
+        Me.listaEdicionesGanadas.Name = "listaEdicionesGanadas"
+        Me.listaEdicionesGanadas.Size = New System.Drawing.Size(147, 84)
+        Me.listaEdicionesGanadas.TabIndex = 73
         '
         'TxtID
         '
@@ -647,4 +703,9 @@ Partial Class Form1
     Friend WithEvents lblIDJugadoraa As Label
     Friend WithEvents listaJugadoras As ListBox
     Friend WithEvents Pestañas As TabControl
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ListaTorneosFinalista As ListBox
+    Friend WithEvents listaEdicionesGanadas As ListBox
 End Class

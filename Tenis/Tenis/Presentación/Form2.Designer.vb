@@ -177,7 +177,7 @@ Partial Class Form2
         Me.txtGanadora.Location = New System.Drawing.Point(1313, 365)
         Me.txtGanadora.Name = "txtGanadora"
         Me.txtGanadora.ReadOnly = True
-        Me.txtGanadora.Size = New System.Drawing.Size(135, 22)
+        Me.txtGanadora.Size = New System.Drawing.Size(153, 22)
         Me.txtGanadora.TabIndex = 64
         '
         'Label1
