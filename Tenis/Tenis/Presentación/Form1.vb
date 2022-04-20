@@ -186,7 +186,6 @@
             Me.btnEliminarTorneo.Enabled = True
             Me.listaEdiciones.Items.Clear()
             Me.listaGanadoras.Items.Clear()
-            'MsgBox(Me.listaGanadoras.Items.Count)
             Me.btnAnadirTorneo.Enabled = False
             Me.generarEdicion.Enabled = True
             Me.txtAnoEdicion.Enabled = True
@@ -196,6 +195,7 @@
             Try
                 Me.t.buscarID()
                 Me.t.ediciones.Clear()
+                Me.t.TorDAO.ganadoras.Clear()
                 Me.t.LeerJugadora()
                 Me.t.paisTorneo.LeerPais()
                 Me.t.leerGanadoras()
@@ -438,7 +438,9 @@
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End Try
             Form1_Load(sender, e)
-
+            MsgBox("Gandora: " & tor.ediciones(tor.ediciones.Count).ganadora.nombre & "    Total puntos: " & tor.ediciones(tor.ediciones.Count).ganadora.puntos)
+            Form2.rellenar(tor.ediciones(tor.ediciones.Count))
+            Form2.Visible = True
         Else
             MsgBox("Debes poner un valor en el campo año")
         End If
@@ -447,12 +449,12 @@
 
     Private Sub listaEdiciones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaEdiciones.SelectedIndexChanged
         For Each edicion In t.ediciones
-            If edicion.anualidad Is Me.listaEdiciones.SelectedItem.ToString Then
+            If edicion.anualidad = Me.listaEdiciones.SelectedItem.ToString Then
                 ed = edicion
                 Exit For
             End If
         Next
-        Form2.ed = Me.ed
+        Form2.rellenar(ed)
         Form2.Visible = True
     End Sub
 

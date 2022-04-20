@@ -57,27 +57,33 @@
 
         For i = 1 To 6
             If i < 5 Then
-                If ganadora.id <> partidos(i).ganadora.id And partidos(i).ganadora.id <> partidos(5).ganadora.id And partidos(i).ganadora.id <> partidos(6).ganadora.id Then
-                    partidos(i).ganadora.puntos += 10
-                    partidos(i).ganadora.ActualizarPuntos()
+                If partidos(i).ganadora.id <> partidos(i).sets(1).jugadora.id Then
+                    partidos(i).sets(1).jugadora.puntos += 10
+                    partidos(i).sets(1).jugadora.ActualizarPuntos()
+                Else
+                    partidos(i).sets(2).jugadora.puntos += 10
+                    partidos(i).sets(2).jugadora.ActualizarPuntos()
                 End If
             ElseIf i < 7 Then
                 If partidos(i).ganadora.id <> ganadora.id Then
-                    partidos(i).ganadora.puntos += 25
-                    partidos(i).ganadora.ActualizarPuntos()
+                    partidos(i).sets(1).jugadora.puntos += 25
+                    partidos(i).sets(1).jugadora.ActualizarPuntos()
+                Else
+                    partidos(i).sets(2).jugadora.puntos += 25
+                    partidos(i).sets(2).jugadora.ActualizarPuntos()
                 End If
             Else
                     If partidos(i).ganadora.id <> partidos(i).sets(1).jugadora Then
                     partidos(i).sets(1).jugadora.puntos += 50
-                    partidos(i).ganadora.ActualizarPuntos()
+                    partidos(i).sets(1).jugadora.ActualizarPuntos()
                 Else
                     partidos(i).sets(2).jugadora.puntos += 50
-                    partidos(i).ganadora.ActualizarPuntos()
+                    partidos(i).sets(2).jugadora.ActualizarPuntos()
                 End If
             End If
         Next
         'Queda insertar el resultado de estas ediciones en la base de datos
-        MsgBox(ganadora.puntos & " " & ganadora.nombre)
+
 
 
     End Sub
