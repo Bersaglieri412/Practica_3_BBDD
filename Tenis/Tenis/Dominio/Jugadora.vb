@@ -11,6 +11,8 @@
     Public Property torneosP As Collection
     Public Property edicionesP As Collection
 
+    Public Property torneosPa As Collection
+
     Public ReadOnly Property JugDAO As JugadoraDAO
 
     Public Sub New()
@@ -19,6 +21,7 @@
         Me.edicionesF = New Collection
         Me.edicionesP = New Collection
         Me.torneosP = New Collection
+        Me.torneosPa = New Collection
         puntos = 0
     End Sub
 
@@ -28,6 +31,7 @@
         Me.edicionesF = New Collection
         Me.edicionesP = New Collection
         Me.torneosP = New Collection
+        Me.torneosPa = New Collection
         Me.id = Id
         puntos = 0
     End Sub
@@ -42,6 +46,7 @@
         Me.edicionesF = New Collection
         Me.edicionesP = New Collection
         Me.torneosP = New Collection
+        Me.torneosPa = New Collection
 
     End Sub
 
@@ -91,6 +96,10 @@
 
     Public Sub leerPosicion(e As Ediciones)
         JugDAO.leerPosicion(Me, e)
+    End Sub
+
+    Public Sub leeParticipacionAño(a As Integer)
+        Me.JugDAO.leerParticipacionesAño(Me, a)
     End Sub
     Function compareTo(p As Integer)
         Dim mayor As Boolean

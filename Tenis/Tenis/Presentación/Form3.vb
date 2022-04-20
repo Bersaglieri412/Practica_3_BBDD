@@ -1,5 +1,6 @@
 ﻿Public Class Form3
     Public Property j As Jugadora
+
     Public Sub rellenar()
         Try
             j.edicionesF.Clear()
@@ -16,6 +17,7 @@
 
     Private Sub listaRanking_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaRanking.SelectedIndexChanged
         Try
+            Me.TextBox1.ReadOnly = False
             Me.j.nombre = Me.listaRanking.SelectedItem.ToString
             j.buscarID()
             j.LeerJugadora()
@@ -128,4 +130,47 @@
                 End If
         End Select
     End Function
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        If Not Me.listaRanking.SelectedItem Is Nothing Then
+            Try
+                j.torneosPa.Clear()
+                Me.ListBox1.Items.Clear()
+                j.leeParticipacionAño(Me.TextBox1.Text)
+                For Each p In j.torneosPa
+                    Me.ListBox1.Items.Add(p(1))
+                Next
+            Catch ex As Exception
+
+            End Try
+        Else
+            MsgBox("Debe seleccionar antes una jugadora")
+        End If
+
+    End Sub
+
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.TextBox1.ReadOnly = True
+    End Sub
+
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+        If Not Me.ListBox1 Is Nothing And Not Me.TextBox1 Is Nothing Then
+            Try
+                Me.txtResultado.Text = String.Empty
+                Me.txtPuntosObtenidos.Text = String.Empty
+                Dim ed As Ediciones
+                Dim t As Torneo
+                t = New Torneo()
+                t.nombreTorneo = Me.ListBox1.SelectedItem.ToString
+                t.buscarID()
+                ed = New Ediciones(Me.TextBox1.Text, t)
+                j.leerPosicion(ed)
+                establecerPosicion(j)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End Try
+        Else
+            MsgBox("Debe seleccionar una edición")
+        End If
+    End Sub
 End Class

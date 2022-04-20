@@ -88,6 +88,12 @@ from ediciones e, torneos t, jugadoras j, partidos p, juegos ju
 where e.Torneo=t.idTorneo and p.anualidad=e.anualidad and p.torneo=e.torneo and ju.partido=p.idPartido and ju.jugadora='" & j.id & "';")
     End Sub
 
+    Public Sub leerParticipacionesAño(j As Jugadora, a As Integer)
+        j.torneosPa = AgenteBD.ObtenerAgente.Leer("select distinct nombreTorneo
+from ediciones e, torneos t, partidos p, juegos j
+where e.torneo=t.idTorneo and e.anualidad='" & a & "' and p.anualidad=e.anualidad and p.torneo=e.torneo and j.partido=p.idPartido and j.jugadora='" & j.id & "';
+")
+    End Sub
     Public Sub leerParticipacionEdiciones(j As Jugadora, t As Torneo)
 
         j.edicionesP = AgenteBD.ObtenerAgente.Leer("select distinct e.Anualidad, nombreTorneo
