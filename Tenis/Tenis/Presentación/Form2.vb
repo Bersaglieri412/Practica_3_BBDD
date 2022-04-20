@@ -5,11 +5,11 @@
         j = New Jugadora(e.partidos(1).sets(1).jugadora.id)
         j.LeerJugadora()
         txtcuartos1.Text = j.nombre
-
+        'Me.Sets1.Text = e.partidos(1).sets(2).set1 & "-" & e.partidos(1).sets(2).set2 & "-" & e.partidos(1).sets(2).set3
         j = New Jugadora(e.partidos(1).sets(2).jugadora.id)
         j.LeerJugadora()
         txtcuartos1_1.Text = j.nombre
-
+        'Me.Sets1_1.Text = e.partidos(1).sets(1).set1 & "-" & e.partidos(1).sets(1).set2 & "-" & e.partidos(1).sets(1).set3
         j.id = e.partidos(4).sets(1).jugadora.id
         j.LeerJugadora()
         txtcuartos2.Text = j.nombre
@@ -78,6 +78,10 @@
 
 
 
+
+    End Sub
+
+    Public Sub sets()
 
     End Sub
 End Class
