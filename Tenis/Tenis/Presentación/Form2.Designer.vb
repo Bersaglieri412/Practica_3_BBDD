@@ -185,7 +185,7 @@ Partial Class Form2
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(189, 4)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(99, 16)
+        Me.Label1.Size = New System.Drawing.Size(107, 17)
         Me.Label1.TabIndex = 65
         Me.Label1.Text = "Cuartos de final"
         '
@@ -194,7 +194,7 @@ Partial Class Form2
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(340, 4)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(34, 16)
+        Me.Label2.Size = New System.Drawing.Size(36, 17)
         Me.Label2.TabIndex = 66
         Me.Label2.Text = "Sets"
         '
@@ -203,7 +203,7 @@ Partial Class Form2
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(747, 4)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(34, 16)
+        Me.Label3.Size = New System.Drawing.Size(36, 17)
         Me.Label3.TabIndex = 68
         Me.Label3.Text = "Sets"
         '
@@ -212,7 +212,7 @@ Partial Class Form2
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(596, 4)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(77, 16)
+        Me.Label4.Size = New System.Drawing.Size(80, 17)
         Me.Label4.TabIndex = 67
         Me.Label4.Text = "Semifinales"
         '
@@ -221,7 +221,7 @@ Partial Class Form2
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(1140, 4)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(34, 16)
+        Me.Label5.Size = New System.Drawing.Size(36, 17)
         Me.Label5.TabIndex = 70
         Me.Label5.Text = "Sets"
         '
@@ -230,7 +230,7 @@ Partial Class Form2
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(989, 4)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(36, 16)
+        Me.Label6.Size = New System.Drawing.Size(38, 17)
         Me.Label6.TabIndex = 69
         Me.Label6.Text = "Final"
         '
@@ -239,7 +239,7 @@ Partial Class Form2
         Me.Sets1.AutoSize = True
         Me.Sets1.Location = New System.Drawing.Point(340, 91)
         Me.Sets1.Name = "Sets1"
-        Me.Sets1.Size = New System.Drawing.Size(34, 16)
+        Me.Sets1.Size = New System.Drawing.Size(36, 17)
         Me.Sets1.TabIndex = 71
         Me.Sets1.Text = "Sets"
         '
@@ -248,7 +248,7 @@ Partial Class Form2
         Me.Sets1_1.AutoSize = True
         Me.Sets1_1.Location = New System.Drawing.Point(340, 149)
         Me.Sets1_1.Name = "Sets1_1"
-        Me.Sets1_1.Size = New System.Drawing.Size(34, 16)
+        Me.Sets1_1.Size = New System.Drawing.Size(36, 17)
         Me.Sets1_1.TabIndex = 72
         Me.Sets1_1.Text = "Sets"
         '
@@ -257,7 +257,7 @@ Partial Class Form2
         Me.Sets2_1.AutoSize = True
         Me.Sets2_1.Location = New System.Drawing.Point(340, 317)
         Me.Sets2_1.Name = "Sets2_1"
-        Me.Sets2_1.Size = New System.Drawing.Size(34, 16)
+        Me.Sets2_1.Size = New System.Drawing.Size(36, 17)
         Me.Sets2_1.TabIndex = 74
         Me.Sets2_1.Text = "Sets"
         '
@@ -266,7 +266,7 @@ Partial Class Form2
         Me.Sets2.AutoSize = True
         Me.Sets2.Location = New System.Drawing.Point(340, 259)
         Me.Sets2.Name = "Sets2"
-        Me.Sets2.Size = New System.Drawing.Size(34, 16)
+        Me.Sets2.Size = New System.Drawing.Size(36, 17)
         Me.Sets2.TabIndex = 73
         Me.Sets2.Text = "Sets"
         '
@@ -275,7 +275,7 @@ Partial Class Form2
         Me.Sets4_1.AutoSize = True
         Me.Sets4_1.Location = New System.Drawing.Point(340, 619)
         Me.Sets4_1.Name = "Sets4_1"
-        Me.Sets4_1.Size = New System.Drawing.Size(34, 16)
+        Me.Sets4_1.Size = New System.Drawing.Size(36, 17)
         Me.Sets4_1.TabIndex = 78
         Me.Sets4_1.Text = "Sets"
         '
@@ -284,7 +284,7 @@ Partial Class Form2
         Me.Sets4.AutoSize = True
         Me.Sets4.Location = New System.Drawing.Point(340, 561)
         Me.Sets4.Name = "Sets4"
-        Me.Sets4.Size = New System.Drawing.Size(34, 16)
+        Me.Sets4.Size = New System.Drawing.Size(36, 17)
         Me.Sets4.TabIndex = 77
         Me.Sets4.Text = "Sets"
         '
@@ -293,7 +293,7 @@ Partial Class Form2
         Me.Sets3_1.AutoSize = True
         Me.Sets3_1.Location = New System.Drawing.Point(340, 486)
         Me.Sets3_1.Name = "Sets3_1"
-        Me.Sets3_1.Size = New System.Drawing.Size(34, 16)
+        Me.Sets3_1.Size = New System.Drawing.Size(36, 17)
         Me.Sets3_1.TabIndex = 76
         Me.Sets3_1.Text = "Sets"
         '
@@ -302,7 +302,7 @@ Partial Class Form2
         Me.Set3.AutoSize = True
         Me.Set3.Location = New System.Drawing.Point(340, 428)
         Me.Set3.Name = "Set3"
-        Me.Set3.Size = New System.Drawing.Size(34, 16)
+        Me.Set3.Size = New System.Drawing.Size(36, 17)
         Me.Set3.TabIndex = 75
         Me.Set3.Text = "Sets"
         '
@@ -311,7 +311,7 @@ Partial Class Form2
         Me.setssemi1.AutoSize = True
         Me.setssemi1.Location = New System.Drawing.Point(767, 115)
         Me.setssemi1.Name = "setssemi1"
-        Me.setssemi1.Size = New System.Drawing.Size(34, 16)
+        Me.setssemi1.Size = New System.Drawing.Size(36, 17)
         Me.setssemi1.TabIndex = 79
         Me.setssemi1.Text = "Sets"
         '
@@ -320,7 +320,7 @@ Partial Class Form2
         Me.setssemi1_1.AutoSize = True
         Me.setssemi1_1.Location = New System.Drawing.Point(767, 293)
         Me.setssemi1_1.Name = "setssemi1_1"
-        Me.setssemi1_1.Size = New System.Drawing.Size(34, 16)
+        Me.setssemi1_1.Size = New System.Drawing.Size(36, 17)
         Me.setssemi1_1.TabIndex = 80
         Me.setssemi1_1.Text = "Sets"
         '
@@ -329,7 +329,7 @@ Partial Class Form2
         Me.setssemi2.AutoSize = True
         Me.setssemi2.Location = New System.Drawing.Point(767, 452)
         Me.setssemi2.Name = "setssemi2"
-        Me.setssemi2.Size = New System.Drawing.Size(34, 16)
+        Me.setssemi2.Size = New System.Drawing.Size(36, 17)
         Me.setssemi2.TabIndex = 81
         Me.setssemi2.Text = "Sets"
         '
@@ -338,7 +338,7 @@ Partial Class Form2
         Me.setssemi2_1.AutoSize = True
         Me.setssemi2_1.Location = New System.Drawing.Point(767, 589)
         Me.setssemi2_1.Name = "setssemi2_1"
-        Me.setssemi2_1.Size = New System.Drawing.Size(34, 16)
+        Me.setssemi2_1.Size = New System.Drawing.Size(36, 17)
         Me.setssemi2_1.TabIndex = 82
         Me.setssemi2_1.Text = "Sets"
         '
@@ -347,7 +347,7 @@ Partial Class Form2
         Me.setsfinal.AutoSize = True
         Me.setsfinal.Location = New System.Drawing.Point(1153, 202)
         Me.setsfinal.Name = "setsfinal"
-        Me.setsfinal.Size = New System.Drawing.Size(34, 16)
+        Me.setsfinal.Size = New System.Drawing.Size(36, 17)
         Me.setsfinal.TabIndex = 83
         Me.setsfinal.Text = "Sets"
         '
@@ -356,7 +356,7 @@ Partial Class Form2
         Me.setsfinal1.AutoSize = True
         Me.setsfinal1.Location = New System.Drawing.Point(1153, 529)
         Me.setsfinal1.Name = "setsfinal1"
-        Me.setsfinal1.Size = New System.Drawing.Size(34, 16)
+        Me.setsfinal1.Size = New System.Drawing.Size(36, 17)
         Me.setsfinal1.TabIndex = 84
         Me.setsfinal1.Text = "Sets"
         '
@@ -365,7 +365,7 @@ Partial Class Form2
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(1310, 4)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(68, 16)
+        Me.Label7.Size = New System.Drawing.Size(72, 17)
         Me.Label7.TabIndex = 85
         Me.Label7.Text = "Ganadora"
         '
@@ -411,6 +411,7 @@ Partial Class Form2
         Me.Controls.Add(Me.txtSemi1)
         Me.Controls.Add(Me.txtcuartos1)
         Me.Name = "Form2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Partidos y resultados"
         Me.ResumeLayout(False)
         Me.PerformLayout()
