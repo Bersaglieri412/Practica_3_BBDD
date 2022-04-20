@@ -74,7 +74,7 @@
     End Sub
 
     Private Sub ListaEdiciones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListaEdiciones.SelectedIndexChanged
-        If Not Me.ListaEdiciones Is Nothing Then
+        If Not Me.ListaEdiciones Is Nothing And Not Me.listaTorneos Is Nothing Then
             Try
                 Me.txtResultado.Text = String.Empty
                 Dim ed As Ediciones
@@ -84,7 +84,7 @@
                 t.buscarID()
                 ed = New Ediciones(Me.ListaEdiciones.SelectedItem.ToString, t)
                 j.leerPosicion(ed)
-                Me.txtResultado.Text = j.posicion
+                establecerPosicion(j)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End Try
@@ -92,4 +92,40 @@
             MsgBox("Debe seleccionar una edición")
         End If
     End Sub
+    Public Function establecerPosicion(j As Jugadora) As String
+        Dim c As Char = j.posicion
+        Select Case c
+            Case "c"
+                If j.id = j.posicionPos Then
+                    Me.txtResultado.Text = "Semifinalista"
+                    Me.txtPuntosObtenidos.Text = "+25"
+                Else
+                    Me.txtResultado.Text = "Cuartofinalista"
+                    Me.txtPuntosObtenidos.Text = "+15"
+
+                End If
+
+            Case "s"
+                If j.id = j.posicionPos Then
+                    Me.txtResultado.Text = "Finalista"
+                    Me.txtPuntosObtenidos.Text = "+50"
+
+                Else
+                    Me.txtResultado.Text = "Semifinalista"
+                    Me.txtPuntosObtenidos.Text = "+25"
+
+                End If
+
+            Case "f"
+                If j.id = j.posicionPos Then
+                    Me.txtResultado.Text = "Ganadora"
+                    Me.txtPuntosObtenidos.Text = "+100"
+
+                Else
+                    Me.txtResultado.Text = "Finalista"
+                    Me.txtPuntosObtenidos.Text = "+50"
+
+                End If
+        End Select
+    End Function
 End Class

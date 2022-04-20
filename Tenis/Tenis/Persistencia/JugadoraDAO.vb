@@ -78,7 +78,7 @@
 
         j.edicionesF = AgenteBD.ObtenerAgente.Leer("Select distinct NombreTorneo, e.Anualidad
 From jugadoras j, torneos t, ediciones e, partidos p, juegos ju
-Where e.torneo = t.idTorneo And p.anualidad = e.anualidad And p.torneo = e.torneo And p.Ronda ='f' and ju.partido=p.idPartido and ju.jugadora='" & j.id & "';")
+Where e.torneo = t.idTorneo And p.anualidad = e.anualidad And p.torneo = e.torneo And p.Ronda ='f' and ju.partido=p.idPartido and ju.jugadora='" & j.id & "' and p.ganadora!='" & j.id & "';")
 
     End Sub
 
@@ -97,10 +97,10 @@ where t.idTorneo='" & t.idTorneo & "' and e.Torneo='" & t.idTorneo & "' and p.an
     End Sub
     Public Sub leerPosicion(j As Jugadora, e As Ediciones)
         Dim col As Collection
-        col = AgenteBD.ObtenerAgente.Leer("select ronda, p.ganadora, max(p.idPartido)
-from ediciones e, partidos p, juegos j
-where e.anualidad='" & e.anualidad & "' and e.torneo='" & e.torneo.idTorneo & "' and e.anualidad=p.anualidad and e.torneo=p.torneo and p.idPartido and j.partido=p.idPartido and j.jugadora='" & j.id & "'
-group by p.Anualidad;")
+        col = AgenteBD.ObtenerAgente.Leer("select ronda, ganadora from partidos where idPartido=(select max(p.idPartido)
+                                            from ediciones e, partidos p, juegos j
+                                            where e.anualidad='" & e.anualidad & "' and e.torneo='" & e.torneo.idTorneo & "' and e.anualidad=p.anualidad and e.torneo=p.torneo and p.idPartido and j.partido=p.idPartido and j.jugadora='" & j.id & "'
+                                            group by e.anualidad);")
         j.posicion = col(1)(1)
         j.posicionPos = col(1)(2)
     End Sub
