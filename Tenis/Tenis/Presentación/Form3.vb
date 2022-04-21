@@ -64,7 +64,7 @@
                 t.buscarID()
                 j.nombre = Me.listaRanking.SelectedItem.ToString
                 j.buscarID()
-                j.leerParticipacionEdiciones(t)
+                Form1.consultas.leerParticipacionEdiciones(j, t)
                 For Each ed In j.JugDAO.edicionesP
                     Me.ListaEdiciones.Items.Add(ed(1))
                 Next
@@ -86,7 +86,7 @@
                 t.nombreTorneo = Me.listaTorneos.SelectedItem.ToString
                 t.buscarID()
                 ed = New Ediciones(Me.ListaEdiciones.SelectedItem.ToString, t)
-                j.leerPosicion(ed)
+                Form1.consultas.leerPosicion(j, ed)
                 establecerPosicion(j)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -137,7 +137,7 @@
             Try
                 j.JugDAO.torneosPa.Clear()
                 Me.ListBox1.Items.Clear()
-                j.leeParticipacionAño(Me.TextBox1.Text)
+                Form1.consultas.leeParticipacionAño(j, Me.TextBox1.Text)
                 For Each p In j.JugDAO.torneosPa
                     Me.ListBox1.Items.Add(p(1))
                 Next
@@ -165,7 +165,7 @@
                 t.nombreTorneo = Me.ListBox1.SelectedItem.ToString
                 t.buscarID()
                 ed = New Ediciones(Me.TextBox1.Text, t)
-                j.leerPosicion(ed)
+                Form1.consultas.leerPosicion(j, ed)
                 establecerPosicion(j)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

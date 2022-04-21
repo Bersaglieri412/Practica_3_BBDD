@@ -70,17 +70,7 @@
         JugDAO.leerParticipaciones(Me)
     End Sub
 
-    Public Sub leerParticipacionEdiciones(t As Torneo)
-        JugDAO.leerParticipacionEdiciones(Me, t)
-    End Sub
 
-    Public Sub leerPosicion(e As Ediciones)
-        JugDAO.leerPosicion(Me, e)
-    End Sub
-
-    Public Sub leeParticipacionAño(a As Integer)
-        Me.JugDAO.leerParticipacionesAño(Me, a)
-    End Sub
     Function compareTo(p As Integer)
         Dim mayor As Boolean
         mayor = False
