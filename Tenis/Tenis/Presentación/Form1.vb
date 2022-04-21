@@ -4,7 +4,9 @@
     Private p As Pais
     Private t As Torneo
     Private ed As Ediciones
+    Public Property consultas As Consultas
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        consultas = New Consultas()
         Dim pAux As Jugadora
         Dim pAux1 As Pais
         Dim paises As Collection
