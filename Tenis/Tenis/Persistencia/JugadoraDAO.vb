@@ -1,8 +1,18 @@
 ﻿Public Class JugadoraDAO
     Public ReadOnly Property Jugadora As Collection
+    Public Property edicionesG As Collection
+    Public Property edicionesF As Collection
+    Public Property torneosP As Collection
+    Public Property edicionesP As Collection
 
+    Public Property torneosPa As Collection
     Public Sub New()
         Me.Jugadora = New Collection
+        Me.torneosPa = New Collection
+        Me.torneosP = New Collection
+        Me.edicionesF = New Collection
+        Me.edicionesG = New Collection
+        Me.edicionesP = New Collection
     End Sub
     Public Sub LeerTodas()
         Jugadora.Clear()
@@ -71,32 +81,32 @@
     End Function
 
     Public Sub leerGanadas(j As Jugadora)
-        j.edicionesG = AgenteBD.ObtenerAgente.Leer("Select distinct NombreTorneo, Anualidad From jugadoras j, torneos t, ediciones e Where e.torneo = t.idTorneo And e.ganadora ='" & j.id & "';")
+        Me.edicionesG = AgenteBD.ObtenerAgente.Leer("Select distinct NombreTorneo, Anualidad From jugadoras j, torneos t, ediciones e Where e.torneo = t.idTorneo And e.ganadora ='" & j.id & "';")
     End Sub
 
     Public Sub leerFinales(j As Jugadora)
 
-        j.edicionesF = AgenteBD.ObtenerAgente.Leer("Select distinct NombreTorneo, e.Anualidad
+        Me.edicionesF = AgenteBD.ObtenerAgente.Leer("Select distinct NombreTorneo, e.Anualidad
 From jugadoras j, torneos t, ediciones e, partidos p, juegos ju
 Where e.torneo = t.idTorneo And p.anualidad = e.anualidad And p.torneo = e.torneo And p.Ronda ='f' and ju.partido=p.idPartido and ju.jugadora='" & j.id & "' and p.ganadora!='" & j.id & "';")
 
     End Sub
 
     Public Sub leerParticipaciones(j As Jugadora)
-        j.torneosP = AgenteBD.ObtenerAgente.Leer("select distinct nombreTorneo 
+        Me.torneosP = AgenteBD.ObtenerAgente.Leer("select distinct nombreTorneo 
 from ediciones e, torneos t, jugadoras j, partidos p, juegos ju 
 where e.Torneo=t.idTorneo and p.anualidad=e.anualidad and p.torneo=e.torneo and ju.partido=p.idPartido and ju.jugadora='" & j.id & "';")
     End Sub
 
     Public Sub leerParticipacionesAño(j As Jugadora, a As Integer)
-        j.torneosPa = AgenteBD.ObtenerAgente.Leer("select distinct nombreTorneo
+        Me.torneosPa = AgenteBD.ObtenerAgente.Leer("select distinct nombreTorneo
 from ediciones e, torneos t, partidos p, juegos j
 where e.torneo=t.idTorneo and e.anualidad='" & a & "' and p.anualidad=e.anualidad and p.torneo=e.torneo and j.partido=p.idPartido and j.jugadora='" & j.id & "';
 ")
     End Sub
     Public Sub leerParticipacionEdiciones(j As Jugadora, t As Torneo)
 
-        j.edicionesP = AgenteBD.ObtenerAgente.Leer("select distinct e.Anualidad, nombreTorneo
+        Me.edicionesP = AgenteBD.ObtenerAgente.Leer("select distinct e.Anualidad, nombreTorneo
 from ediciones e, torneos t, jugadoras j, partidos p, juegos ju 
 where t.idTorneo='" & t.idTorneo & "' and e.Torneo='" & t.idTorneo & "' and p.anualidad=e.anualidad and p.torneo=e.torneo and ju.partido=p.idPartido and ju.jugadora='" & j.id & "';")
 

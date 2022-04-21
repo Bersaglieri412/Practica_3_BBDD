@@ -95,8 +95,8 @@
             Me.ListaTorneosFinalista.Items.Clear()
             Me.j.nombre = listaJugadoras.SelectedItem.ToString
             Try
-                Me.j.edicionesG.Clear()
-                Me.j.edicionesF.Clear()
+                Me.j.JugDAO.edicionesG.Clear()
+                Me.j.JugDAO.edicionesF.Clear()
                 Me.j.buscarID()
                 Me.j.LeerJugadora()
                 Me.j.leerGanadas()
@@ -105,10 +105,10 @@
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End Try
-            For Each aux In j.edicionesG
+            For Each aux In j.JugDAO.edicionesG
                 Me.listaEdicionesGanadas.Items.Add(aux(1) & " " & aux(2))
             Next
-            For Each aux In j.edicionesF
+            For Each aux In j.JugDAO.edicionesF
                 Me.ListaTorneosFinalista.Items.Add(aux(1) & " " & aux(2))
             Next
             Me.TxtID.Text = j.id

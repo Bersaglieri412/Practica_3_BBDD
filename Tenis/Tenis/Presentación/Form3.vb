@@ -3,8 +3,8 @@
 
     Public Sub rellenar()
         Try
-            j.edicionesF.Clear()
-            j.edicionesG.Clear()
+            j.JugDAO.edicionesF.Clear()
+            j.JugDAO.edicionesG.Clear()
             j.leerTodasRanking()
             For Each jug In j.JugDAO.Jugadora
                 Me.listaRanking.Items.Add(jug.nombre)
@@ -26,24 +26,24 @@
             Me.ListaTorneosFinalista.Items.Clear()
             Me.listaEdicionesGanadas.Items.Clear()
             Me.ListBox1.Items.Clear()
-            j.edicionesF.Clear()
-            j.edicionesG.Clear()
-            j.torneosP.Clear()
+            j.JugDAO.edicionesF.Clear()
+            j.JugDAO.edicionesG.Clear()
+            j.JugDAO.torneosP.Clear()
             j.leerFinales()
             j.leerGanadas()
             j.leerParticipaciones()
             Me.txtpuntos.Text = j.puntos
-            Me.txtNfinales.Text = j.edicionesF.Count
-            Me.txtvecesganadora.Text = j.edicionesG.Count
-            Me.txtParticipaciones.Text = j.torneosP.Count
+            Me.txtNfinales.Text = j.JugDAO.edicionesF.Count
+            Me.txtvecesganadora.Text = j.JugDAO.edicionesG.Count
+            Me.txtParticipaciones.Text = j.JugDAO.torneosP.Count
 
-            For Each t In j.edicionesF
+            For Each t In j.JugDAO.edicionesF
                 Me.ListaTorneosFinalista.Items.Add(t(1) & " " & t(2))
             Next
-            For Each t In j.edicionesG
+            For Each t In j.JugDAO.edicionesG
                 Me.listaEdicionesGanadas.Items.Add(t(1) & " " & t(2))
             Next
-            For Each t In j.torneosP
+            For Each t In j.JugDAO.torneosP
                 Me.listaTorneos.Items.Add(t(1))
             Next
 
@@ -57,7 +57,7 @@
         If Not Me.listaRanking.SelectedItem Is Nothing And Not Me.listaTorneos.SelectedItem Is Nothing Then
             Try
                 Me.ListaEdiciones.Items.Clear()
-                j.edicionesP.Clear()
+                j.JugDAO.edicionesP.Clear()
                 Dim t As Torneo
                 t = New Torneo()
                 t.nombreTorneo = Me.listaTorneos.SelectedItem.ToString
@@ -65,7 +65,7 @@
                 j.nombre = Me.listaRanking.SelectedItem.ToString
                 j.buscarID()
                 j.leerParticipacionEdiciones(t)
-                For Each ed In j.edicionesP
+                For Each ed In j.JugDAO.edicionesP
                     Me.ListaEdiciones.Items.Add(ed(1))
                 Next
             Catch ex As Exception
@@ -135,10 +135,10 @@
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         If Not Me.listaRanking.SelectedItem Is Nothing Then
             Try
-                j.torneosPa.Clear()
+                j.JugDAO.torneosPa.Clear()
                 Me.ListBox1.Items.Clear()
                 j.leeParticipacionAño(Me.TextBox1.Text)
-                For Each p In j.torneosPa
+                For Each p In j.JugDAO.torneosPa
                     Me.ListBox1.Items.Add(p(1))
                 Next
             Catch ex As Exception

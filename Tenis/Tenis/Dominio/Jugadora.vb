@@ -6,32 +6,17 @@
     Public Property fechaNacimiento As String
     Public Property posicion As Char
     Public Property posicionPos As Integer
-    Public Property edicionesG As Collection
-    Public Property edicionesF As Collection
-    Public Property torneosP As Collection
-    Public Property edicionesP As Collection
 
-    Public Property torneosPa As Collection
 
     Public ReadOnly Property JugDAO As JugadoraDAO
 
     Public Sub New()
         Me.JugDAO = New JugadoraDAO
-        Me.edicionesG = New Collection
-        Me.edicionesF = New Collection
-        Me.edicionesP = New Collection
-        Me.torneosP = New Collection
-        Me.torneosPa = New Collection
         puntos = 0
     End Sub
 
     Public Sub New(Id As String)
         Me.JugDAO = New JugadoraDAO
-        Me.edicionesG = New Collection
-        Me.edicionesF = New Collection
-        Me.edicionesP = New Collection
-        Me.torneosP = New Collection
-        Me.torneosPa = New Collection
         Me.id = Id
         puntos = 0
     End Sub
@@ -42,11 +27,6 @@
         Me.puntos = puntos
         Me.fechaNacimiento = fechaNacimiento
         Me.JugDAO = New JugadoraDAO
-        Me.edicionesG = New Collection
-        Me.edicionesF = New Collection
-        Me.edicionesP = New Collection
-        Me.torneosP = New Collection
-        Me.torneosPa = New Collection
 
     End Sub
 
