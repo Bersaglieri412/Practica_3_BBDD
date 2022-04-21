@@ -29,9 +29,9 @@
             j.JugDAO.edicionesF.Clear()
             j.JugDAO.edicionesG.Clear()
             j.JugDAO.torneosP.Clear()
-            j.leerFinales()
-            j.leerGanadas()
-            j.leerParticipaciones()
+            Form1.consultas.leerFinales(j)
+            Form1.consultas.leerGanadas(j)
+            Form1.consultas.leerParticipaciones(j)
             Me.txtpuntos.Text = j.puntos
             Me.txtNfinales.Text = j.JugDAO.edicionesF.Count
             Me.txtvecesganadora.Text = j.JugDAO.edicionesG.Count

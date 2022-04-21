@@ -101,8 +101,8 @@
                 Me.j.JugDAO.edicionesF.Clear()
                 Me.j.buscarID()
                 Me.j.LeerJugadora()
-                Me.j.leerGanadas()
-                Me.j.leerFinales()
+                Me.consultas.leerGanadas(j)
+                Me.consultas.leerFinales(j)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
