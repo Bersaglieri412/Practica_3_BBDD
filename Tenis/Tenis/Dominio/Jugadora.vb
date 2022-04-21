@@ -63,18 +63,6 @@
         Me.JugDAO.buscarID(Me)
     End Function
 
-    Public Sub leerGanadas()
-        JugDAO.leerGanadas(Me)
-    End Sub
-
-    Public Sub leerFinales()
-        JugDAO.leerFinales(Me)
-    End Sub
-
-    Public Sub leerParticipaciones()
-        JugDAO.leerParticipaciones(Me)
-    End Sub
-
     Function compareTo(p As Integer)
         Dim mayor As Boolean
         mayor = False

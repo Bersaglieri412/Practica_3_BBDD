@@ -2,8 +2,16 @@
     'Lo mismo que resultados pero para otras cosas en específico
 
     ' Clase Jugadora
-    Public Sub leerParticipaciones()
-        JugDAO.leerParticipaciones(Me)
+    Public Sub leerGanadas(j As Jugadora)
+        j.JugDAO.leerGanadas(j)
+    End Sub
+
+    Public Sub leerFinales(j As Jugadora)
+        j.JugDAO.leerFinales(j)
+    End Sub
+
+    Public Sub leerParticipaciones(j As Jugadora)
+        j.JugDAO.leerParticipaciones(j)
     End Sub
 
     Public Sub leerParticipacionEdiciones(j As Jugadora, t As Torneo)
@@ -17,8 +25,6 @@
     Public Sub leeParticipacionAño(j As Jugadora, a As Integer)
         j.JugDAO.leerParticipacionesAño(j, a)
     End Sub
-
-    ' Clase 
 
 
 End Class
