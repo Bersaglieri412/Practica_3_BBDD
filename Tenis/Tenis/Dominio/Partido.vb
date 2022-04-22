@@ -39,6 +39,9 @@
     Public Function BorrarPartido() As Integer
         Return Me.ParDAO.Borrar(Me)
     End Function
+    Public Function buscarID()
+        Me.ParDAO.buscarID(Me)
+    End Function
 
     Public Sub celebrarPartido(j As Jugadora, j1 As Jugadora, r As Char)
         sets = New Collection()

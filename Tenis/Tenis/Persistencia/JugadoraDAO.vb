@@ -5,6 +5,7 @@
     Public Property torneosP As Collection
     Public Property edicionesP As Collection
 
+    Public Property anosParticicion As Collection
     Public Property torneosPa As Collection
     Public Sub New()
         Me.Jugadora = New Collection
@@ -13,6 +14,7 @@
         Me.edicionesF = New Collection
         Me.edicionesG = New Collection
         Me.edicionesP = New Collection
+        Me.anosParticicion = New Collection
     End Sub
     Public Sub LeerTodas()
         Jugadora.Clear()
@@ -119,6 +121,18 @@ where t.idTorneo='" & t.idTorneo & "' and e.Torneo='" & t.idTorneo & "' and p.an
                                             group by e.anualidad);")
         j.posicion = col(1)(1)
         j.posicionPos = col(1)(2)
+    End Sub
+
+    Public Sub leerAnos(j As Jugadora)
+        Me.anosParticicion.Clear()
+        Dim col As Collection
+        col = AgenteBD.ObtenerAgente.Leer("select distinct e.anualidad
+from ediciones e, torneos t, partidos p, juegos j
+where  p.anualidad=e.anualidad and p.torneo=e.torneo and j.partido=p.idPartido and j.jugadora='" & j.id & "'
+order by e.anualidad;")
+        For Each a In col
+            Me.anosParticicion.Add(a(1))
+        Next
     End Sub
 
 End Class

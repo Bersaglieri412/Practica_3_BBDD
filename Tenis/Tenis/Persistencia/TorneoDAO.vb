@@ -2,6 +2,7 @@
     Public ReadOnly Property Torneo As Collection
     Public ReadOnly Property Ediciones As Collection
     Public ReadOnly Property ganadoras As Collection
+
     Public Sub New()
         Me.Torneo = New Collection
         Me.Ediciones = New Collection
@@ -44,18 +45,9 @@
             p.idTorneo = aux(1).ToString
         Next
     End Sub
-
-    Public Sub buscarIDPartido(ByRef p As Partido)
-        Dim col As Collection : Dim aux As Collection
-        col = AgenteBD.ObtenerAgente.Leer("Select idPartido from partidos where anualidad='" & p.edicion.anualidad & "' and ganadora='" & p.ganadora.id & "' and ronda='" & p.ronda & "';")
-        For Each aux In col
-            p.idPartido = aux(1).ToString
-        Next
-    End Sub
     Public Sub leerEdiciones(ByRef p As Torneo)
         Dim e As Ediciones
         Dim cole, auxe As Collection
-        Dim contador As Integer
         Ediciones.Clear()
         cole = AgenteBD.ObtenerAgente().Leer("Select * from ediciones where Torneo='" & p.idTorneo & "'")
         For Each auxe In cole
@@ -65,8 +57,6 @@
             leerPartidos(e)
             Me.Ediciones.Add(e)
         Next
-        p.ediciones = Ediciones
-
     End Sub
     Public Function Insertar(ByVal p As Torneo) As Integer
         Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Torneos(nombreTorneo,ciudadTorneo,paisTorneo) VALUES ('" & p.nombreTorneo.ToString & "', '" & p.ciudadTorneo.ToString & "', '" & p.paisTorneo.id.ToString & "');")
@@ -89,7 +79,7 @@
 
     Public Function insertarEdicion(e As Ediciones)
         Dim r As Integer
-
+        Me.Ediciones.Add(e)
         If AgenteBD.ObtenerAgente.Modificar("INSERT INTO Ediciones (anualidad,torneo,ganadora) VALUES ('" & e.anualidad & "','" & e.torneo.idTorneo & "','" & e.ganadora.id & "');") <> 1 Then
             Return 0
             Exit Function
@@ -99,7 +89,7 @@
                 Return 0
                 Exit Function
             End If
-            buscarIDPartido(p)
+            p.buscarID()
             For Each s In p.sets
                 If Not s.set3 Is Nothing Then
                     If AgenteBD.ObtenerAgente.Modificar("Insert INTO Juegos(Jugadora,Partido,SET1,SET2,SET3) Values('" & s.jugadora.id & "', '" & p.idPartido.ToString & "', '" & s.set1.ToString & "' ,'" & s.set2.ToString & "', '" & s.set3.ToString & "');") <> 1 Then

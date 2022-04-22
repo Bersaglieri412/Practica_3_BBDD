@@ -24,8 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.listaGanadoras = New System.Windows.Forms.ListBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtAnoEdicion = New System.Windows.Forms.TextBox()
         Me.txtCiudadTorneo = New System.Windows.Forms.TextBox()
@@ -85,8 +83,6 @@ Partial Class Form1
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.listaGanadoras)
-        Me.TabPage3.Controls.Add(Me.Label3)
         Me.TabPage3.Controls.Add(Me.Label2)
         Me.TabPage3.Controls.Add(Me.txtAnoEdicion)
         Me.TabPage3.Controls.Add(Me.txtCiudadTorneo)
@@ -113,31 +109,11 @@ Partial Class Form1
         Me.TabPage3.Text = "TORNEO"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'listaGanadoras
-        '
-        Me.listaGanadoras.Cursor = System.Windows.Forms.Cursors.Default
-        Me.listaGanadoras.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.listaGanadoras.FormattingEnabled = True
-        Me.listaGanadoras.ItemHeight = 16
-        Me.listaGanadoras.Location = New System.Drawing.Point(160, 236)
-        Me.listaGanadoras.Name = "listaGanadoras"
-        Me.listaGanadoras.Size = New System.Drawing.Size(124, 132)
-        Me.listaGanadoras.TabIndex = 40
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(157, 214)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 16)
-        Me.Label3.TabIndex = 39
-        Me.Label3.Text = "Ganadoras"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(308, 260)
+        Me.Label2.Location = New System.Drawing.Point(370, 261)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(34, 16)
         Me.Label2.TabIndex = 38
@@ -145,35 +121,35 @@ Partial Class Form1
         '
         'txtAnoEdicion
         '
-        Me.txtAnoEdicion.Location = New System.Drawing.Point(369, 260)
+        Me.txtAnoEdicion.Location = New System.Drawing.Point(431, 261)
         Me.txtAnoEdicion.Name = "txtAnoEdicion"
         Me.txtAnoEdicion.Size = New System.Drawing.Size(100, 22)
         Me.txtAnoEdicion.TabIndex = 37
         '
         'txtCiudadTorneo
         '
-        Me.txtCiudadTorneo.Location = New System.Drawing.Point(369, 136)
+        Me.txtCiudadTorneo.Location = New System.Drawing.Point(431, 137)
         Me.txtCiudadTorneo.Name = "txtCiudadTorneo"
         Me.txtCiudadTorneo.Size = New System.Drawing.Size(171, 22)
         Me.txtCiudadTorneo.TabIndex = 25
         '
         'txtNombreTorneo
         '
-        Me.txtNombreTorneo.Location = New System.Drawing.Point(369, 88)
+        Me.txtNombreTorneo.Location = New System.Drawing.Point(431, 89)
         Me.txtNombreTorneo.Name = "txtNombreTorneo"
         Me.txtNombreTorneo.Size = New System.Drawing.Size(171, 22)
         Me.txtNombreTorneo.TabIndex = 22
         '
         'txtIDTorneo
         '
-        Me.txtIDTorneo.Location = New System.Drawing.Point(369, 39)
+        Me.txtIDTorneo.Location = New System.Drawing.Point(431, 40)
         Me.txtIDTorneo.Name = "txtIDTorneo"
         Me.txtIDTorneo.Size = New System.Drawing.Size(171, 22)
         Me.txtIDTorneo.TabIndex = 21
         '
         'generarEdicion
         '
-        Me.generarEdicion.Location = New System.Drawing.Point(369, 298)
+        Me.generarEdicion.Location = New System.Drawing.Point(431, 299)
         Me.generarEdicion.Name = "generarEdicion"
         Me.generarEdicion.Size = New System.Drawing.Size(100, 52)
         Me.generarEdicion.TabIndex = 36
@@ -183,7 +159,7 @@ Partial Class Form1
         'cbPaisTorneo
         '
         Me.cbPaisTorneo.FormattingEnabled = True
-        Me.cbPaisTorneo.Location = New System.Drawing.Point(369, 191)
+        Me.cbPaisTorneo.Location = New System.Drawing.Point(431, 192)
         Me.cbPaisTorneo.Name = "cbPaisTorneo"
         Me.cbPaisTorneo.Size = New System.Drawing.Size(171, 24)
         Me.cbPaisTorneo.TabIndex = 35
@@ -193,9 +169,9 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(31, 214)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 16)
+        Me.Label1.Size = New System.Drawing.Size(146, 16)
         Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Ediciones"
+        Me.Label1.Text = "Ediciones y ganadoras"
         '
         'listaEdiciones
         '
@@ -203,9 +179,9 @@ Partial Class Form1
         Me.listaEdiciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.listaEdiciones.FormattingEnabled = True
         Me.listaEdiciones.ItemHeight = 16
-        Me.listaEdiciones.Location = New System.Drawing.Point(31, 236)
+        Me.listaEdiciones.Location = New System.Drawing.Point(12, 240)
         Me.listaEdiciones.Name = "listaEdiciones"
-        Me.listaEdiciones.Size = New System.Drawing.Size(110, 132)
+        Me.listaEdiciones.Size = New System.Drawing.Size(352, 132)
         Me.listaEdiciones.TabIndex = 33
         '
         'btnLimpiarTorneo
@@ -252,7 +228,7 @@ Partial Class Form1
         '
         Me.lblPaisTorneo.AutoSize = True
         Me.lblPaisTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPaisTorneo.Location = New System.Drawing.Point(305, 190)
+        Me.lblPaisTorneo.Location = New System.Drawing.Point(367, 191)
         Me.lblPaisTorneo.Name = "lblPaisTorneo"
         Me.lblPaisTorneo.Size = New System.Drawing.Size(38, 16)
         Me.lblPaisTorneo.TabIndex = 24
@@ -262,7 +238,7 @@ Partial Class Form1
         '
         Me.lblCiudadTorneo.AutoSize = True
         Me.lblCiudadTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCiudadTorneo.Location = New System.Drawing.Point(286, 136)
+        Me.lblCiudadTorneo.Location = New System.Drawing.Point(348, 137)
         Me.lblCiudadTorneo.Name = "lblCiudadTorneo"
         Me.lblCiudadTorneo.Size = New System.Drawing.Size(56, 16)
         Me.lblCiudadTorneo.TabIndex = 23
@@ -272,7 +248,7 @@ Partial Class Form1
         '
         Me.lblNombreTorneo.AutoSize = True
         Me.lblNombreTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreTorneo.Location = New System.Drawing.Point(280, 88)
+        Me.lblNombreTorneo.Location = New System.Drawing.Point(342, 89)
         Me.lblNombreTorneo.Name = "lblNombreTorneo"
         Me.lblNombreTorneo.Size = New System.Drawing.Size(62, 16)
         Me.lblNombreTorneo.TabIndex = 20
@@ -282,7 +258,7 @@ Partial Class Form1
         '
         Me.lblIDTorneo.AutoSize = True
         Me.lblIDTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIDTorneo.Location = New System.Drawing.Point(321, 42)
+        Me.lblIDTorneo.Location = New System.Drawing.Point(383, 43)
         Me.lblIDTorneo.Name = "lblIDTorneo"
         Me.lblIDTorneo.Size = New System.Drawing.Size(22, 16)
         Me.lblIDTorneo.TabIndex = 19
@@ -660,8 +636,6 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents listaGanadoras As ListBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txtAnoEdicion As TextBox
     Friend WithEvents txtCiudadTorneo As TextBox

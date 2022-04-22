@@ -79,11 +79,9 @@
   <ItemGroup>
     <Compile Include="Dominio\Consultas.vb" />
     <Compile Include="Dominio\Ediciones.vb" />
-    <Compile Include="Dominio\Juegos.vb" />
     <Compile Include="Dominio\Jugadora.vb" />
     <Compile Include="Dominio\Pais.vb" />
     <Compile Include="Dominio\Partido.vb" />
-    <Compile Include="Dominio\Resultados.vb" />
     <Compile Include="Dominio\Sets.vb" />
     <Compile Include="Dominio\Torneo.vb" />
     <Compile Include="Persistencia\AgenteBD.vb" />

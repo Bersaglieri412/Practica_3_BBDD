@@ -17,7 +17,7 @@
 
     Private Sub listaRanking_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaRanking.SelectedIndexChanged
         Try
-            Me.TextBox1.ReadOnly = False
+            Me.cbAños.Items.Clear()
             Me.j.nombre = Me.listaRanking.SelectedItem.ToString
             j.buscarID()
             j.LeerJugadora()
@@ -36,6 +36,10 @@
             Me.txtNfinales.Text = j.JugDAO.edicionesF.Count
             Me.txtvecesganadora.Text = j.JugDAO.edicionesG.Count
             Me.txtParticipaciones.Text = j.JugDAO.torneosP.Count
+            Form1.consultas.leerParticipacionAnos(j)
+            For Each a In j.JugDAO.anosParticicion
+                Me.cbAños.Items.Add(a.ToString)
+            Next
 
             For Each t In j.JugDAO.edicionesF
                 Me.ListaTorneosFinalista.Items.Add(t(1) & " " & t(2))
@@ -132,30 +136,13 @@
         End Select
     End Function
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        If Not Me.listaRanking.SelectedItem Is Nothing Then
-            Try
-                j.JugDAO.torneosPa.Clear()
-                Me.ListBox1.Items.Clear()
-                Form1.consultas.leeParticipacionAño(j, Me.TextBox1.Text)
-                For Each p In j.JugDAO.torneosPa
-                    Me.ListBox1.Items.Add(p(1))
-                Next
-            Catch ex As Exception
-
-            End Try
-        Else
-            MsgBox("Debe seleccionar antes una jugadora")
-        End If
-
-    End Sub
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.TextBox1.ReadOnly = True
+        Me.cbAños.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        If Not Me.ListBox1 Is Nothing And Not Me.TextBox1 Is Nothing Then
+        If Not Me.cbAños.SelectedItem Is Nothing And Not Me.cbAños.SelectedItem Is Nothing Then
             Try
                 Me.txtResultado.Text = String.Empty
                 Me.txtPuntosObtenidos.Text = String.Empty
@@ -164,7 +151,7 @@
                 t = New Torneo()
                 t.nombreTorneo = Me.ListBox1.SelectedItem.ToString
                 t.buscarID()
-                ed = New Ediciones(Me.TextBox1.Text, t)
+                ed = New Ediciones(Me.cbAños.SelectedItem.ToString, t)
                 Form1.consultas.leerPosicion(j, ed)
                 establecerPosicion(j)
             Catch ex As Exception
@@ -175,9 +162,22 @@
         End If
     End Sub
 
-    Private Sub listaEdicionesGanadas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaEdicionesGanadas.SelectedIndexChanged
-        Dim s As String = Me.listaEdicionesGanadas.SelectedItem
-        Dim c() As Object = Split(s, " ")
-        Me.listaTorneos.SelectedIndex = Me.listaTorneos.Items.IndexOf(c(1))
+    Private Sub cbAños_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAños.SelectedIndexChanged
+        If Not Me.listaRanking.SelectedItem Is Nothing Then
+            If Not Me.cbAños.SelectedItem Is Nothing Then
+                Try
+                    j.JugDAO.torneosPa.Clear()
+                    Me.ListBox1.Items.Clear()
+                    Form1.consultas.leeParticipacionAño(j, Me.cbAños.SelectedItem.ToString)
+                    For Each p In j.JugDAO.torneosPa
+                        Me.ListBox1.Items.Add(p(1))
+                    Next
+                Catch ex As Exception
+
+                End Try
+            End If
+        Else
+                MsgBox("Debe seleccionar antes una jugadora")
+        End If
     End Sub
 End Class

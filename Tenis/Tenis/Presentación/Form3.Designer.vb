@@ -50,10 +50,10 @@ Partial Class Form3
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.cbAños = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -73,7 +73,7 @@ Partial Class Form3
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(54, 73)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 17)
+        Me.Label1.Size = New System.Drawing.Size(60, 16)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Ranking:"
         '
@@ -82,7 +82,7 @@ Partial Class Form3
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(271, 266)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 17)
+        Me.Label5.Size = New System.Drawing.Size(57, 16)
         Me.Label5.TabIndex = 80
         Me.Label5.Text = "Finalista"
         '
@@ -91,7 +91,7 @@ Partial Class Form3
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(57, 269)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(66, 17)
+        Me.Label4.Size = New System.Drawing.Size(63, 16)
         Me.Label4.TabIndex = 79
         Me.Label4.Text = "Ganadas"
         '
@@ -106,6 +106,7 @@ Partial Class Form3
         '
         'listaEdicionesGanadas
         '
+        Me.listaEdicionesGanadas.Cursor = System.Windows.Forms.Cursors.Default
         Me.listaEdicionesGanadas.FormattingEnabled = True
         Me.listaEdicionesGanadas.ItemHeight = 16
         Me.listaEdicionesGanadas.Location = New System.Drawing.Point(57, 291)
@@ -126,7 +127,7 @@ Partial Class Form3
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(273, 98)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(112, 17)
+        Me.Label2.Size = New System.Drawing.Size(108, 16)
         Me.Label2.TabIndex = 82
         Me.Label2.Text = "Veces ganadora"
         '
@@ -143,7 +144,7 @@ Partial Class Form3
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(260, 143)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(126, 17)
+        Me.Label3.Size = New System.Drawing.Size(121, 16)
         Me.Label3.TabIndex = 84
         Me.Label3.Text = "Finales disputadas"
         '
@@ -160,7 +161,7 @@ Partial Class Form3
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(333, 218)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 17)
+        Me.Label6.Size = New System.Drawing.Size(48, 16)
         Me.Label6.TabIndex = 86
         Me.Label6.Text = "Puntos"
         '
@@ -187,7 +188,7 @@ Partial Class Form3
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(27, 28)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(124, 17)
+        Me.Label7.Size = New System.Drawing.Size(117, 16)
         Me.Label7.TabIndex = 89
         Me.Label7.Text = "Ha participado en:"
         '
@@ -196,7 +197,7 @@ Partial Class Form3
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(27, 148)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(73, 17)
+        Me.Label8.Size = New System.Drawing.Size(70, 16)
         Me.Label8.TabIndex = 90
         Me.Label8.Text = "Ediciones:"
         '
@@ -205,7 +206,7 @@ Partial Class Form3
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(868, 98)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(76, 17)
+        Me.Label9.Size = New System.Drawing.Size(72, 16)
         Me.Label9.TabIndex = 91
         Me.Label9.Text = "Resultado:"
         '
@@ -230,7 +231,7 @@ Partial Class Form3
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(826, 146)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(122, 17)
+        Me.Label10.Size = New System.Drawing.Size(114, 16)
         Me.Label10.TabIndex = 93
         Me.Label10.Text = "Puntos obtenidos:"
         '
@@ -239,7 +240,7 @@ Partial Class Form3
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(236, 184)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(156, 17)
+        Me.Label11.Size = New System.Drawing.Size(148, 16)
         Me.Label11.TabIndex = 96
         Me.Label11.Text = "Participaciones torneos"
         '
@@ -283,10 +284,10 @@ Partial Class Form3
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.cbAños)
         Me.TabPage1.Controls.Add(Me.Label13)
         Me.TabPage1.Controls.Add(Me.ListBox1)
         Me.TabPage1.Controls.Add(Me.Label12)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Size = New System.Drawing.Size(208, 278)
@@ -294,12 +295,20 @@ Partial Class Form3
         Me.TabPage1.Text = "Vista anual"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'cbAños
+        '
+        Me.cbAños.FormattingEnabled = True
+        Me.cbAños.Location = New System.Drawing.Point(86, 32)
+        Me.cbAños.Name = "cbAños"
+        Me.cbAños.Size = New System.Drawing.Size(100, 24)
+        Me.cbAños.TabIndex = 4
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(52, 88)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(61, 17)
+        Me.Label13.Size = New System.Drawing.Size(58, 16)
         Me.Label13.TabIndex = 3
         Me.Label13.Text = "Torneos"
         '
@@ -307,9 +316,9 @@ Partial Class Form3
         '
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 16
-        Me.ListBox1.Location = New System.Drawing.Point(52, 122)
+        Me.ListBox1.Location = New System.Drawing.Point(55, 122)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(120, 84)
+        Me.ListBox1.Size = New System.Drawing.Size(131, 84)
         Me.ListBox1.TabIndex = 2
         '
         'Label12
@@ -317,16 +326,9 @@ Partial Class Form3
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(49, 35)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(33, 17)
+        Me.Label12.Size = New System.Drawing.Size(31, 16)
         Me.Label12.TabIndex = 1
         Me.Label12.Text = "Año"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(86, 32)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 0
         '
         'Form3
         '
@@ -395,5 +397,5 @@ Partial Class Form3
     Friend WithEvents Label13 As Label
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents cbAños As ComboBox
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class Sets 'Lo mismo que la tabla juegos de la bd
+﻿Public Class Sets 'Lo mismo que la tabla juegos de la base de datos
     Public Property set1 As Integer
     Public Property set2 As Integer
     Public Property set3 As Integer

@@ -19,7 +19,7 @@
         Me.listaEdiciones.Items.Clear()
         Me.listaPaises.Items.Clear()
         Me.listaTorneos.Items.Clear()
-        Me.listaGanadoras.Items.Clear()
+
         Me.generarEdicion.Enabled = False
         Me.txtAnoEdicion.Enabled = False
         Me.TxtID.Enabled = False
@@ -202,7 +202,6 @@
             Me.btnLimpiarTorneo.Enabled = True
             Me.btnEliminarTorneo.Enabled = True
             Me.listaEdiciones.Items.Clear()
-            Me.listaGanadoras.Items.Clear()
             Me.btnAnadirTorneo.Enabled = False
             Me.generarEdicion.Enabled = True
             Me.txtAnoEdicion.Enabled = True
@@ -211,17 +210,15 @@
             Dim ed As Ediciones
             Try
                 Me.t.buscarID()
-                Me.t.ediciones.Clear()
-                Me.t.TorDAO.ganadoras.Clear()
+                Me.t.TorDAO.Ediciones.Clear()
                 Me.t.LeerJugadora()
                 Me.t.paisTorneo.LeerPais()
                 Me.t.leerGanadoras()
+                Dim i As Integer = 0
 
-                For Each ed In Me.t.ediciones
-                    Me.listaEdiciones.Items.Add(ed.anualidad.ToString)
-                Next
-                For Each g In Me.t.TorDAO.ganadoras
-                    Me.listaGanadoras.Items.Add(g.ToString)
+                For Each ed In Me.t.TorDAO.Ediciones
+                    ed.ganadora.LeerJugadora()
+                    Me.listaEdiciones.Items.Add(ed.anualidad.ToString & " Ganadora:" & ed.ganadora.nombre)
                 Next
 
             Catch ex As Exception
@@ -242,7 +239,6 @@
         Me.txtNombreTorneo.Clear()
         Me.cbPaisTorneo.BringToFront()
         Me.listaEdiciones.Items.Clear()
-        Me.listaGanadoras.Items.Clear()
         Me.listaTorneos.ClearSelected()
         Me.btnModificarTorneo.Enabled = False
         Me.btnLimpiarTorneo.Enabled = False
@@ -444,32 +440,39 @@
 
     Private Sub generarEdicion_Click(sender As Object, e As EventArgs) Handles generarEdicion.Click
         If Me.txtAnoEdicion.Text <> String.Empty Then
-            Dim tor As Torneo
-            tor = New Torneo(Me.txtIDTorneo.Text)
             Try
-                If tor.añadirEdicion(Me.txtAnoEdicion.Text) <> 1 Then
-                    MessageBox.Show("INSERT return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                    Exit Sub
+                If Me.txtAnoEdicion.Text.ToString < 1900 And Me.txtAnoEdicion.Text.ToString > 2100 Then
+                    Dim tor As Torneo
+                    tor = New Torneo(Me.txtIDTorneo.Text)
+
+                    If consultas.añadirEdicion(tor, Me.txtAnoEdicion.Text) <> 1 Then
+                        MessageBox.Show("INSERT return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        Exit Sub
+                    End If
+                    Form1_Load(sender, e)
+                    If MsgBox("Gandora: " & tor.TorDAO.Ediciones(tor.TorDAO.Ediciones.Count).ganadora.nombre & Environment.NewLine & "Total puntos: " & tor.TorDAO.Ediciones(tor.TorDAO.Ediciones.Count).ganadora.puntos & Environment.NewLine & "¿Desea ver el árbol de partidos detallado?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                        Form2.rellenar(tor.TorDAO.Ediciones(tor.TorDAO.Ediciones.Count))
+                        Form2.Visible = True
+                    End If
+
+
+                Else
+                    MsgBox("El año debe estar comprendido entre 1900 y 2100", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 End If
             Catch ex As Exception
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End Try
-            Form1_Load(sender, e)
-            If MsgBox("Gandora: " & tor.ediciones(tor.ediciones.Count).ganadora.nombre & Environment.NewLine & "Total puntos: " & tor.ediciones(tor.ediciones.Count).ganadora.puntos & Environment.NewLine & "¿Desea ver el árbol de partidos detallado?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                Form2.rellenar(tor.ediciones(tor.ediciones.Count))
-                Form2.Visible = True
-            End If
         Else
-                MsgBox("Debes poner un valor en el campo año")
+            MsgBox("Debes poner un valor en el campo año")
         End If
 
     End Sub
 
     Private Sub listaEdiciones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaEdiciones.SelectedIndexChanged
 
-        For Each edicion In t.ediciones
-            If edicion.anualidad = Me.listaEdiciones.SelectedItem.ToString Then
+        For Each edicion In t.TorDAO.Ediciones
+            If edicion.anualidad = Me.listaEdiciones.SelectedItem.ToString.Split.ToArray(0) Then
                 ed = edicion
                 Exit For
             End If
@@ -483,4 +486,6 @@
         Form3.rellenar()
         Form3.Visible = True
     End Sub
+
+
 End Class

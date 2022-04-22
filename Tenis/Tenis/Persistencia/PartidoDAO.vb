@@ -22,7 +22,15 @@
         Dim col As Collection : Dim aux As Collection
         col = AgenteBD.ObtenerAgente.Leer("SELECT * FROM Partidos WHERE IdPartido='" & p.idPartido & "';")
         For Each aux In col
-            p.idPartido= aux(2).ToString
+            p.idPartido = aux(2).ToString
+        Next
+    End Sub
+
+    Public Sub buscarID(ByRef p As Partido)
+        Dim col As Collection : Dim aux As Collection
+        col = AgenteBD.ObtenerAgente.Leer("Select idPartido from partidos where anualidad='" & p.edicion.anualidad & "' and ganadora='" & p.ganadora.id & "' and ronda='" & p.ronda & "';")
+        For Each aux In col
+            p.idPartido = aux(1).ToString
         Next
     End Sub
 

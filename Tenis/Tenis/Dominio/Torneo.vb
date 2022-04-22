@@ -3,19 +3,17 @@
     Public Property nombreTorneo As String
     Public Property ciudadTorneo As String
     Public Property paisTorneo As Pais
-    Public Property ediciones As Collection 'Debe tener un conjunto de ediciones
+    'Debe tener un conjunto de ediciones
 
     Public ReadOnly Property TorDAO As TorneoDAO
 
     Public Sub New()
         Me.TorDAO = New TorneoDAO
-        Me.ediciones = New Collection
     End Sub
 
     Public Sub New(Id As Integer)
         Me.TorDAO = New TorneoDAO
         Me.idTorneo = Id
-        Me.ediciones = New Collection
     End Sub
 
     Public Sub LeerTodasPersonas()
@@ -46,10 +44,6 @@
     Public Function BorrarJugadora() As Integer
         Return Me.TorDAO.Borrar(Me)
     End Function
-    Public Function añadirEdicion(a As Integer)
-        ediciones.Add(New Ediciones(a, Me))
-        ediciones(ediciones.Count).generarEdicion()
-        Return TorDAO.insertarEdicion(ediciones(ediciones.Count))
-    End Function
+
 
 End Class

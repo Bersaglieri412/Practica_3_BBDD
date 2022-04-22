@@ -26,5 +26,14 @@
         j.JugDAO.leerParticipacionesAño(j, a)
     End Sub
 
+    Public Sub leerParticipacionAnos(j As Jugadora)
+        j.JugDAO.leerAnos(j)
+    End Sub
+
+    Public Function añadirEdicion(t As Torneo, a As Integer)
+        Dim ed As Ediciones = New Ediciones(a, t)
+        ed.generarEdicion()
+        Return t.TorDAO.insertarEdicion(ed)
+    End Function
 
 End Class
