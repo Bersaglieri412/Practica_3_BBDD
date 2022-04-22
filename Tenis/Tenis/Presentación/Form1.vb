@@ -347,6 +347,17 @@
     End Sub
 
     Private Sub txtNombrePais_TextChanged(sender As Object, e As EventArgs) Handles txtNombrePais.TextChanged
+        If Not Me.txtNombrePais.Text = String.Empty Then
+            If Not comprobarLetras(Me.txtNombrePais.Text.ToCharArray.GetValue(Me.txtNombrePais.Text.Length - 1)) Then
+                If Me.txtNombrePais.Text.Length = 1 Then
+                    Me.txtNombrePais.Text = String.Empty
+
+                Else
+                    Me.txtNombrePais.Text = Me.txtNombrePais.Text.Substring(0, Me.txtNombrePais.Text.Length - 1)
+                End If
+                MsgBox("El campo nombre no puede contener cifras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        End If
         If Len(Me.txtNombrePais.Text) < 3 Then
             Me.txtIDPais.Text = Me.txtNombrePais.Text.Substring(0, Len(Me.txtNombrePais.Text)).ToUpper
         Else
@@ -441,7 +452,7 @@
     Private Sub generarEdicion_Click(sender As Object, e As EventArgs) Handles generarEdicion.Click
         If Me.txtAnoEdicion.Text <> String.Empty Then
             Try
-                If Me.txtAnoEdicion.Text.ToString < 1900 And Me.txtAnoEdicion.Text.ToString > 2100 Then
+                If Convert.ToInt32(Me.txtAnoEdicion.Text) > 1900 And Convert.ToInt32(Me.txtAnoEdicion.Text) < 2100 Then
                     Dim tor As Torneo
                     tor = New Torneo(Me.txtIDTorneo.Text)
 
@@ -487,5 +498,59 @@
         Form3.Visible = True
     End Sub
 
+    Private Sub txtAnoEdicion_TextChanged(sender As Object, e As EventArgs) Handles txtAnoEdicion.TextChanged
+        If Me.txtAnoEdicion.Text.Length > 4 Then
+            Me.txtAnoEdicion.Text = Me.txtAnoEdicion.Text.Substring(0, 4)
+            MsgBox("El campo año no debe tener más de 4 cifras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 
+    Private Sub txtCiudadTorneo_TextChanged(sender As Object, e As EventArgs) Handles txtCiudadTorneo.TextChanged
+        If Not Me.txtCiudadTorneo.Text = String.Empty Then
+            If Not comprobarLetras(Me.txtCiudadTorneo.Text.ToCharArray.GetValue(Me.txtCiudadTorneo.Text.Length - 1)) Then
+                If Me.txtCiudadTorneo.Text.Length = 1 Then
+                    Me.txtCiudadTorneo.Text = String.Empty
+
+                Else
+                    Me.txtCiudadTorneo.Text = Me.txtCiudadTorneo.Text.Substring(0, Me.txtCiudadTorneo.Text.Length - 1)
+                End If
+                MsgBox("El campo ciudad no puede contener cifras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        End If
+    End Sub
+    Private Function comprobarLetras(c As Char) As Boolean
+        If IsNumeric(c) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Private Sub txtNombreTorneo_TextChanged(sender As Object, e As EventArgs) Handles txtNombreTorneo.TextChanged
+        If Not Me.txtNombreTorneo.Text = String.Empty Then
+            If Not comprobarLetras(Me.txtNombreTorneo.Text.ToCharArray.GetValue(Me.txtNombreTorneo.Text.Length - 1)) Then
+                If Me.txtNombreTorneo.Text.Length = 1 Then
+                    Me.txtNombreTorneo.Text = String.Empty
+
+                Else
+                    Me.txtNombreTorneo.Text = Me.txtNombreTorneo.Text.Substring(0, Me.txtNombreTorneo.Text.Length - 1)
+                End If
+                MsgBox("El campo nombre no puede contener cifras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        End If
+    End Sub
+
+    Private Sub txtNombreJugadora_TextChanged(sender As Object, e As EventArgs) Handles txtNombreJugadora.TextChanged
+        If Not Me.txtNombreJugadora.Text = String.Empty Then
+            If Not comprobarLetras(Me.txtNombreJugadora.Text.ToCharArray.GetValue(Me.txtNombreJugadora.Text.Length - 1)) Then
+                If Me.txtNombreJugadora.Text.Length = 1 Then
+                    Me.txtNombreJugadora.Text = String.Empty
+
+                Else
+                    Me.txtNombreJugadora.Text = Me.txtNombreJugadora.Text.Substring(0, Me.txtNombreJugadora.Text.Length - 1)
+                End If
+                MsgBox("El campo nombre no puede contener cifras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        End If
+    End Sub
 End Class

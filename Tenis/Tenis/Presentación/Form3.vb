@@ -142,7 +142,7 @@
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        If Not Me.cbAños.SelectedItem Is Nothing And Not Me.cbAños.SelectedItem Is Nothing Then
+        If Not Me.cbAños.SelectedItem Is Nothing And Not Me.ListBox1.SelectedItem Is Nothing Then
             Try
                 Me.txtResultado.Text = String.Empty
                 Me.txtPuntosObtenidos.Text = String.Empty
