@@ -63,15 +63,15 @@ Partial Class Form3
         '
         Me.listaRanking.FormattingEnabled = True
         Me.listaRanking.ItemHeight = 16
-        Me.listaRanking.Location = New System.Drawing.Point(54, 95)
+        Me.listaRanking.Location = New System.Drawing.Point(12, 91)
         Me.listaRanking.Name = "listaRanking"
-        Me.listaRanking.Size = New System.Drawing.Size(176, 164)
+        Me.listaRanking.Size = New System.Drawing.Size(302, 164)
         Me.listaRanking.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(54, 73)
+        Me.Label1.Location = New System.Drawing.Point(12, 69)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 16)
         Me.Label1.TabIndex = 1
@@ -80,7 +80,7 @@ Partial Class Form3
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(271, 266)
+        Me.Label5.Location = New System.Drawing.Point(229, 262)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(57, 16)
         Me.Label5.TabIndex = 80
@@ -89,7 +89,7 @@ Partial Class Form3
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(57, 269)
+        Me.Label4.Location = New System.Drawing.Point(15, 265)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 16)
         Me.Label4.TabIndex = 79
@@ -99,7 +99,7 @@ Partial Class Form3
         '
         Me.ListaTorneosFinalista.FormattingEnabled = True
         Me.ListaTorneosFinalista.ItemHeight = 16
-        Me.ListaTorneosFinalista.Location = New System.Drawing.Point(271, 291)
+        Me.ListaTorneosFinalista.Location = New System.Drawing.Point(229, 287)
         Me.ListaTorneosFinalista.Name = "ListaTorneosFinalista"
         Me.ListaTorneosFinalista.Size = New System.Drawing.Size(192, 84)
         Me.ListaTorneosFinalista.TabIndex = 78
@@ -109,14 +109,14 @@ Partial Class Form3
         Me.listaEdicionesGanadas.Cursor = System.Windows.Forms.Cursors.Default
         Me.listaEdicionesGanadas.FormattingEnabled = True
         Me.listaEdicionesGanadas.ItemHeight = 16
-        Me.listaEdicionesGanadas.Location = New System.Drawing.Point(57, 291)
+        Me.listaEdicionesGanadas.Location = New System.Drawing.Point(15, 287)
         Me.listaEdicionesGanadas.Name = "listaEdicionesGanadas"
         Me.listaEdicionesGanadas.Size = New System.Drawing.Size(179, 84)
         Me.listaEdicionesGanadas.TabIndex = 77
         '
         'txtvecesganadora
         '
-        Me.txtvecesganadora.Location = New System.Drawing.Point(398, 95)
+        Me.txtvecesganadora.Location = New System.Drawing.Point(474, 93)
         Me.txtvecesganadora.Name = "txtvecesganadora"
         Me.txtvecesganadora.ReadOnly = True
         Me.txtvecesganadora.Size = New System.Drawing.Size(100, 22)
@@ -125,7 +125,7 @@ Partial Class Form3
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(273, 98)
+        Me.Label2.Location = New System.Drawing.Point(357, 96)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(108, 16)
         Me.Label2.TabIndex = 82
@@ -133,7 +133,7 @@ Partial Class Form3
         '
         'txtNfinales
         '
-        Me.txtNfinales.Location = New System.Drawing.Point(398, 140)
+        Me.txtNfinales.Location = New System.Drawing.Point(474, 138)
         Me.txtNfinales.Name = "txtNfinales"
         Me.txtNfinales.ReadOnly = True
         Me.txtNfinales.Size = New System.Drawing.Size(100, 22)
@@ -142,7 +142,7 @@ Partial Class Form3
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(260, 143)
+        Me.Label3.Location = New System.Drawing.Point(344, 141)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(121, 16)
         Me.Label3.TabIndex = 84
@@ -150,7 +150,7 @@ Partial Class Form3
         '
         'txtpuntos
         '
-        Me.txtpuntos.Location = New System.Drawing.Point(398, 215)
+        Me.txtpuntos.Location = New System.Drawing.Point(474, 213)
         Me.txtpuntos.Name = "txtpuntos"
         Me.txtpuntos.ReadOnly = True
         Me.txtpuntos.Size = New System.Drawing.Size(100, 22)
@@ -159,7 +159,7 @@ Partial Class Form3
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(333, 218)
+        Me.Label6.Location = New System.Drawing.Point(417, 216)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 16)
         Me.Label6.TabIndex = 86
@@ -238,7 +238,7 @@ Partial Class Form3
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(236, 184)
+        Me.Label11.Location = New System.Drawing.Point(320, 182)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(148, 16)
         Me.Label11.TabIndex = 96
@@ -246,7 +246,7 @@ Partial Class Form3
         '
         'txtParticipaciones
         '
-        Me.txtParticipaciones.Location = New System.Drawing.Point(398, 178)
+        Me.txtParticipaciones.Location = New System.Drawing.Point(474, 176)
         Me.txtParticipaciones.Name = "txtParticipaciones"
         Me.txtParticipaciones.ReadOnly = True
         Me.txtParticipaciones.Size = New System.Drawing.Size(100, 22)

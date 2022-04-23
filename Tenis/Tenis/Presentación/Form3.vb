@@ -6,8 +6,10 @@
             j.JugDAO.edicionesF.Clear()
             j.JugDAO.edicionesG.Clear()
             j.leerTodasRanking()
+            Dim i As Integer = 1
             For Each jug In j.JugDAO.Jugadora
-                Me.listaRanking.Items.Add(jug.nombre)
+                Me.listaRanking.Items.Add(i & "º Posición:  " & jug.nombre)
+                i += 1
             Next
         Catch ex As Exception
             MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -18,7 +20,17 @@
     Private Sub listaRanking_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaRanking.SelectedIndexChanged
         Try
             Me.cbAños.Items.Clear()
-            Me.j.nombre = Me.listaRanking.SelectedItem.ToString
+            Dim cad() = Me.listaRanking.SelectedItem.ToString.Split().ToArray
+            If (cad.Length = 5) Then
+                Me.j.nombre = cad(3) & " " & cad(4)
+            ElseIf cad.Length = 4 Then
+                Me.j.nombre = cad(3)
+            Else
+                Me.j.nombre = cad(3)
+                For i = 4 To cad.Length - 1
+                    Me.j.nombre = j.nombre & " " & cad(i)
+                Next i
+            End If
             j.buscarID()
             j.LeerJugadora()
             Me.ListaEdiciones.Items.Clear()

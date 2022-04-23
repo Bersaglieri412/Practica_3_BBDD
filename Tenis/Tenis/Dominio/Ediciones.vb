@@ -65,7 +65,7 @@
                     partidos(i).sets(2).jugadora.ActualizarPuntos()
                 End If
             ElseIf i < 7 Then
-                If partidos(i).ganadora.id <> ganadora.id Then
+                If partidos(i).ganadora.id <> partidos(i).sets(1).jugadora.id Then
                     partidos(i).sets(1).jugadora.puntos += 25
                     partidos(i).sets(1).jugadora.ActualizarPuntos()
                 Else

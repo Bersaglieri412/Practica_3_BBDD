@@ -14,6 +14,7 @@
         Me.j = New Jugadora
         Me.p = New Pais
         Me.t = New Torneo
+        Me.btnLimpiarTorneo.PerformClick()
         Me.listaEdicionesGanadas.Items.Clear()
         Me.listaJugadoras.Items.Clear()
         Me.listaEdiciones.Items.Clear()
@@ -461,7 +462,7 @@
                         Exit Sub
                     End If
                     Form1_Load(sender, e)
-                    If MsgBox("Gandora: " & tor.TorDAO.Ediciones(tor.TorDAO.Ediciones.Count).ganadora.nombre & Environment.NewLine & "Total puntos: " & tor.TorDAO.Ediciones(tor.TorDAO.Ediciones.Count).ganadora.puntos & Environment.NewLine & "¿Desea ver el árbol de partidos detallado?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    If MessageBox.Show("Gandora: " & tor.TorDAO.Ediciones(tor.TorDAO.Ediciones.Count).ganadora.nombre & Environment.NewLine & "Sus puntos suman: " & tor.TorDAO.Ediciones(tor.TorDAO.Ediciones.Count).ganadora.puntos & Environment.NewLine & "¿Desea ver el árbol de partidos detallado?", "¡Edición celebrada!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                         Form2.rellenar(tor.TorDAO.Ediciones(tor.TorDAO.Ediciones.Count))
                         Form2.Visible = True
                     End If
