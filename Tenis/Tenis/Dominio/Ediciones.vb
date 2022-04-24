@@ -55,30 +55,45 @@
         ganadora.puntos = ganadora.puntos + 100
         ganadora.ActualizarPuntos()
 
-        For i = 1 To 6
+
+        For i = 1 To 7
             If i < 5 Then
                 If partidos(i).ganadora.id <> partidos(i).sets(1).jugadora.id Then
                     partidos(i).sets(1).jugadora.puntos += 10
-                    partidos(i).sets(1).jugadora.ActualizarPuntos()
+                    'MsgBox()
+                    If partidos(i).sets(1).jugadora.ActualizarPuntos() <> 1 Then
+                        MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End If
                 Else
                     partidos(i).sets(2).jugadora.puntos += 10
-                    partidos(i).sets(2).jugadora.ActualizarPuntos()
+                    If partidos(i).sets(2).jugadora.ActualizarPuntos() <> 1 Then
+                        MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End If
                 End If
             ElseIf i < 7 Then
                 If partidos(i).ganadora.id <> partidos(i).sets(1).jugadora.id Then
                     partidos(i).sets(1).jugadora.puntos += 25
-                    partidos(i).sets(1).jugadora.ActualizarPuntos()
+                    If partidos(i).sets(1).jugadora.ActualizarPuntos() <> 1 Then
+                        MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End If
+
                 Else
                     partidos(i).sets(2).jugadora.puntos += 25
-                    partidos(i).sets(2).jugadora.ActualizarPuntos()
+                    If partidos(i).sets(2).jugadora.ActualizarPuntos() <> 1 Then
+                        MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End If
                 End If
             Else
-                    If partidos(i).ganadora.id <> partidos(i).sets(1).jugadora Then
+                If partidos(i).ganadora.id <> partidos(i).sets(1).jugadora.id Then
                     partidos(i).sets(1).jugadora.puntos += 50
-                    partidos(i).sets(1).jugadora.ActualizarPuntos()
+                    If partidos(i).sets(1).jugadora.ActualizarPuntos() <> 1 Then
+                        MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End If
                 Else
                     partidos(i).sets(2).jugadora.puntos += 50
-                    partidos(i).sets(2).jugadora.ActualizarPuntos()
+                    If partidos(i).sets(2).jugadora.ActualizarPuntos() <> 1 Then
+                        MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End If
                 End If
             End If
         Next

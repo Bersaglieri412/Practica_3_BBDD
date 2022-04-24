@@ -245,6 +245,11 @@
         Me.btnLimpiarTorneo.Enabled = False
         Me.btnEliminarTorneo.Enabled = False
         Me.btnAnadirTorneo.Enabled = True
+        Me.generarEdicion.Enabled = False
+        Me.txtAnoEdicion.Enabled = False
+        Me.txtIDTorneo.Text = String.Empty
+        Me.txtNombreTorneo.Text = String.Empty
+        Me.txtCiudadTorneo.Text = String.Empty
     End Sub
 
     Private Sub btnModificarTorneo_Click(sender As Object, e As EventArgs) Handles btnModificarTorneo.Click
@@ -255,11 +260,10 @@
                     t = New Torneo
                     t.idTorneo = Me.txtIDTorneo.Text
                     t.nombreTorneo = Me.txtNombreTorneo.Text
-                    t.ciudadTorneo = txtPuntosJugadora.Text
+                    t.ciudadTorneo = Me.txtCiudadTorneo.Text
                     p = New Pais(Me.cbPaisTorneo.SelectedItem)
                     p.LeerPais()
                     t.paisTorneo = p
-                    'Lo mismo aquí, a lo mejor vendría bien una excepción específica
 
                     If t.ActualizarJugadora() <> 1 Then
                         MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -482,15 +486,16 @@
     End Sub
 
     Private Sub listaEdiciones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaEdiciones.SelectedIndexChanged
-
-        For Each edicion In t.TorDAO.Ediciones
-            If edicion.anualidad = Me.listaEdiciones.SelectedItem.ToString.Split.ToArray(0) Then
-                ed = edicion
-                Exit For
-            End If
-        Next
-        Form2.rellenar(ed)
-        Form2.Visible = True
+        If Not Me.listaEdiciones.SelectedItem Is Nothing Then
+            For Each edicion In t.TorDAO.Ediciones
+                If edicion.anualidad = Me.listaEdiciones.SelectedItem.ToString.Split.ToArray(0) Then
+                    ed = edicion
+                    Exit For
+                End If
+            Next
+            Form2.rellenar(ed)
+            Form2.Visible = True
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

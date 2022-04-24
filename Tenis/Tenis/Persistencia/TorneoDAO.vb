@@ -62,8 +62,8 @@
         Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Torneos(nombreTorneo,ciudadTorneo,paisTorneo) VALUES ('" & p.nombreTorneo.ToString & "', '" & p.ciudadTorneo.ToString & "', '" & p.paisTorneo.id.ToString & "');")
     End Function
 
-    Public Function Actualizar(ByVal p As Torneo) As Integer 'Aquí lo mismo, solo actualizao el nombre del torneo
-        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Torneos Set nombreTorneo='" & p.nombreTorneo & "' WHERE idTorneo='" & p.idTorneo & "';")
+    Public Function Actualizar(ByVal p As Torneo) As Integer
+        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Torneos Set nombreTorneo='" & p.nombreTorneo & "', CiudadTorneo='" & p.ciudadTorneo & "' WHERE idTorneo='" & p.idTorneo & "';")
     End Function
 
     Public Function Borrar(ByVal p As Torneo) As Integer
