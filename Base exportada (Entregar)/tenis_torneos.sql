@@ -16,28 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `paises`
+-- Table structure for table `torneos`
 --
 
-DROP TABLE IF EXISTS `paises`;
+DROP TABLE IF EXISTS `torneos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `paises` (
-  `idPais` char(3) NOT NULL,
-  `NombrePais` varchar(45) NOT NULL,
-  PRIMARY KEY (`idPais`),
-  UNIQUE KEY `CountryName_UNIQUE` (`NombrePais`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `torneos` (
+  `idTorneo` int NOT NULL AUTO_INCREMENT,
+  `NombreTorneo` varchar(45) NOT NULL,
+  `CiudadTorneo` varchar(45) NOT NULL,
+  `PaisTorneo` char(3) DEFAULT NULL,
+  PRIMARY KEY (`idTorneo`),
+  UNIQUE KEY `TournamentName_UNIQUE` (`NombreTorneo`),
+  KEY `PaisTorneo_idx` (`PaisTorneo`),
+  CONSTRAINT `PaisTorneo` FOREIGN KEY (`PaisTorneo`) REFERENCES `paises` (`idPais`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `paises`
+-- Dumping data for table `torneos`
 --
 
-LOCK TABLES `paises` WRITE;
-/*!40000 ALTER TABLE `paises` DISABLE KEYS */;
-INSERT INTO `paises` VALUES ('ALB','Albania'),('ALE','Alemania'),('AUS','Australia'),('CAN','Canada'),('CHI','China'),('EMI','Emiratos Arabes Unidos'),('ESP','España'),('EST','Estados unidos'),('FRA','Francia'),('GUA','Guatemala'),('ING','Inglaterra'),('ITA','Italia'),('MEX','Mexico'),('RUM','Rumania'),('RUS','Rusia'),('SER','Serbia'),('SUD','Sudafrica'),('SUE','Suecia'),('UGA','Uganda');
-/*!40000 ALTER TABLE `paises` ENABLE KEYS */;
+LOCK TABLES `torneos` WRITE;
+/*!40000 ALTER TABLE `torneos` DISABLE KEYS */;
+INSERT INTO `torneos` VALUES (9,'Wimblendon','Londres','ING'),(10,'Open Australia','Sydney','AUS'),(11,'Conde de Godó','Madrid','ESP'),(15,'Roland Garros','Paris','FRA'),(16,'Andalucía Open','Marbella','ESP'),(17,'Melbourne summer set','Melbourne','AUS'),(18,'Shenzen Open','Shenzen','CHI'),(19,'St Petersburg Ladies Trophy','San Petersburgo','RUS'),(20,'Toyota Thailand Open','Hua Hin','TAI'),(21,'Abierto Mexicano Telcel','Acapulco','MEX'),(22,'Hungarian Ladies Open','Budapest','HUN'),(23,'Qatar Total Open','Doha','QAT'),(24,'BNP Paribas Open','Indian Wells','EST'),(25,'J&T Banka Prague Open','Praga','REP'),(26,'Mutua Madrid Open','Madrid','ESP');
+/*!40000 ALTER TABLE `torneos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-24 14:07:09
+-- Dump completed on 2022-04-24 21:21:32

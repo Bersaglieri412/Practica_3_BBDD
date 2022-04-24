@@ -36,7 +36,7 @@ CREATE TABLE `paises` (
 
 LOCK TABLES `paises` WRITE;
 /*!40000 ALTER TABLE `paises` DISABLE KEYS */;
-INSERT INTO `paises` VALUES ('ALB','Albania'),('ALE','Alemania'),('AUS','Australia'),('CAN','Canada'),('CHI','China'),('EMI','Emiratos Arabes Unidos'),('ESP','España'),('FRA','Francia'),('ING','Inglaterra'),('ITA','Italia'),('MEX','Mexico'),('RUM','Rumania'),('RUS','Rusia'),('SER','Serbia'),('SUD','Sudafrica'),('SUE','Suecia'),('UGA','Uganda');
+INSERT INTO `paises` VALUES ('ALB','Albania'),('ALE','Alemania'),('AUS','Australia'),('CAN','Canada'),('CHI','China'),('EMI','Emiratos Arabes Unidos'),('ESP','España'),('EST','Estados unidos'),('FRA','Francia'),('GUA','Guatemala'),('HUN','Hungría'),('ING','Inglaterra'),('ITA','Italia'),('MEX','Mexico'),('QAT','Qatar'),('REP','República Checa'),('RUM','Rumania'),('RUS','Rusia'),('SER','Serbia'),('SUD','Sudafrica'),('SUE','Suecia'),('TAI','Tailandia'),('UGA','Uganda');
 /*!40000 ALTER TABLE `paises` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-20 23:52:01
+-- Dump completed on 2022-04-24 21:21:33

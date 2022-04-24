@@ -16,32 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `torneos`
+-- Table structure for table `ediciones`
 --
 
-DROP TABLE IF EXISTS `torneos`;
+DROP TABLE IF EXISTS `ediciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `torneos` (
-  `idTorneo` int NOT NULL AUTO_INCREMENT,
-  `NombreTorneo` varchar(45) NOT NULL,
-  `CiudadTorneo` varchar(45) NOT NULL,
-  `PaisTorneo` char(3) DEFAULT NULL,
-  PRIMARY KEY (`idTorneo`),
-  UNIQUE KEY `TournamentName_UNIQUE` (`NombreTorneo`),
-  KEY `PaisTorneo_idx` (`PaisTorneo`),
-  CONSTRAINT `PaisTorneo` FOREIGN KEY (`PaisTorneo`) REFERENCES `paises` (`idPais`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `ediciones` (
+  `Anualidad` int NOT NULL,
+  `Torneo` int NOT NULL,
+  `Ganadora` int NOT NULL,
+  PRIMARY KEY (`Anualidad`,`Torneo`),
+  KEY `FK_Edi_Tou_idx` (`Torneo`),
+  KEY `FK_Edi_Pla_idx` (`Ganadora`),
+  CONSTRAINT `FK_Edi_Pla` FOREIGN KEY (`Ganadora`) REFERENCES `jugadoras` (`idJugadora`),
+  CONSTRAINT `FK_Edi_Tou` FOREIGN KEY (`Torneo`) REFERENCES `torneos` (`idTorneo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `torneos`
+-- Dumping data for table `ediciones`
 --
 
-LOCK TABLES `torneos` WRITE;
-/*!40000 ALTER TABLE `torneos` DISABLE KEYS */;
-INSERT INTO `torneos` VALUES (9,'Wimblendon','Londres','ING'),(10,'Open Australia','Sydney','AUS'),(11,'Caja mágica','Madrid','ESP'),(15,'Roland Garros','Paris','FRA');
-/*!40000 ALTER TABLE `torneos` ENABLE KEYS */;
+LOCK TABLES `ediciones` WRITE;
+/*!40000 ALTER TABLE `ediciones` DISABLE KEYS */;
+INSERT INTO `ediciones` VALUES (2015,25,2),(2016,9,4),(2019,20,4),(2022,18,4),(2019,15,16),(2014,24,17),(2022,17,17),(2018,15,25),(2015,23,26),(2017,11,26),(2018,20,26),(2021,16,26),(2014,25,27),(2018,21,27),(2015,9,30),(2017,21,30),(2017,22,30),(2015,26,31),(2017,10,31),(2016,26,32),(2019,19,32),(2021,17,32),(2021,18,32),(2021,19,32),(2016,10,33),(2019,16,33),(2018,11,35),(2015,24,39),(2016,23,39),(2016,22,41);
+/*!40000 ALTER TABLE `ediciones` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-20 23:52:02
+-- Dump completed on 2022-04-24 21:21:33

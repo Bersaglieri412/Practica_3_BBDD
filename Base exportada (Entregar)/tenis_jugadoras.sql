@@ -32,7 +32,7 @@ CREATE TABLE `jugadoras` (
   UNIQUE KEY `PlayerName_UNIQUE` (`NombreJugadora`),
   KEY `FK_Pla_Cou_idx` (`PaisJugadora`),
   CONSTRAINT `FK_Pla_Cou` FOREIGN KEY (`PaisJugadora`) REFERENCES `paises` (`idPais`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `jugadoras` (
 
 LOCK TABLES `jugadoras` WRITE;
 /*!40000 ALTER TABLE `jugadoras` DISABLE KEYS */;
-INSERT INTO `jugadoras` VALUES (2,'Lucía López','2004-01-22',535,'ESP'),(3,'Andrea García','2004-01-22',1215,'ESP'),(4,'Every Fernández','2022-04-12',920,'ING'),(16,'Audrey Lemon','2003-06-15',610,'AUS'),(17,'Alebarda Moiccina','1995-01-18',1120,'ITA'),(21,'Selena Guillerma','2000-06-22',1150,'ESP'),(24,'Margaret Tatcher','1925-10-13',675,'ING'),(25,'Pamela Voskova','1997-09-18',550,'RUS'),(26,'Pamela andersen','2003-06-11',430,'ALE'),(27,'Lima wallace','1989-10-25',605,'MEX'),(28,'Octaviana Valiniskova','2022-04-18',535,'RUM'),(29,'Oriola Anderson','2022-04-18',660,'CAN'),(30,'Jesusa Manuel','2022-04-18',665,'MEX'),(31,'Medina Ubombo','2022-04-20',735,'EMI'),(32,'Francisca Melnibumba','2022-04-20',1085,'UGA'),(33,'Pedra Bascugnet','2022-04-20',780,'FRA'),(34,'Vladyana Savalenka','2022-04-20',620,'RUS'),(35,'Sofia Yockovick','2022-04-22',165,'SER'),(38,'Miguela Ramos','1983-10-14',145,'GUA'),(39,'Shakayawea','2022-04-23',0,'EST'),(40,'Paula Badosa Gilbert','2022-04-23',100,'ESP');
+INSERT INTO `jugadoras` VALUES (2,'Lucía López','2004-01-22',275,'ESP'),(3,'Andrea García','2004-01-22',150,'ESP'),(4,'Every Fernández','2022-04-12',555,'ING'),(16,'Audrey Lemon','2003-06-15',320,'AUS'),(17,'Alebarda Moiccina','1995-01-18',365,'ITA'),(21,'Serena Williams','1981-09-26',195,'EST'),(24,'Garbine Muguruza','1993-10-08',165,'ESP'),(25,'Pamela Voskova','1997-09-18',370,'RUS'),(26,'Pamela andersen','2003-06-11',570,'ALE'),(27,'Lima wallace','1989-10-25',365,'MEX'),(28,'Octaviana Valiniskova','2022-04-18',165,'RUM'),(29,'Leylah Fernández','2002-09-06',245,'CAN'),(30,'Renata Zarazúa','1997-09-30',590,'MEX'),(31,'Medina Ubombo','2022-04-20',425,'EMI'),(32,'Francisca Melnibumba','2022-04-20',670,'UGA'),(33,'Brigitte Bascugnet','1994-06-20',545,'FRA'),(34,'Vladyana Savalenka','2022-04-20',80,'RUS'),(35,'Sofia Yockovick','2022-04-22',335,'SER'),(38,'Miguela Ramos','1983-10-14',230,'GUA'),(39,'Shakayawea','2022-04-23',230,'EST'),(40,'Paula Badosa Gilbert','2022-04-23',90,'ESP'),(41,'Yafan Wang','1994-04-30',265,'CHI');
 /*!40000 ALTER TABLE `jugadoras` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-24 14:07:08
+-- Dump completed on 2022-04-24 21:21:32
