@@ -75,14 +75,21 @@ Partial Class Form1
         Me.lblIDJugadoraa = New System.Windows.Forms.Label()
         Me.listaJugadoras = New System.Windows.Forms.ListBox()
         Me.Pestañas = New System.Windows.Forms.TabControl()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabPage3.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Pestañas.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabPage3
         '
+        Me.TabPage3.BackgroundImage = CType(resources.GetObject("TabPage3.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPage3.Controls.Add(Me.Label2)
         Me.TabPage3.Controls.Add(Me.txtAnoEdicion)
         Me.TabPage3.Controls.Add(Me.txtCiudadTorneo)
@@ -114,7 +121,7 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(371, 256)
+        Me.Label2.Location = New System.Drawing.Point(371, 282)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(34, 16)
         Me.Label2.TabIndex = 38
@@ -122,7 +129,7 @@ Partial Class Form1
         '
         'txtAnoEdicion
         '
-        Me.txtAnoEdicion.Location = New System.Drawing.Point(431, 252)
+        Me.txtAnoEdicion.Location = New System.Drawing.Point(431, 278)
         Me.txtAnoEdicion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtAnoEdicion.Name = "txtAnoEdicion"
         Me.txtAnoEdicion.Size = New System.Drawing.Size(100, 22)
@@ -130,7 +137,7 @@ Partial Class Form1
         '
         'txtCiudadTorneo
         '
-        Me.txtCiudadTorneo.Location = New System.Drawing.Point(431, 145)
+        Me.txtCiudadTorneo.Location = New System.Drawing.Point(431, 118)
         Me.txtCiudadTorneo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCiudadTorneo.Name = "txtCiudadTorneo"
         Me.txtCiudadTorneo.Size = New System.Drawing.Size(171, 22)
@@ -138,7 +145,7 @@ Partial Class Form1
         '
         'txtNombreTorneo
         '
-        Me.txtNombreTorneo.Location = New System.Drawing.Point(431, 92)
+        Me.txtNombreTorneo.Location = New System.Drawing.Point(431, 65)
         Me.txtNombreTorneo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNombreTorneo.Name = "txtNombreTorneo"
         Me.txtNombreTorneo.Size = New System.Drawing.Size(171, 22)
@@ -146,7 +153,7 @@ Partial Class Form1
         '
         'txtIDTorneo
         '
-        Me.txtIDTorneo.Location = New System.Drawing.Point(431, 39)
+        Me.txtIDTorneo.Location = New System.Drawing.Point(431, 12)
         Me.txtIDTorneo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtIDTorneo.Name = "txtIDTorneo"
         Me.txtIDTorneo.Size = New System.Drawing.Size(171, 22)
@@ -154,7 +161,7 @@ Partial Class Form1
         '
         'generarEdicion
         '
-        Me.generarEdicion.Location = New System.Drawing.Point(387, 300)
+        Me.generarEdicion.Location = New System.Drawing.Point(387, 316)
         Me.generarEdicion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.generarEdicion.Name = "generarEdicion"
         Me.generarEdicion.Size = New System.Drawing.Size(100, 52)
@@ -165,7 +172,7 @@ Partial Class Form1
         'cbPaisTorneo
         '
         Me.cbPaisTorneo.FormattingEnabled = True
-        Me.cbPaisTorneo.Location = New System.Drawing.Point(431, 198)
+        Me.cbPaisTorneo.Location = New System.Drawing.Point(431, 224)
         Me.cbPaisTorneo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbPaisTorneo.Name = "cbPaisTorneo"
         Me.cbPaisTorneo.Size = New System.Drawing.Size(171, 24)
@@ -240,7 +247,7 @@ Partial Class Form1
         '
         Me.lblPaisTorneo.AutoSize = True
         Me.lblPaisTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPaisTorneo.Location = New System.Drawing.Point(365, 202)
+        Me.lblPaisTorneo.Location = New System.Drawing.Point(371, 227)
         Me.lblPaisTorneo.Name = "lblPaisTorneo"
         Me.lblPaisTorneo.Size = New System.Drawing.Size(38, 16)
         Me.lblPaisTorneo.TabIndex = 24
@@ -250,7 +257,7 @@ Partial Class Form1
         '
         Me.lblCiudadTorneo.AutoSize = True
         Me.lblCiudadTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCiudadTorneo.Location = New System.Drawing.Point(348, 149)
+        Me.lblCiudadTorneo.Location = New System.Drawing.Point(348, 122)
         Me.lblCiudadTorneo.Name = "lblCiudadTorneo"
         Me.lblCiudadTorneo.Size = New System.Drawing.Size(56, 16)
         Me.lblCiudadTorneo.TabIndex = 23
@@ -260,7 +267,7 @@ Partial Class Form1
         '
         Me.lblNombreTorneo.AutoSize = True
         Me.lblNombreTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreTorneo.Location = New System.Drawing.Point(343, 96)
+        Me.lblNombreTorneo.Location = New System.Drawing.Point(343, 69)
         Me.lblNombreTorneo.Name = "lblNombreTorneo"
         Me.lblNombreTorneo.Size = New System.Drawing.Size(62, 16)
         Me.lblNombreTorneo.TabIndex = 20
@@ -270,7 +277,7 @@ Partial Class Form1
         '
         Me.lblIDTorneo.AutoSize = True
         Me.lblIDTorneo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIDTorneo.Location = New System.Drawing.Point(383, 43)
+        Me.lblIDTorneo.Location = New System.Drawing.Point(383, 16)
         Me.lblIDTorneo.Name = "lblIDTorneo"
         Me.lblIDTorneo.Size = New System.Drawing.Size(22, 16)
         Me.lblIDTorneo.TabIndex = 19
@@ -289,6 +296,8 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.BackgroundImage = CType(resources.GetObject("TabPage2.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPage2.Controls.Add(Me.btnLimpiarPais)
         Me.TabPage2.Controls.Add(Me.btnEliminarPais)
         Me.TabPage2.Controls.Add(Me.btnModificarPais)
@@ -353,7 +362,7 @@ Partial Class Form1
         '
         'txtNombrePais
         '
-        Me.txtNombrePais.Location = New System.Drawing.Point(348, 146)
+        Me.txtNombrePais.Location = New System.Drawing.Point(358, 125)
         Me.txtNombrePais.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNombrePais.Name = "txtNombrePais"
         Me.txtNombrePais.Size = New System.Drawing.Size(171, 22)
@@ -361,7 +370,7 @@ Partial Class Form1
         '
         'txtIDPais
         '
-        Me.txtIDPais.Location = New System.Drawing.Point(348, 97)
+        Me.txtIDPais.Location = New System.Drawing.Point(358, 76)
         Me.txtIDPais.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtIDPais.Name = "txtIDPais"
         Me.txtIDPais.Size = New System.Drawing.Size(171, 22)
@@ -371,7 +380,7 @@ Partial Class Form1
         '
         Me.lblNombrePais.AutoSize = True
         Me.lblNombrePais.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombrePais.Location = New System.Drawing.Point(260, 151)
+        Me.lblNombrePais.Location = New System.Drawing.Point(270, 130)
         Me.lblNombrePais.Name = "lblNombrePais"
         Me.lblNombrePais.Size = New System.Drawing.Size(62, 16)
         Me.lblNombrePais.TabIndex = 16
@@ -381,7 +390,7 @@ Partial Class Form1
         '
         Me.lblIDPais.AutoSize = True
         Me.lblIDPais.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIDPais.Location = New System.Drawing.Point(300, 102)
+        Me.lblIDPais.Location = New System.Drawing.Point(310, 81)
         Me.lblIDPais.Name = "lblIDPais"
         Me.lblIDPais.Size = New System.Drawing.Size(22, 16)
         Me.lblIDPais.TabIndex = 15
@@ -392,7 +401,7 @@ Partial Class Form1
         Me.listaPaises.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.listaPaises.FormattingEnabled = True
         Me.listaPaises.ItemHeight = 16
-        Me.listaPaises.Location = New System.Drawing.Point(35, 41)
+        Me.listaPaises.Location = New System.Drawing.Point(33, 41)
         Me.listaPaises.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.listaPaises.Name = "listaPaises"
         Me.listaPaises.Size = New System.Drawing.Size(201, 196)
@@ -400,6 +409,8 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.Label4)
@@ -421,6 +432,7 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.lblNombreJugadora)
         Me.TabPage1.Controls.Add(Me.lblIDJugadoraa)
         Me.TabPage1.Controls.Add(Me.listaJugadoras)
+        Me.TabPage1.Cursor = System.Windows.Forms.Cursors.Default
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage1.Name = "TabPage1"
@@ -444,7 +456,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(272, 250)
+        Me.Label5.Location = New System.Drawing.Point(237, 248)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(57, 16)
         Me.Label5.TabIndex = 76
@@ -453,7 +465,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(87, 250)
+        Me.Label4.Location = New System.Drawing.Point(52, 248)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 16)
         Me.Label4.TabIndex = 75
@@ -464,7 +476,7 @@ Partial Class Form1
         Me.ListaTorneosFinalista.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListaTorneosFinalista.FormattingEnabled = True
         Me.ListaTorneosFinalista.ItemHeight = 16
-        Me.ListaTorneosFinalista.Location = New System.Drawing.Point(215, 272)
+        Me.ListaTorneosFinalista.Location = New System.Drawing.Point(180, 270)
         Me.ListaTorneosFinalista.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListaTorneosFinalista.Name = "ListaTorneosFinalista"
         Me.ListaTorneosFinalista.Size = New System.Drawing.Size(172, 84)
@@ -475,7 +487,7 @@ Partial Class Form1
         Me.listaEdicionesGanadas.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.listaEdicionesGanadas.FormattingEnabled = True
         Me.listaEdicionesGanadas.ItemHeight = 16
-        Me.listaEdicionesGanadas.Location = New System.Drawing.Point(33, 272)
+        Me.listaEdicionesGanadas.Location = New System.Drawing.Point(-2, 270)
         Me.listaEdicionesGanadas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.listaEdicionesGanadas.Name = "listaEdicionesGanadas"
         Me.listaEdicionesGanadas.Size = New System.Drawing.Size(172, 84)
@@ -483,7 +495,7 @@ Partial Class Form1
         '
         'TxtID
         '
-        Me.TxtID.Location = New System.Drawing.Point(449, 52)
+        Me.TxtID.Location = New System.Drawing.Point(448, 28)
         Me.TxtID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtID.Name = "TxtID"
         Me.TxtID.Size = New System.Drawing.Size(171, 22)
@@ -491,7 +503,7 @@ Partial Class Form1
         '
         'txtPuntosJugadora
         '
-        Me.txtPuntosJugadora.Location = New System.Drawing.Point(449, 230)
+        Me.txtPuntosJugadora.Location = New System.Drawing.Point(448, 276)
         Me.txtPuntosJugadora.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPuntosJugadora.Name = "txtPuntosJugadora"
         Me.txtPuntosJugadora.Size = New System.Drawing.Size(171, 22)
@@ -499,7 +511,7 @@ Partial Class Form1
         '
         'txtNombreJugadora
         '
-        Me.txtNombreJugadora.Location = New System.Drawing.Point(449, 96)
+        Me.txtNombreJugadora.Location = New System.Drawing.Point(448, 72)
         Me.txtNombreJugadora.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNombreJugadora.Name = "txtNombreJugadora"
         Me.txtNombreJugadora.Size = New System.Drawing.Size(171, 22)
@@ -508,7 +520,7 @@ Partial Class Form1
         'lblIDJugadora
         '
         Me.lblIDJugadora.AutoSize = True
-        Me.lblIDJugadora.Location = New System.Drawing.Point(445, 57)
+        Me.lblIDJugadora.Location = New System.Drawing.Point(444, 33)
         Me.lblIDJugadora.Name = "lblIDJugadora"
         Me.lblIDJugadora.Size = New System.Drawing.Size(0, 16)
         Me.lblIDJugadora.TabIndex = 71
@@ -516,7 +528,7 @@ Partial Class Form1
         'cbPaisJugadora
         '
         Me.cbPaisJugadora.FormattingEnabled = True
-        Me.cbPaisJugadora.Location = New System.Drawing.Point(449, 185)
+        Me.cbPaisJugadora.Location = New System.Drawing.Point(448, 231)
         Me.cbPaisJugadora.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbPaisJugadora.Name = "cbPaisJugadora"
         Me.cbPaisJugadora.Size = New System.Drawing.Size(171, 24)
@@ -570,7 +582,7 @@ Partial Class Form1
         '
         Me.lblPuntosJugadora.AutoSize = True
         Me.lblPuntosJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPuntosJugadora.Location = New System.Drawing.Point(359, 235)
+        Me.lblPuntosJugadora.Location = New System.Drawing.Point(358, 281)
         Me.lblPuntosJugadora.Name = "lblPuntosJugadora"
         Me.lblPuntosJugadora.Size = New System.Drawing.Size(58, 16)
         Me.lblPuntosJugadora.TabIndex = 9
@@ -580,7 +592,7 @@ Partial Class Form1
         '
         Me.lblPaisJugadora.AutoSize = True
         Me.lblPaisJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPaisJugadora.Location = New System.Drawing.Point(381, 190)
+        Me.lblPaisJugadora.Location = New System.Drawing.Point(380, 236)
         Me.lblPaisJugadora.Name = "lblPaisJugadora"
         Me.lblPaisJugadora.Size = New System.Drawing.Size(38, 16)
         Me.lblPaisJugadora.TabIndex = 7
@@ -589,7 +601,7 @@ Partial Class Form1
         'DateTimeFechaNacJugadora
         '
         Me.DateTimeFechaNacJugadora.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.DateTimeFechaNacJugadora.Location = New System.Drawing.Point(449, 140)
+        Me.DateTimeFechaNacJugadora.Location = New System.Drawing.Point(448, 116)
         Me.DateTimeFechaNacJugadora.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DateTimeFechaNacJugadora.MaxDate = New Date(2022, 12, 31, 0, 0, 0, 0)
         Me.DateTimeFechaNacJugadora.Name = "DateTimeFechaNacJugadora"
@@ -600,7 +612,7 @@ Partial Class Form1
         '
         Me.lblFechaNacJugadora.AutoSize = True
         Me.lblFechaNacJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaNacJugadora.Location = New System.Drawing.Point(259, 145)
+        Me.lblFechaNacJugadora.Location = New System.Drawing.Point(258, 121)
         Me.lblFechaNacJugadora.Name = "lblFechaNacJugadora"
         Me.lblFechaNacJugadora.Size = New System.Drawing.Size(151, 16)
         Me.lblFechaNacJugadora.TabIndex = 3
@@ -610,7 +622,7 @@ Partial Class Form1
         '
         Me.lblNombreJugadora.AutoSize = True
         Me.lblNombreJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreJugadora.Location = New System.Drawing.Point(359, 101)
+        Me.lblNombreJugadora.Location = New System.Drawing.Point(358, 77)
         Me.lblNombreJugadora.Name = "lblNombreJugadora"
         Me.lblNombreJugadora.Size = New System.Drawing.Size(62, 16)
         Me.lblNombreJugadora.TabIndex = 2
@@ -620,7 +632,7 @@ Partial Class Form1
         '
         Me.lblIDJugadoraa.AutoSize = True
         Me.lblIDJugadoraa.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIDJugadoraa.Location = New System.Drawing.Point(399, 57)
+        Me.lblIDJugadoraa.Location = New System.Drawing.Point(398, 33)
         Me.lblIDJugadoraa.Name = "lblIDJugadoraa"
         Me.lblIDJugadoraa.Size = New System.Drawing.Size(22, 16)
         Me.lblIDJugadoraa.TabIndex = 1
@@ -643,18 +655,53 @@ Partial Class Form1
         Me.Pestañas.Controls.Add(Me.TabPage2)
         Me.Pestañas.Controls.Add(Me.TabPage3)
         Me.Pestañas.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Pestañas.Location = New System.Drawing.Point(-4, 4)
+        Me.Pestañas.Location = New System.Drawing.Point(1, 92)
         Me.Pestañas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Pestañas.Name = "Pestañas"
         Me.Pestañas.SelectedIndex = 0
         Me.Pestañas.Size = New System.Drawing.Size(836, 404)
         Me.Pestañas.TabIndex = 0
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 35.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label3.Location = New System.Drawing.Point(112, 6)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(533, 78)
+        Me.Label3.TabIndex = 101
+        Me.Label3.Text = "GESTOR TORNEOS"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.ForeColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Panel1.Location = New System.Drawing.Point(1, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(851, 84)
+        Me.Panel1.TabIndex = 102
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(16, 10)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(68, 62)
+        Me.PictureBox1.TabIndex = 102
+        Me.PictureBox1.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(864, 439)
+        Me.ClientSize = New System.Drawing.Size(864, 507)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Pestañas)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -669,6 +716,9 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.Pestañas.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -724,4 +774,7 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents ListaTorneosFinalista As ListBox
     Friend WithEvents listaEdicionesGanadas As ListBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
