@@ -11,7 +11,6 @@
         For Each aux In col
             p.idPartido = aux(1).ToString
             p.ganadora = New Jugadora(aux(4).ToString)
-            'p.edicion = New Ediciones(aux(2))
             p.ronda = aux(5).ToString
             Me.Partido.Add(p)
 
@@ -38,7 +37,7 @@
         Return AgenteBD.ObtenerAgente.Modificar("INSERT INTO Partidos VALUES ('" & p.edicion.anualidad.ToString & "', '" & p.edicion.torneo.idTorneo & "', '" & p.ganadora.id & "', '" & p.ronda & "');")
     End Function
 
-    Public Function Actualizar(ByVal p As Partido) As Integer 'No se que valores se actualizarian aqui, he puesto que basicamente se cambie el torneo
+    Public Function Actualizar(ByVal p As Partido) As Integer
         Return AgenteBD.ObtenerAgente.Modificar("UPDATE Partidos Set Anualidad='" & p.edicion.anualidad.ToString & " Set Torneo='" & p.edicion.torneo.idTorneo & "' WHERE idPartido='" & p.idPartido & "';")
     End Function
 

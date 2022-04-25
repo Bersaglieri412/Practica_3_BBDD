@@ -582,7 +582,7 @@ Partial Class Form1
         '
         Me.lblPuntosJugadora.AutoSize = True
         Me.lblPuntosJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPuntosJugadora.Location = New System.Drawing.Point(358, 281)
+        Me.lblPuntosJugadora.Location = New System.Drawing.Point(386, 282)
         Me.lblPuntosJugadora.Name = "lblPuntosJugadora"
         Me.lblPuntosJugadora.Size = New System.Drawing.Size(58, 16)
         Me.lblPuntosJugadora.TabIndex = 9
@@ -592,7 +592,7 @@ Partial Class Form1
         '
         Me.lblPaisJugadora.AutoSize = True
         Me.lblPaisJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPaisJugadora.Location = New System.Drawing.Point(380, 236)
+        Me.lblPaisJugadora.Location = New System.Drawing.Point(404, 234)
         Me.lblPaisJugadora.Name = "lblPaisJugadora"
         Me.lblPaisJugadora.Size = New System.Drawing.Size(38, 16)
         Me.lblPaisJugadora.TabIndex = 7
@@ -612,7 +612,7 @@ Partial Class Form1
         '
         Me.lblFechaNacJugadora.AutoSize = True
         Me.lblFechaNacJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaNacJugadora.Location = New System.Drawing.Point(258, 121)
+        Me.lblFechaNacJugadora.Location = New System.Drawing.Point(278, 116)
         Me.lblFechaNacJugadora.Name = "lblFechaNacJugadora"
         Me.lblFechaNacJugadora.Size = New System.Drawing.Size(151, 16)
         Me.lblFechaNacJugadora.TabIndex = 3
@@ -622,7 +622,7 @@ Partial Class Form1
         '
         Me.lblNombreJugadora.AutoSize = True
         Me.lblNombreJugadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreJugadora.Location = New System.Drawing.Point(358, 77)
+        Me.lblNombreJugadora.Location = New System.Drawing.Point(380, 72)
         Me.lblNombreJugadora.Name = "lblNombreJugadora"
         Me.lblNombreJugadora.Size = New System.Drawing.Size(62, 16)
         Me.lblNombreJugadora.TabIndex = 2
@@ -632,7 +632,7 @@ Partial Class Form1
         '
         Me.lblIDJugadoraa.AutoSize = True
         Me.lblIDJugadoraa.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIDJugadoraa.Location = New System.Drawing.Point(398, 33)
+        Me.lblIDJugadoraa.Location = New System.Drawing.Point(416, 28)
         Me.lblIDJugadoraa.Name = "lblIDJugadoraa"
         Me.lblIDJugadoraa.Size = New System.Drawing.Size(22, 16)
         Me.lblIDJugadoraa.TabIndex = 1

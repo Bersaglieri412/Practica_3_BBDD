@@ -71,6 +71,7 @@ Partial Class Form2
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -459,6 +460,7 @@ Partial Class Form2
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Panel9.Controls.Add(Me.Button1)
         Me.Panel9.Controls.Add(Me.Label5)
         Me.Panel9.Controls.Add(Me.PictureBox1)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
@@ -566,6 +568,22 @@ Partial Class Form2
         Me.Label9.TabIndex = 86
         Me.Label9.Text = "SEMIFINALES"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Button1.Location = New System.Drawing.Point(880, 33)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(17, 16)
+        Me.Button1.TabIndex = 101
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -586,6 +604,8 @@ Partial Class Form2
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximumSize = New System.Drawing.Size(1644, 932)
+        Me.MinimumSize = New System.Drawing.Size(1644, 932)
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Partidos y resultados"
@@ -663,4 +683,5 @@ Partial Class Form2
     Friend WithEvents Label3 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents Button1 As Button
 End Class

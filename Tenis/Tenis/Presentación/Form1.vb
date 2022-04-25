@@ -416,8 +416,6 @@
                 Exit Sub
             End Try
             Me.listaPaises.Items.RemoveAt(Me.listaPaises.Items.IndexOf(p.nombre))
-            'Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
-            'Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
             Form1_Load(sender, e)
             MessageBox.Show(Me.p.nombre & " eliminado correctamente")
         End If
