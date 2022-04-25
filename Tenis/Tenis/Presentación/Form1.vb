@@ -429,8 +429,8 @@
 
                 Try
                     p.nombre = Me.txtNombrePais.Text
-                    'p.id = Me.txtIDPais.Text
-                    'Lo mismo aquí, a lo mejor vendría bien una excepción específica
+
+
                     If p.ActualizarPais() <> 1 Then
                         MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         Exit Sub
@@ -558,5 +558,9 @@
                 MsgBox("El campo nombre no puede contener cifras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
         End If
+    End Sub
+
+    Private Sub txtIDPais_TextChanged(sender As Object, e As EventArgs) Handles txtIDPais.TextChanged
+        p.id = Me.txtIDPais.Text
     End Sub
 End Class

@@ -20,7 +20,7 @@
         Jugadora.Clear()
         Dim p As Jugadora
         Dim col, aux As Collection
-        col = AgenteBD.ObtenerAgente().Leer("SELECT * FROM Jugadoras ORDER BY idJugadora")
+        col = AgenteBD.ObtenerAgente().Leer("SELECT * FROM Jugadoras ORDER BY nombreJugadora")
         For Each aux In col
             p = New Jugadora(aux(1).ToString)
             p.nombre = aux(2).ToString

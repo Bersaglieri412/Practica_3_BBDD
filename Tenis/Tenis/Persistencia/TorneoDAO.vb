@@ -13,7 +13,7 @@
         Dim p As Torneo
         Dim col, cole, aux, auxe As Collection
         Dim e As Ediciones
-        col = AgenteBD.ObtenerAgente().Leer("SELECT * FROM Torneos ORDER BY idTorneo")
+        col = AgenteBD.ObtenerAgente().Leer("SELECT * FROM Torneos ORDER BY nombreTorneo")
         For Each aux In col
             p = New Torneo(aux(1).ToString)
             p.nombreTorneo = aux(2).ToString
