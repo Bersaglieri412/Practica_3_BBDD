@@ -1,0 +1,17 @@
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Release\Tenis.exe.config
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Release\Tenis.exe
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Release\Tenis.pdb
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Release\Tenis.xml
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\bin\Release\MySql.Data.dll
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.vbproj.AssemblyReference.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.vbproj.SuggestedBindingRedirects.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.Resources.resources
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.Form1.resources
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.Form2.resources
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.Form3.resources
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.vbproj.GenerateResource.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.vbproj.CoreCompileInputs.cache
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.vbproj.CopyComplete
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.exe
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.xml
+C:\Mis Documentos\Uni\Segundo\BBDD\Lab\Practica_3_BBDD\Tenis\Tenis\obj\Release\Tenis.pdb
