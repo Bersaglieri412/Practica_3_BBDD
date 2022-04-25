@@ -380,6 +380,7 @@
             Try
                 Me.p.nombre = Me.listaPaises.SelectedItem.ToString()
                 Me.p.buscarId()
+                Me.p.id_antiguo = p.id
             Catch ex As Exception
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End Try
@@ -429,7 +430,7 @@
 
                 Try
                     p.nombre = Me.txtNombrePais.Text
-
+                    p.id = Me.txtIDPais.Text
 
                     If p.ActualizarPais() <> 1 Then
                         MessageBox.Show("UPDATE return <> 1", String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -443,10 +444,8 @@
                 MessageBox.Show(p.nombre & " actualizado correctamente")
                 Me.listaPaises.Items.Add(p.nombre)
                 Me.listaPaises.Items.Remove(listaPaises.SelectedItem)
-                'Me.cbPaisJugadora.DataSource = Me.listaPaises.Items
-                'Me.cbPaisTorneo.DataSource = Me.listaPaises.Items
                 Form1_Load(sender, e)
-                'Ten en cuenta que hay que despues borrar el pais de los cb que no funciona
+
             End If
         Else
             MsgBox("Debe seleccionar un torneo de la lista para modificar", MessageBoxButtons.OK)

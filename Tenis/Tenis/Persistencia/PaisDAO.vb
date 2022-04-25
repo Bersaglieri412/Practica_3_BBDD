@@ -36,7 +36,7 @@
     End Function
 
     Public Function Actualizar(ByVal p As Pais) As Integer
-        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Paises Set NombrePais='" & p.nombre & "' WHERE idPais='" & p.id & "';")
+        Return AgenteBD.ObtenerAgente.Modificar("UPDATE Paises Set NombrePais='" & p.nombre & "', idPais='" & p.id & "' WHERE idPais='" & p.id_antiguo & "';")
     End Function
 
     Public Function Borrar(ByVal p As Pais) As Integer
