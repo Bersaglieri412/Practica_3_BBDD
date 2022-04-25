@@ -2,6 +2,8 @@
     Public Property id As String
     Public Property nombre As String
 
+    Public Property id_antiguo As String
+
     Public ReadOnly Property PaisDAO As PaisDAO
 
     Public Sub New()

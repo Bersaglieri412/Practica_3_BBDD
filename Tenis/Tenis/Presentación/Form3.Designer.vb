@@ -62,211 +62,205 @@ Partial Class Form3
         'listaRanking
         '
         Me.listaRanking.FormattingEnabled = True
-        Me.listaRanking.Location = New System.Drawing.Point(9, 74)
-        Me.listaRanking.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.listaRanking.ItemHeight = 16
+        Me.listaRanking.Location = New System.Drawing.Point(12, 91)
+        Me.listaRanking.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.listaRanking.Name = "listaRanking"
-        Me.listaRanking.Size = New System.Drawing.Size(228, 134)
+        Me.listaRanking.Size = New System.Drawing.Size(303, 164)
         Me.listaRanking.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 56)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(12, 69)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 13)
+        Me.Label1.Size = New System.Drawing.Size(60, 16)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Ranking:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(172, 213)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(229, 262)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(45, 13)
+        Me.Label5.Size = New System.Drawing.Size(57, 16)
         Me.Label5.TabIndex = 80
         Me.Label5.Text = "Finalista"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(11, 215)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(15, 265)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(50, 13)
+        Me.Label4.Size = New System.Drawing.Size(63, 16)
         Me.Label4.TabIndex = 79
         Me.Label4.Text = "Ganadas"
         '
         'ListaTorneosFinalista
         '
         Me.ListaTorneosFinalista.FormattingEnabled = True
-        Me.ListaTorneosFinalista.Location = New System.Drawing.Point(172, 233)
-        Me.ListaTorneosFinalista.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListaTorneosFinalista.ItemHeight = 16
+        Me.ListaTorneosFinalista.Location = New System.Drawing.Point(229, 287)
+        Me.ListaTorneosFinalista.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListaTorneosFinalista.Name = "ListaTorneosFinalista"
-        Me.ListaTorneosFinalista.Size = New System.Drawing.Size(145, 69)
+        Me.ListaTorneosFinalista.Size = New System.Drawing.Size(246, 84)
         Me.ListaTorneosFinalista.TabIndex = 78
         '
         'listaEdicionesGanadas
         '
         Me.listaEdicionesGanadas.Cursor = System.Windows.Forms.Cursors.Default
         Me.listaEdicionesGanadas.FormattingEnabled = True
-        Me.listaEdicionesGanadas.Location = New System.Drawing.Point(11, 233)
-        Me.listaEdicionesGanadas.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.listaEdicionesGanadas.ItemHeight = 16
+        Me.listaEdicionesGanadas.Location = New System.Drawing.Point(15, 287)
+        Me.listaEdicionesGanadas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.listaEdicionesGanadas.Name = "listaEdicionesGanadas"
-        Me.listaEdicionesGanadas.Size = New System.Drawing.Size(135, 69)
+        Me.listaEdicionesGanadas.Size = New System.Drawing.Size(208, 84)
         Me.listaEdicionesGanadas.TabIndex = 77
         '
         'txtvecesganadora
         '
-        Me.txtvecesganadora.Location = New System.Drawing.Point(371, 77)
-        Me.txtvecesganadora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtvecesganadora.Location = New System.Drawing.Point(495, 95)
+        Me.txtvecesganadora.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtvecesganadora.Name = "txtvecesganadora"
         Me.txtvecesganadora.ReadOnly = True
-        Me.txtvecesganadora.Size = New System.Drawing.Size(76, 20)
+        Me.txtvecesganadora.Size = New System.Drawing.Size(100, 22)
         Me.txtvecesganadora.TabIndex = 81
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(277, 81)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(369, 100)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 13)
+        Me.Label2.Size = New System.Drawing.Size(108, 16)
         Me.Label2.TabIndex = 82
         Me.Label2.Text = "Veces ganadora"
         '
         'txtNfinales
         '
-        Me.txtNfinales.Location = New System.Drawing.Point(371, 113)
-        Me.txtNfinales.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNfinales.Location = New System.Drawing.Point(495, 139)
+        Me.txtNfinales.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNfinales.Name = "txtNfinales"
         Me.txtNfinales.ReadOnly = True
-        Me.txtNfinales.Size = New System.Drawing.Size(76, 20)
+        Me.txtNfinales.Size = New System.Drawing.Size(100, 22)
         Me.txtNfinales.TabIndex = 83
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(268, 118)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(357, 145)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(94, 13)
+        Me.Label3.Size = New System.Drawing.Size(121, 16)
         Me.Label3.TabIndex = 84
         Me.Label3.Text = "Finales disputadas"
         '
         'txtpuntos
         '
-        Me.txtpuntos.Location = New System.Drawing.Point(371, 174)
-        Me.txtpuntos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtpuntos.Location = New System.Drawing.Point(495, 214)
+        Me.txtpuntos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtpuntos.Name = "txtpuntos"
         Me.txtpuntos.ReadOnly = True
-        Me.txtpuntos.Size = New System.Drawing.Size(76, 20)
+        Me.txtpuntos.Size = New System.Drawing.Size(100, 22)
         Me.txtpuntos.TabIndex = 85
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(322, 179)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(429, 220)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(40, 13)
+        Me.Label6.Size = New System.Drawing.Size(48, 16)
         Me.Label6.TabIndex = 86
         Me.Label6.Text = "Puntos"
         '
         'listaTorneos
         '
         Me.listaTorneos.FormattingEnabled = True
-        Me.listaTorneos.Location = New System.Drawing.Point(20, 41)
-        Me.listaTorneos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.listaTorneos.ItemHeight = 16
+        Me.listaTorneos.Location = New System.Drawing.Point(27, 50)
+        Me.listaTorneos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.listaTorneos.Name = "listaTorneos"
-        Me.listaTorneos.Size = New System.Drawing.Size(91, 69)
+        Me.listaTorneos.Size = New System.Drawing.Size(120, 84)
         Me.listaTorneos.TabIndex = 87
         '
         'ListaEdiciones
         '
         Me.ListaEdiciones.FormattingEnabled = True
-        Me.ListaEdiciones.Location = New System.Drawing.Point(20, 138)
-        Me.ListaEdiciones.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListaEdiciones.ItemHeight = 16
+        Me.ListaEdiciones.Location = New System.Drawing.Point(27, 170)
+        Me.ListaEdiciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListaEdiciones.Name = "ListaEdiciones"
-        Me.ListaEdiciones.Size = New System.Drawing.Size(91, 69)
+        Me.ListaEdiciones.Size = New System.Drawing.Size(120, 84)
         Me.ListaEdiciones.TabIndex = 88
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 23)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Location = New System.Drawing.Point(27, 28)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(94, 13)
+        Me.Label7.Size = New System.Drawing.Size(117, 16)
         Me.Label7.TabIndex = 89
         Me.Label7.Text = "Ha participado en:"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(20, 120)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Location = New System.Drawing.Point(27, 148)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(56, 13)
+        Me.Label8.Size = New System.Drawing.Size(70, 16)
         Me.Label8.TabIndex = 90
         Me.Label8.Text = "Ediciones:"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(675, 85)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Location = New System.Drawing.Point(900, 105)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(58, 13)
+        Me.Label9.Size = New System.Drawing.Size(72, 16)
         Me.Label9.TabIndex = 91
         Me.Label9.Text = "Resultado:"
         '
         'txtResultado
         '
-        Me.txtResultado.Location = New System.Drawing.Point(737, 81)
-        Me.txtResultado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtResultado.Location = New System.Drawing.Point(983, 100)
+        Me.txtResultado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtResultado.Name = "txtResultado"
         Me.txtResultado.ReadOnly = True
-        Me.txtResultado.Size = New System.Drawing.Size(76, 20)
+        Me.txtResultado.Size = New System.Drawing.Size(100, 22)
         Me.txtResultado.TabIndex = 92
         '
         'txtPuntosObtenidos
         '
-        Me.txtPuntosObtenidos.Location = New System.Drawing.Point(737, 117)
-        Me.txtPuntosObtenidos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPuntosObtenidos.Location = New System.Drawing.Point(983, 144)
+        Me.txtPuntosObtenidos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPuntosObtenidos.Name = "txtPuntosObtenidos"
         Me.txtPuntosObtenidos.ReadOnly = True
-        Me.txtPuntosObtenidos.Size = New System.Drawing.Size(76, 20)
+        Me.txtPuntosObtenidos.Size = New System.Drawing.Size(100, 22)
         Me.txtPuntosObtenidos.TabIndex = 94
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(641, 121)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Location = New System.Drawing.Point(855, 149)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(92, 13)
+        Me.Label10.Size = New System.Drawing.Size(114, 16)
         Me.Label10.TabIndex = 93
         Me.Label10.Text = "Puntos obtenidos:"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(245, 151)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Location = New System.Drawing.Point(327, 186)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(117, 13)
+        Me.Label11.Size = New System.Drawing.Size(148, 16)
         Me.Label11.TabIndex = 96
         Me.Label11.Text = "Participaciones torneos"
         '
         'txtParticipaciones
         '
-        Me.txtParticipaciones.Location = New System.Drawing.Point(371, 144)
-        Me.txtParticipaciones.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtParticipaciones.Location = New System.Drawing.Point(495, 177)
+        Me.txtParticipaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtParticipaciones.Name = "txtParticipaciones"
         Me.txtParticipaciones.ReadOnly = True
-        Me.txtParticipaciones.Size = New System.Drawing.Size(76, 20)
+        Me.txtParticipaciones.Size = New System.Drawing.Size(100, 22)
         Me.txtParticipaciones.TabIndex = 95
         '
         'ContextMenuStrip1
@@ -279,11 +273,11 @@ Partial Class Form3
         '
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(462, 56)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabControl1.Location = New System.Drawing.Point(616, 69)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(162, 249)
+        Me.TabControl1.Size = New System.Drawing.Size(216, 306)
         Me.TabControl1.TabIndex = 98
         '
         'TabPage2
@@ -292,11 +286,11 @@ Partial Class Form3
         Me.TabPage2.Controls.Add(Me.ListaEdiciones)
         Me.TabPage2.Controls.Add(Me.Label7)
         Me.TabPage2.Controls.Add(Me.Label8)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TabPage2.Size = New System.Drawing.Size(154, 223)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabPage2.Size = New System.Drawing.Size(208, 277)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Vista total"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -307,10 +301,10 @@ Partial Class Form3
         Me.TabPage1.Controls.Add(Me.Label13)
         Me.TabPage1.Controls.Add(Me.ListBox1)
         Me.TabPage1.Controls.Add(Me.Label12)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(154, 223)
+        Me.TabPage1.Size = New System.Drawing.Size(208, 277)
         Me.TabPage1.TabIndex = 2
         Me.TabPage1.Text = "Vista anual"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -318,46 +312,45 @@ Partial Class Form3
         'cbAños
         '
         Me.cbAños.FormattingEnabled = True
-        Me.cbAños.Location = New System.Drawing.Point(64, 26)
-        Me.cbAños.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbAños.Location = New System.Drawing.Point(85, 32)
+        Me.cbAños.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbAños.Name = "cbAños"
-        Me.cbAños.Size = New System.Drawing.Size(76, 21)
+        Me.cbAños.Size = New System.Drawing.Size(100, 24)
         Me.cbAños.TabIndex = 4
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(39, 72)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label13.Location = New System.Drawing.Point(52, 89)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(46, 13)
+        Me.Label13.Size = New System.Drawing.Size(58, 16)
         Me.Label13.TabIndex = 3
         Me.Label13.Text = "Torneos"
         '
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(41, 99)
-        Me.ListBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListBox1.ItemHeight = 16
+        Me.ListBox1.Location = New System.Drawing.Point(55, 122)
+        Me.ListBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(99, 69)
+        Me.ListBox1.Size = New System.Drawing.Size(131, 84)
         Me.ListBox1.TabIndex = 2
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(37, 28)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label12.Location = New System.Drawing.Point(49, 34)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(26, 13)
+        Me.Label12.Size = New System.Drawing.Size(31, 16)
         Me.Label12.TabIndex = 1
         Me.Label12.Text = "Año"
         '
         'Form3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(824, 316)
+        Me.ClientSize = New System.Drawing.Size(1099, 389)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtParticipaciones)
@@ -379,7 +372,7 @@ Partial Class Form3
         Me.Controls.Add(Me.listaRanking)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form3"
